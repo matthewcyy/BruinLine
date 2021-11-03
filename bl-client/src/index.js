@@ -2,30 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="App">
-      <header className="App-header">
-        <div className="App-menu">
-          <button className="menu-item">
-            <h1> BOO </h1>
-          </button>
-          <button className="menu-item">
-            <h1> BOO </h1>
-          </button>
-          <button className="menu-item">
-            <h1> BOO </h1>
-          </button>
-          <button className="menu-item">
-            <h1> BOO </h1>
-          </button>
-        </div>
-        <p> HELLO </p>
-      </header>
-    </div>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
