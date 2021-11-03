@@ -1,9 +1,19 @@
+/*
+COLORS:
+- BLUE ACCENTS : #2774AE
+- YELLOW ACCENTS : #FFD100
+- MAIN WHITE : white
+- MAIN GREY : grey
+- BLUE ON CLICK : 
+- YELLOW ON CLICK : 
+*/
+
 .App {
   text-align: center;
 }
 
 .App-menu {
-  background-color: #61dafb;
+  background-color: #2774ae;
 }
 
 .App-logo {
@@ -18,7 +28,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffd100;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
