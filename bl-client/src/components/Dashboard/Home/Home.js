@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './Home.css';
 
 function Home() {
@@ -12,3 +13,9 @@ function Home() {
   );
 }
 export default Home;
+=======
+function Home() {
+    return <h2> HOME </h2>;
+}
+export default Home;
+>>>>>>> master
