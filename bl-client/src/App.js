@@ -9,6 +9,8 @@ import DiningHalls from "./components/Dashboard/DiningHalls/DiningHalls";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/LandingPage/LandingPage";
+import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -41,44 +43,58 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="nav">
-        <Link to="/">
-          <button type="button" className="button1">
-            Home
-          </button>
-        </Link>
+      <Box
+        component="span"
+        sx={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          p: 2,
+          border: "2px solid grey",
+        }}
+      >
+        <Button component={Link} style={{ display: "inline-block" }} to="/">
+          Home
+        </Button>
+        <Button
+          component={Link}
+          style={{ display: "inline-block" }}
+          to="/register"
+        >
+          Register
+        </Button>
+        <Button
+          component={Link}
+          style={{ display: "inline-block" }}
+          to="/login"
+        >
+          Login
+        </Button>
+        <Button
+          component={Link}
+          style={{ display: "inline-block" }}
+          to="/dininghalls"
+        >
+          Dining Halls
+        </Button>
 
-        <Link to="/register">
-          <button type="button" className="button1">
-            Register
-          </button>
-        </Link>
-        <Link to="/login">
-          <button type="button" className="button1">
-            Login
-          </button>
-        </Link>
-        <Link to="/dininghalls">
-          <button type="button" className="button1">
-            Dining Halls
-          </button>
-        </Link>
-        <Link to="/home">
-          <button type="button" className="button1">
-            Home
-          </button>
-        </Link>
-        <Link to="/profile">
-          <button type="button" className="button1">
-            Profile
-          </button>
-        </Link>
-        <Link to="/rankings">
-          <button type="button" className="button1">
-            Rankings
-          </button>
-        </Link>
-      </div>
+        <Button component={Link} style={{ display: "inline-block" }} to="/home">
+          Home
+        </Button>
+        <Button
+          component={Link}
+          style={{ display: "inline-block" }}
+          to="/profile"
+        >
+          Profile
+        </Button>
+        <Button
+          component={Link}
+          style={{ display: "inline-block" }}
+          to="/rankings"
+        >
+          Rankings
+        </Button>
+      </Box>
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/register" component={Register} />

@@ -7,9 +7,10 @@ COLORS:
 - BLUE ON CLICK : 
 - YELLOW ON CLICK : 
 */
-.nav {
-  padding: 20px;
-  background: white;
+.Box {
+  padding: 100px;
+  display: flex;
+  background: black;
   width: 100%;
   justify-content: space-evenly;
 }
