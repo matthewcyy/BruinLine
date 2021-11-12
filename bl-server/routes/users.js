@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var food = require("../models/food_model");
 var User = require("../models/user_model");
+const auth = require("../middleware/auth");
 
 router.post('/register', async (req, res) => {
     try {
@@ -65,7 +66,7 @@ router.post('/login', async (req, res) => {
             return res
                 .status(400)
                 .json({ msg: "No such user exists with this email" })
-        const user = await User.findOne({ username: email })
+        const user = await User.findOne({ email: email })
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch)
@@ -86,5 +87,31 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 })
+
+router.post("/tokenIsValid", async (req, res) => {
+    try {
+      const token = req.header("x-auth-token");
+      if (!token) return res.json(false);
+  
+      const verified = jwt.verify(token, process.env.JWT_SECRET);
+      if (!verified) return res.json(false);
+  
+      const user = await User.findById(verified.id);
+      if (!user) return res.json(false);
+  
+      return res.json(true);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+  
+  router.get("/", auth, async (req, res) => {
+    const user = await User.findById(req.user);
+    res.json({
+      displayName: user.displayName,
+      id: user._id,
+      favFoods: user.favFoods,
+    });
+  });
 
 module.exports = router;
