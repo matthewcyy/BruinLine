@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
 COLORS:
 - BLUE ACCENTS : #2774AE
@@ -7,6 +8,26 @@ COLORS:
 - BLUE ON CLICK : 
 - YELLOW ON CLICK : 
 */
+=======
+.nav {
+  padding:20px;
+  background:white;
+  width:100%;
+  justify-content: space-evenly;
+}
+
+.button1{
+  position:relative;
+  font-style: normal;
+  font-weight: normal;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  background-color: white;
+  border:0px;
+  padding:10px;
+}
+>>>>>>> Stashed changes
 
 .App {
   text-align: center;
