@@ -1,5 +1,4 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
@@ -9,6 +8,7 @@ import Rankings from "./components/Dashboard/Rankings/Rankings";
 import DiningHalls from "./components/Dashboard/DiningHalls/DiningHalls";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -79,20 +79,6 @@ function App() {
           </button>
         </Link>
       </div>
-      <Switch>
-        <Route path="/DiningHalls">
-          <DiningHalls />
-        </Route>
-        <Route path="/Profile">
-          <Profile />
-        </Route>
-        <Route path="/Rankings">
-          <Rankings />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/register" component={Register} />
