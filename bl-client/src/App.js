@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Home from './components/Dashboard/Home/Home';
 import Profile from './components/Dashboard/Profile/Profile';
@@ -13,9 +13,9 @@ import './App.css';
 import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
-  const [ userData, setUserData] = useState({
+  const [userData, setUserData] = useState({
     token: undefined,
-    user: undefined
+    user: undefined,
   });
 
   useEffect(() => {
@@ -54,6 +54,44 @@ function App() {
           <Route path="/rankings" component={Rankings} />
         </Switch>
       </UserContext.Provider>
+      <div className="nav">
+        <Link to="/">
+          <button type="button" className="button1">
+            Home
+          </button>
+        </Link>
+
+        <Link to="/register">
+          <button type="button" className="button1">
+            Register
+          </button>
+        </Link>
+        <Link to="/login">
+          <button type="button" className="button1">
+            Login
+          </button>
+        </Link>
+        <Link to="/dininghalls">
+          <button type="button" className="button1">
+            Dining Halls
+          </button>
+        </Link>
+        <Link to="/home">
+          <button type="button" className="button1">
+            Home
+          </button>
+        </Link>
+        <Link to="/profile">
+          <button type="button" className="button1">
+            Profile
+          </button>
+        </Link>
+        <Link to="/rankings">
+          <button type="button" className="button1">
+            Rankings
+          </button>
+        </Link>
+      </div>
     </BrowserRouter>
   );
 }

@@ -1,5 +1,37 @@
+/*
+COLORS:
+- BLUE ACCENTS : #2774AE
+- YELLOW ACCENTS : #FFD100
+- MAIN WHITE : white
+- MAIN GREY : grey
+- BLUE ON CLICK : 
+- YELLOW ON CLICK : 
+*/
+.nav {
+  padding: 20px;
+  background: white;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.button1 {
+  position: relative;
+  font-style: normal;
+  font-weight: normal;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  background-color: white;
+  border: 0px;
+  padding: 10px;
+}
+
 .App {
   text-align: center;
+}
+
+.App-menu {
+  background-color: #2774ae;
 }
 
 .App-logo {
@@ -7,14 +39,8 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: #ffd100;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,13 +52,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
