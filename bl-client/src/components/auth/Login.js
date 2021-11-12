@@ -2,25 +2,27 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import ErrorNotice from "./ErrorNotice";
+import UserContext from "../../context/userContext"
 
 function Login () {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
 
-    // const history = useHistory();
+    const { setUserData } = useContext(UserContext);
+    const history = useHistory();
 
     const submit = async (e) => {
         e.preventDefault();
         try{
             const loginUser = {email, password};
             const loginResponse = await axios.post("http://localhost:5000/users/login", loginUser);
-            // setUserData({
-            //     token: loginResponse.data.token,
-            //     user: loginResponse.data.user
-            // });
-            // localStorage.setItem("auth-token", loginResponse.data.token);
-            // history.push("/dashboard");
+            setUserData({
+                token: loginResponse.data.token,
+                user: loginResponse.data.user
+            });
+            localStorage.setItem("auth-token", loginResponse.data.token);
+            history.push("/home");
         } catch(err) {
             err.response.data.msg && setError(err.response.data.msg)
         }
