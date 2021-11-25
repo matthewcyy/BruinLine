@@ -42,7 +42,7 @@ function Registration() {
                 <label>Password: </label>
                 <input type="password" id="password" onChange={e => setPassword(e.target.value)}/>
                 <input type="password" placeholder="Confirm password" onChange={e => setPasswordVerify(e.target.value)}/>
-                <label>Display name </label>
+                <label>Username </label>
                 <input type="text" id="dsplay-name" onChange={e => setUsername(e.target.value)}/>
                 <input type="submit" value="Register" className="btn btn-primary" />
             </form>
