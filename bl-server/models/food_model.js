@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema({
+  itemName: {type: String},
+  onTodaysMenu: {type: Boolean, default: false}, // sayng whether or not on today's menu
   diningHall: {type: String},
   calories: {type: Number},
   fat: {type: Number},
@@ -8,4 +10,4 @@ const foodSchema = new mongoose.Schema({
   protein: {type: Number},
 });
 
-module.exports = User = mongoose.model("food", foodSchema);
+module.exports = Food = mongoose.model("food", foodSchema);
