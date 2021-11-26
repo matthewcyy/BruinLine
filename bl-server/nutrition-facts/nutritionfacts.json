@@ -1,0 +1,355 @@
+
+[
+{
+	"itemName": "Grilled Tri-color Carrots w/ Peruvian Salsa Verde",
+	"diningHall": "DeNeve",
+	"calories": 57,
+	"fat": 4.2,
+	"carbs": 4.8,
+	"protein": 0.5 
+},
+{
+	"itemName": "Pan Roasted Brussels Sprouts",
+	"diningHall": "DeNeve",
+	"calories": 55,
+	"fat": 3,
+	"carbs": 6.6,
+	"protein": 1.9 
+},
+{
+	"itemName": "Roasted Broccoli w/ Garlic",
+	"diningHall": "DeNeve",
+	"calories": 58,
+	"fat": 4.3,
+	"carbs": 4.6,
+	"protein": 1.4 
+},
+{
+	"itemName": "Cherry Wood Smoked Turkey",
+	"diningHall": "DeNeve",
+	"calories": 85,
+	"fat": 1.2,
+	"carbs": 0.5,
+	"protein": 16.9 
+},
+{
+	"itemName": "Hearty Seafood Soup",
+	"diningHall": "DeNeve",
+	"calories": 149,
+	"fat": 5.8,
+	"carbs": 9.2,
+	"protein": 14.5 
+},
+{
+	"itemName": "Brazilian Style Mustard Greens",
+	"diningHall": "DeNeve",
+	"calories": 97,
+	"fat": 9,
+	"carbs": 3.9,
+	"protein": 1.4 
+},
+{
+	"itemName": "Cuban Red Beans &amp; Rice",
+	"diningHall": "DeNeve",
+	"calories": 34,
+	"fat": 1.8,
+	"carbs": 4.1,
+	"protein": 0.8 
+},
+{
+	"itemName": "Mexican Style Ratatouille",
+	"diningHall": "DeNeve",
+	"calories": 40,
+	"fat": 2.2,
+	"carbs": 4.9,
+	"protein": 0.9 
+},
+{
+	"itemName": "Beef Fajita Salad",
+	"diningHall": "DeNeve",
+	"calories": 42,
+	"fat": 1.9,
+	"carbs": 3.5,
+	"protein": 3 
+},
+{
+	"itemName": "Beluga Lentil, Chickpea &amp; Arugula Salad",
+	"diningHall": "DeNeve",
+	"calories": 86,
+	"fat": 2.6,
+	"carbs": 12.2,
+	"protein": 4.5 
+},
+{
+	"itemName": "California Pasta Salad",
+	"diningHall": "DeNeve",
+	"calories": 113,
+	"fat": 7,
+	"carbs": 11,
+	"protein": 1.7 
+},
+{
+	"itemName": "Cantaloupe",
+	"diningHall": "DeNeve",
+	"calories": 8,
+	"fat": 0,
+	"carbs": 1.8,
+	"protein": 0.2 
+},
+{
+	"itemName": "Charred Cruciferous Salad w/ Cotija Cheese &amp; Almonds",
+	"diningHall": "DeNeve",
+	"calories": 96,
+	"fat": 6.1,
+	"carbs": 8.6,
+	"protein": 3.7 
+},
+{
+	"itemName": "Golden Beet &amp; Greens Salad w/ Blood Orange Mint Vinaigrette",
+	"diningHall": "DeNeve",
+	"calories": 74,
+	"fat": 3.2,
+	"carbs": 10.4,
+	"protein": 1.9 
+},
+{
+	"itemName": "Honeydew Melon",
+	"diningHall": "DeNeve",
+	"calories": 5,
+	"fat": 0,
+	"carbs": 1.3,
+	"protein": 0.1 
+},
+{
+	"itemName": "Kale Salad w/ Garlicky Panko",
+	"diningHall": "DeNeve",
+	"calories": 128,
+	"fat": 9.2,
+	"carbs": 8.7,
+	"protein": 3.1 
+},
+{
+	"itemName": "Pineapple",
+	"diningHall": "DeNeve",
+	"calories": 11,
+	"fat": 0,
+	"carbs": 3,
+	"protein": 0.1 
+},
+{
+	"itemName": "Southwest Chicken Caesar Salad",
+	"diningHall": "DeNeve",
+	"calories": 115,
+	"fat": 8.5,
+	"carbs": 4.5,
+	"protein": 5.6 
+},
+{
+	"itemName": "Watermelon",
+	"diningHall": "DeNeve",
+	"calories": 6,
+	"fat": 0,
+	"carbs": 1.5,
+	"protein": 0.1 
+},
+{
+	"itemName": "Chicken Noodle Soup",
+	"diningHall": "DeNeve",
+	"calories": 175,
+	"fat": 4.5,
+	"carbs": 11.8,
+	"protein": 20.5 
+},
+{
+	"itemName": "Tomato &amp; Fresh Basil Soup",
+	"diningHall": "DeNeve",
+	"calories": 70,
+	"fat": 2.3,
+	"carbs": 11.8,
+	"protein": 2.5 
+},
+{
+	"itemName": "Al Pastor Pork Street Tacos",
+	"diningHall": "DeNeve",
+	"calories": 520,
+	"fat": 24.5,
+	"carbs": 39.4,
+	"protein": 32.3 
+},
+{
+	"itemName": "Tex-Mex Potato Papas Tacos",
+	"diningHall": "DeNeve",
+	"calories": 373,
+	"fat": 14.3,
+	"carbs": 55.7,
+	"protein": 6.5 
+},
+{
+	"itemName": "Yankee Pot Roast",
+	"diningHall": "DeNeve",
+	"calories": 295,
+	"fat": 13.6,
+	"carbs": 4.4,
+	"protein": 36.5 
+},
+{
+	"itemName": "Mashed Potatoes",
+	"diningHall": "DeNeve",
+	"calories": 63,
+	"fat": 2.3,
+	"carbs": 9.8,
+	"protein": 1 
+},
+{
+	"itemName": "Mushroom Gravy",
+	"diningHall": "DeNeve",
+	"calories": 25,
+	"fat": 1.7,
+	"carbs": 2.2,
+	"protein": 0.4 
+},
+{
+	"itemName": "Minnesota Spaghetti Pie",
+	"diningHall": "DeNeve",
+	"calories": 190,
+	"fat": 7.4,
+	"carbs": 21.9,
+	"protein": 9.4 
+},
+{
+	"itemName": "Meatball Pizza",
+	"diningHall": "DeNeve",
+	"calories": 240,
+	"fat": 9.1,
+	"carbs": 27.3,
+	"protein": 13.9 
+},
+{
+	"itemName": "Margherita Pizza",
+	"diningHall": "DeNeve",
+	"calories": 214,
+	"fat": 8.7,
+	"carbs": 26.5,
+	"protein": 9.7 
+},
+{
+	"itemName": "Pepperoni Pizza",
+	"diningHall": "DeNeve",
+	"calories": 215,
+	"fat": 9.3,
+	"carbs": 24.2,
+	"protein": 10.3 
+},
+{
+	"itemName": "Brunch Burger",
+	"diningHall": "DeNeve",
+	"calories": 719,
+	"fat": 44.1,
+	"carbs": 43.1,
+	"protein": 35.3 
+},
+{
+	"itemName": "D.F.C.",
+	"diningHall": "DeNeve",
+	"calories": 1005,
+	"fat": 75.6,
+	"carbs": 55.3,
+	"protein": 23 
+},
+{
+	"itemName": "Bruin Burger",
+	"diningHall": "DeNeve",
+	"calories": 456,
+	"fat": 20.6,
+	"carbs": 44.6,
+	"protein": 22 
+},
+{
+	"itemName": "Bruin Cheeseburger",
+	"diningHall": "DeNeve",
+	"calories": 518,
+	"fat": 26.1,
+	"carbs": 45.2,
+	"protein": 24.6 
+},
+{
+	"itemName": "Grilled Chicken Breast",
+	"diningHall": "DeNeve",
+	"calories": 133,
+	"fat": 2.9,
+	"carbs": 0.2,
+	"protein": 24.9 
+},
+{
+	"itemName": "Grilled Chicken Breast Sandwich",
+	"diningHall": "DeNeve",
+	"calories": 317,
+	"fat": 4.1,
+	"carbs": 36.1,
+	"protein": 31.2 
+},
+{
+	"itemName": "Impossible Burger",
+	"diningHall": "DeNeve",
+	"calories": 486,
+	"fat": 21.6,
+	"carbs": 49.3,
+	"protein": 20.9 
+},
+{
+	"itemName": "French Fries",
+	"diningHall": "DeNeve",
+	"calories": 269,
+	"fat": 13.7,
+	"carbs": 33.2,
+	"protein": 3.2 
+},
+{
+	"itemName": "Chipmunk Bar",
+	"diningHall": "DeNeve",
+	"calories": 383,
+	"fat": 21.6,
+	"carbs": 48,
+	"protein": 5.9 
+},
+{
+	"itemName": "Chocolate Ganache Cake",
+	"diningHall": "DeNeve",
+	"calories": 328,
+	"fat": 20.8,
+	"carbs": 31.8,
+	"protein": 4 
+},
+{
+	"itemName": "Pecan Pie",
+	"diningHall": "DeNeve",
+	"calories": 519,
+	"fat": 21.3,
+	"carbs": 76,
+	"protein": 5.7 
+},
+{
+	"itemName": "Snickerdoodle Cookies",
+	"diningHall": "DeNeve",
+	"calories": 290,
+	"fat": 16.2,
+	"carbs": 34.7,
+	"protein": 2.7 
+},
+{
+	"itemName": "Vegan Apple Crisp",
+	"diningHall": "DeNeve",
+	"calories": 248,
+	"fat": 7.4,
+	"carbs": 44.5,
+	"protein": 2.8 
+},
+{
+	"itemName": "White Cupcake",
+	"diningHall": "DeNeve",
+	"calories": 302,
+	"fat": 19,
+	"carbs": 29.6,
+	"protein": 3.7 
+}
+]
