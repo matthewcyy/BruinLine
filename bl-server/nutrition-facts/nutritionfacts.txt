@@ -1,0 +1,96 @@
+
+{
+	titeName: "Grilled Tri-color Carrots w/ Peruvian Salsa Verde"
+	diningHall: "deNeve"
+	calories: 57 
+	fat: 4.2g
+	carbs: 4.8g
+	protein: 0.5g 
+}
+
+{
+	titeName: "Pan Roasted Brussels Sprouts"
+	diningHall: "deNeve"
+	calories: 55 
+	fat: 3g
+	carbs: 6.6g
+	protein: 1.9g 
+}
+
+{
+	titeName: "Roasted Broccoli w/ Garlic"
+	diningHall: "deNeve"
+	calories: 58 
+	fat: 4.3g
+	carbs: 4.6g
+	protein: 1.4g 
+}
+
+{
+	titeName: "Cherry Wood Smoked Turkey"
+	diningHall: "deNeve"
+	calories: 85 
+	fat: 1.2g
+	carbs: 0.5g
+	protein: 16.9g 
+}
+
+{
+	titeName: "Hearty Seafood Soup"
+	diningHall: "deNeve"
+	calories: 149 
+	fat: 5.8g
+	carbs: 9.2g
+	protein: 14.5g 
+}
+
+{
+	titeName: "Brazilian Style Mustard Greens"
+	diningHall: "deNeve"
+	calories: 97 
+	fat: 9g
+	carbs: 3.9g
+	protein: 1.4g 
+}
+
+{
+	titeName: "Cuban Red Beans &amp; Rice"
+	diningHall: "deNeve"
+	calories: 34 
+	fat: 1.8g
+	carbs: 4.1g
+	protein: 0.8g 
+}
+
+{
+	titeName: "Mexican Style Ratatouille"
+	diningHall: "deNeve"
+	calories: 40 
+	fat: 2.2g
+	carbs: 4.9g
+	protein: 0.9g 
+}
+
+{
+	titeName: "Beef Fajita Salad"
+	diningHall: "deNeve"
+	calories: 42 
+	fat: 1.9g
+	carbs: 3.5g
+	protein: 3g 
+}
+
+{
+	titeName: "Beluga Lentil, Chickpea &amp; Arugula Salad"
+	diningHall: "deNeve"
+	calories: 86 
+	fat: 2.6g
+	carbs: 12.2g
+	protein: 4.5g 
+}
+
+{
+	titeName: "California Pasta Salad"
+	diningHall: "deNeve"
+	calories: 113 
+	fat: 7g
