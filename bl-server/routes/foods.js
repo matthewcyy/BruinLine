@@ -5,8 +5,10 @@ var Food = require("../models/food_model");
 router.post('/addFood', async (req, res) => {
     try {
         let { itemName, onTodaysMenu, diningHall, calories, fat, carbs, protein } = req.body;
-        if (!itemName || !onTodaysMenu || !diningHall || !calories || !fat || !carbs || !protein)
+        if (!itemName || !diningHall || !calories || !fat || !carbs || !protein)
             return res.status(400).json({ msg: "Not all information is filled out"})
+        if (!onTodaysMenu)
+            onTodaysMenu = 'false'
         const newFood = new Food({
             itemName,
             onTodaysMenu,
