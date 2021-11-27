@@ -29,3 +29,4 @@ mongoose.connect(
 // set up routes
 
 app.use("/users", require("./routes/users"));
+app.use("/foods", require("./routes/foods"));

@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
-var food = require("../models/food_model");
 var User = require("../models/user_model");
+var Group = require("../models/group_model");
 const auth = require("../middleware/auth");
 
 router.post('/register', async (req, res) => {
@@ -55,7 +56,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log(res.user);
+        console.log("res.user", res.user);
 
         console.log(email, "hi")
         if (!email || !password) // if not sent the username/password
@@ -113,5 +114,95 @@ router.post("/tokenIsValid", async (req, res) => {
       favFoods: user.favFoods,
     });
   });
+
+  router.patch("/addFavFood", async (req, res) => {
+      try {
+          const user = await User.findById(req.body.id); // finding user in database
+          if (!user) {
+              return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
+          }
+          res.user = user;
+          console.log("Before fav foods update", res.user.favFoods);
+          var favArr = req.body.putArr; // getting the new array of favorite foods from the request
+          if (req.body.putArr) {
+              res.user.favFoods = favArr; // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
+          }
+          const updatedUser = await res.user.save();
+          console.log(res.user.favFoods);
+          res.json(updatedUser);
+      } catch (err) {
+          res.status(400).json({ error: err.message });
+      }
+  })
+
+  router.patch("/makeGroup", async (req, res) => { // group creation inside of users since a group must have at least one member in it; it's original creator
+      try {
+        const user = await User.findById(req.body.id); // finding user in database
+          if (!user) {
+              return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
+          }
+          const group = await Group.findById(req.body.groupId)
+          res.user = user;
+          console.log("Before group created for user", res.user.groups);
+          var groupName = req.body.groupName;
+          var newGroupList = user.groups
+          if (groupName) {
+              user.groups = newGroupList; // adding new group name for user
+              groupMembers = [user.username]
+              const newGroup = new Group({
+                groupName,
+                groupMembers
+              })
+              const groupId = newGroup._id.toString()
+              console.log("groupId", groupId)
+              newGroupList.push({groupName, groupId}) // adding new group name to list of groups for the user
+              const savedGroup = await newGroup.save();
+              const updatedUser = await user.save();
+              res.json({savedGroup, updatedUser});
+            //   res.json(updatedUser);
+          }
+      } catch (err) {
+        res.status(400).json({ error: err.message });
+      }
+  })
+
+  router.patch("/addToGroup", async (req, res) => {
+      try {
+          console.log("USER ID", req.body.id)
+          console.log("GROUP ID", req.body.groupId)
+        const user = await User.findById(req.body.id); // finding user in database
+          if (!user) {
+              return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
+          }
+          res.user = user;
+          console.log("Before user added to group", res.user.groups);
+          var groupName = req.body.groupName;
+          var newGroupList = user.groups
+          groupId = mongoose.Types.ObjectId(req.body.groupId)
+          console.log("NEW GROUP ID (OBJECT)", groupId)
+          var group = await Group.findById(groupId)
+          console.log("GROUP HERE", group)
+          if (group) {
+              user.groups = newGroupList; // adding new group name for user
+              groupMembers = group.groupMembers
+              console.log("GROUP MEMBERS", groupMembers)
+              console.log("USER'S USERNAME", user.username)
+              username = user.username
+              if (groupMembers.indexOf(user.username) !== -1) { // checking if user is already in the group...
+                console.log("IN THE IF STATEMENT")
+                return res.status(400).json("error, user already in group")
+              }
+              groupMembers.push(user.username) // adding new user to the exsting group
+              newGroupList.push({groupName, groupId}) // adding new group name to list of groups for the user
+              group.groupMembers = groupMembers
+              const savedGroup = await group.save();
+              const updatedUser = await user.save();
+              res.json({savedGroup, updatedUser});
+            //   res.json(updatedUser);
+          }
+      } catch (err) {
+        res.status(400).json({ error: err.message });
+      }
+  })
 
 module.exports = router;
