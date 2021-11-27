@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+}
+
+.title {
+    color: black;
+}
+
+.profilePicture {
+    height: 100px;
+    width: 100px;
+    border-radius: 40px;
+}
+
+.profilePictureContainer {
+    border-color: black;
+    border-width: 10px;
+    border-radius: 10px;
+}

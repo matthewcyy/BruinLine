@@ -23,13 +23,12 @@ function imgToNutritionFacts(imgSrc) {
 
 (async () => {
         // Launch browser and go to menu URL
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     await page.goto(menu_url);
 
     const mealJSON = {};
 
-        // Get the 
     const meals = await page.$$('div.menu-block');
 
     for await (const mealPeriod of meals) {
