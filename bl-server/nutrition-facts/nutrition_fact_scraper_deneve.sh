@@ -4,10 +4,11 @@ echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>names.txt
 dining_hall="DeNeve"
+file_name_json="deneve_nutrient.json"
 
 #paste -d "\n" names.txt urls.txt > combined
 #echo $N
-echo "" > nutritionfacts.json;
+echo "" > $file_name_json;
 
 curl "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
 curl "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>>names.txt
@@ -38,38 +39,38 @@ N=$(cat names.txt|wc -l)
 
 paste -d"|" names.txt urls.txt | sort | uniq >combined.txt
 i=0
-echo "[" >>nutritionfacts.json
+echo "[" >>$file_name_json
 paste -d "|" names.txt urls.txt |sort|uniq| while IFS="|" read -r q p
 do
     #%printf 'f1: %s\n' "$q"ss
     #echo $p
     P=$(curl $p)
     #echo $P
-    echo "{">>nutritionfacts.json
-    echo -e "\t\"itemName\": \"$q\"," |sed -e 's/[\t][\t]*",$/",/'>>nutritionfacts.json
-    echo -e "\t\"diningHall\": \"$dining_hall\"," >>nutritionfacts.json
-    echo "$P"|grep "<p class=\"nfcal\"><span class=\"nfcaltxt\">Calories</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Calories/\t"calories":/g'|sed 's/.$/,/' >> nutritionfacts.json
-    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Total Fat</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Total Fat/\t"fat":/g; s/g[ ][0-9]*%/,/g' >> nutritionfacts.json
-    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Total Carbohydrate</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Total Carbohydrate/\t"carbs":/g; s/g[ ][0-9]*%/,/g'| >> nutritionfacts.json
-    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Protein</span>" |sed -e 's/[<][^>]*[>]//g; s/[ \t]*Protein/\t"protein":/g; s/g//g' >> nutritionfacts.json
+    echo "{">>$file_name_json
+    echo -e "\t\"itemName\": \"$q\"," |sed -e 's/[\t][\t]*",$/",/'>>$file_name_json
+    echo -e "\t\"diningHall\": \"$dining_hall\"," >>$file_name_json
+    echo "$P"|grep "<p class=\"nfcal\"><span class=\"nfcaltxt\">Calories</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Calories/\t"calories":/g'|sed 's/.$/,/' >> $file_name_json
+    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Total Fat</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Total Fat/\t"fat":/g; s/g[ ][0-9]*%/,/g' >> $file_name_json
+    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Total Carbohydrate</span>" | sed -e 's/[<][^>]*[>]//g; s/[ \t]*Total Carbohydrate/\t"carbs":/g; s/g[ ][0-9]*%/,/g'| >> $file_name_json
+    echo "$P"|grep "<p class=\"nfnutrient\"><span class=\"nfmajornutrient\">Protein</span>" |sed -e 's/[<][^>]*[>]//g; s/[ \t]*Protein/\t"protein":/g; s/g//g' >> $file_name_json
     if echo "$P"|grep "<span class=\"nfcaltxt\">Calories"
     then 
         echo
     else  
-        echo -e "\t\"calories\": \"N/A\",">> nutritionfacts.json
-        echo -e  "\t\"fat\": \"N/A\",">> nutritionfacts.json
-        echo -e "\t\"carbs\": \"N/A\",">> nutritionfacts.json
-        echo -e "\t\"protein\": \"N/A\"">> nutritionfacts.json
+        echo -e "\t\"calories\": \"N/A\",">> $file_name_json
+        echo -e  "\t\"fat\": \"N/A\",">> $file_name_json
+        echo -e "\t\"carbs\": \"N/A\",">> $file_name_json
+        echo -e "\t\"protein\": \"N/A\"">> $file_name_json
     fi
     if [ i -eq $N-1 ];
     then
-        echo "}">>nutritionfacts.json
+        echo "}">>$file_name_json
     else
-        echo "},">>nutritionfacts.json
+        echo "},">>$file_name_json
     fi
     ((i++))
 done
-sed -i '$ s/,$//g' nutritionfacts.json
-echo "]">>nutritionfacts.json
-#rm nutritionfacts.json
-#cp nutritionfacts.txt nutritionfacts.json
+sed -i '$ s/,$//g' $file_name_json
+echo "]">>$file_name_json
+#rm $file_name_json
+#cp nutritionfacts.txt $file_name_json
