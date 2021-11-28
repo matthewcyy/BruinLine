@@ -9,8 +9,9 @@ import DiningHalls from "./components/Dashboard/DiningHalls/DiningHalls";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import LandingPage from "./components/LandingPage/LandingPage";
-import { Button } from "@mui/material";
+import { Button, Card, CardMedia, CardContent } from "@mui/material";
 import Box from "@mui/material/Box";
+import imglogo from "./images/logobline.png";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -43,57 +44,51 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Box
-        component="span"
-        sx={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          p: 2,
-          border: "2px solid grey",
-        }}
-      >
-        <Button component={Link} style={{ display: "inline-block" }} to="/">
-          Home
-        </Button>
-        <Button
-          component={Link}
-          style={{ display: "inline-block" }}
-          to="/register"
+      <Box component="span">
+        <Card>
+          <CardMedia
+            component="img"
+            image={imglogo}
+            sx={{
+              height: "80px",
+            }}
+          />
+        </Card>
+        <Box
+          component="span"
+          sx={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            border: "2px solid grey",
+            height: "40px",
+          }}
         >
-          Register
-        </Button>
-        <Button
-          component={Link}
-          style={{ display: "inline-block" }}
-          to="/login"
-        >
-          Login
-        </Button>
-        <Button
-          component={Link}
-          style={{ display: "inline-block" }}
-          to="/dininghalls"
-        >
-          Dining Halls
-        </Button>
+          <Button component={Link} style={{ display: "inline-block" }} to="/">
+            Home
+          </Button>
+          <Button
+            component={Link}
+            style={{ display: "inline-block" }}
+            to="/dininghalls"
+          >
+            Dining Halls
+          </Button>
 
-        <Button component={Link} style={{ display: "inline-block" }} to="/home">
-          Home
-        </Button>
-        <Button
-          component={Link}
-          style={{ display: "inline-block" }}
-          to="/profile"
-        >
-          Profile
-        </Button>
-        <Button
-          component={Link}
-          style={{ display: "inline-block" }}
-          to="/rankings"
-        >
-          Rankings
-        </Button>
+          <Button
+            component={Link}
+            style={{ display: "inline-block" }}
+            to="/rankings"
+          >
+            Rankings
+          </Button>
+          <Button
+            component={Link}
+            style={{ display: "inline-block" }}
+            to="/profile"
+          >
+            Profile
+          </Button>
+        </Box>
       </Box>
       <Switch>
         <Route exact path="/" component={LandingPage} />
