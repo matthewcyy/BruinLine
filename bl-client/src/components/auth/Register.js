@@ -13,7 +13,7 @@ function Registration() {
 
     const { setUserData } = useContext(UserContext);
     let history = useHistory();
-    const favFoods = [""];
+    const favFoods = [];
 
     const submit = async (e) => {
         e.preventDefault();
