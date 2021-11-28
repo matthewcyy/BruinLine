@@ -45,7 +45,8 @@ router.post('/register', async (req, res) => {
             password: passwordHash,
             favFoods: [],
             groups: [],
-            invitations: []
+            invitations: [],
+            reviews: []
         })
         const savedUser = await newUser.save();
         res.json(savedUser);

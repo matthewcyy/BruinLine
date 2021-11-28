@@ -8,6 +8,7 @@ const foodSchema = new mongoose.Schema({
   fat: {type: Number},
   carbs: {type: Number},
   protein: {type: Number},
+  reviews: [{ reviewer: {type: String}, rating: {type: Number}, date: {type: String}, description: {type: String}}]
 });
 
 module.exports = Food = mongoose.model("food", foodSchema);
