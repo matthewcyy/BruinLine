@@ -1,21 +1,33 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
+import BLineLogo from '../../images/BLINE LOGO OUTLINED.png'
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Typography from '@mui/material/Typography';
 
 function LandingPage() {
     return (
         <div style = {{textAlign: "center"}}>
-            <h1 style = {{marginBottom: '50px'}}>
-                Welcome to BruinLine
+            <h1 style = {{marginBottom: '10px'}}>
+                Welcome to BruinLine!
             </h1>
-            <Box component="span" sx={{ p: 2, border: '1px solid grey' }}>
-                <Button component={Link} style={{display: "inline-block"}} to="/register">
-                    Register
-                </Button>
-                <Button component={Link} style={{display: "inline-block"}} to="/login">
-                    Login
-                </Button>
-            </Box>
+            <span style={{display: 'inline-block', margin: 'auto auto', marginBottom: '20px'}}>
+                <img src={BLineLogo} style={{width: '75%'}} alt='The BLine Logo; a hand-drawn teddy bear wearing a BruinLine beanie, holding a bowl of honey with a buzzing bee nearby'/>
+            </span>
+            <div style={{width: '50%', margin: 'auto', }}>
+                <Box sx={{textAlign: 'left', fontSize: '1.15rem', fontWeight: 'medium', border: 1, borderWidth: 2, borderColor: 'grey', paddingLeft: 1.75, paddingRight: 1.75, paddingTop: 1.75, paddingBottom: 0.75}}>
+                    This site is meant to make a more fun and personalized dining-hall experience at UCLA!<br/> 
+                    Here, users can: 
+                    <ul> 
+                        <li>Get a general estimate for the lines/number of people at each dining hall</li>
+                        <li>'Like' their favorite foods on different menus</li>
+                        <li>Create groups to see other users' favorite foods and vote on which dining hall to eat at together</li>
+                        <li>Write reviews for various items</li>
+                        <li>Track their daily nutrition</li>
+                    </ul>
+                </Box>
+            </div>
         </div>
     )
 }
