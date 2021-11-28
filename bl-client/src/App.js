@@ -43,17 +43,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{ userData, setUserData }}>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/dininghalls" component={DiningHalls} />
-          <Route path="/home" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/rankings" component={Rankings} />
-        </Switch>
-      </UserContext.Provider>
       <div className="nav">
         <Link to="/">
           <button type="button" className="button1">
@@ -92,6 +81,17 @@ function App() {
           </button>
         </Link>
       </div>
+      <UserContext.Provider value={{ userData, setUserData }}>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/dininghalls" component={DiningHalls} />
+          <Route path="/home" component={Home} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/rankings" component={Rankings} />
+        </Switch>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }

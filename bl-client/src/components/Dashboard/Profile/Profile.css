@@ -1,19 +1,82 @@
+@font-face {
+    font-family: 'MavenPro-Medium';
+    src: local('MavenPro'), url(../../fonts/MavenPro/MavenPro-Medium.ttf) format('truetype');
+}
+
 .container {
     text-align: center;
 }
 
 .title {
     color: black;
+    font-size: 30pt;
+    font-family: MavenPro-Medium;
 }
 
 .profilePicture {
-    height: 100px;
-    width: 100px;
-    border-radius: 40px;
+    height: 100pt;
+    width: 100pt;
+    border-radius: 40pt;
 }
 
 .profilePictureContainer {
     border-color: black;
-    border-width: 10px;
-    border-radius: 10px;
+    border-width: 10pt;
+    border-radius: 40pt;
+    border-style: solid;
 }
+
+.infoBoard {
+    text-align: center;
+}
+
+.subInfo {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #2774AE;
+    border-radius: 10pt;
+    border-width: 1pt;
+    padding: 20pt 50pt;
+    margin-right: 20pt;
+    width: 300pt;
+    text-align: left;
+}
+
+.infoTitle {
+    color: white;
+    font-size: x-large;
+    font-family: MavenPro-Medium;
+}
+
+.infoList {
+    color: white;
+    font-size: large;
+    font-family: MavenPro-Medium;
+}
+
+#newPassword {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #2774AE;
+    border-radius: 4px;
+    font-family: MavenPro-Medium;
+}
+
+#newPassword:focus {
+    background-color: lightblue;
+}
+
+#submitNewPassword {
+    background-color: lightblue;
+    border: #2774AE;
+    border-radius: 4px;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: solid;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: MavenPro-Medium;
+  }
+  
