@@ -57,4 +57,17 @@ router.patch('/reviewFood', async (req, res) => {
         res.status(400).json({ error: err.message});
     }
 })
+
+router.get('/getAllReviews', async (req, res) => {
+    try {
+        var allFoodReviews = await Food.find({});
+        allFoodReviews = allFoodReviews.map(({itemName, diningHall, reviews}) => ({itemName, diningHall, reviews}))
+        console.log('ALLFOODREVIEWS', allFoodReviews)
+        allFoodReviews.map(x => console.log("REVIEW", x.reviews))
+        allFoodReviews = allFoodReviews.filter(x => x.reviews.length !== 0)
+        res.json({allFoodReviews})
+    } catch (err) {
+        res.status(400).json({ error: err.message});
+    }
+})
 module.exports = router;
