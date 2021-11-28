@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import logo from '../../../images/BLINE LOGO OUTLINED.png';
 import axios from 'axios';
@@ -32,10 +32,14 @@ function Profile() {
         getUserData(); 
     }, []);
 
-    const submit = async () => {
+    const submit = async (e) => {
+        e.preventDefault();
+        e.target.reset();
         try{
             const requestBody = {password, id};
             await axios.post("http://localhost:5000/users/changePassword", requestBody);
+            setPassword("");
+            alert("Password has been changed!")
         } catch(err) {
             err.response.data.msg && setError(err.response.data.msg)
         }
@@ -50,41 +54,39 @@ function Profile() {
             </div>
             <div class="infoBoard">
                 <div class="subInfo">
-                    <p>Username: {username}</p>
-                    <p>Email: {email}</p>
+                    <p class="infoTitle">Username: {username}</p>
+                    <p class="infoTitle">Email: {email}</p>
                     <div class="password">
-                        <input type="password" onChange={obj => setPassword(obj.target.value)}/>
-                        <button onClick={submit}>Update Password</button>
-                        {/* <Button>Update Password</Button> */}
+                        <form onSubmit={submit}>
+                            <input type="password" id="newPassword" onChange={obj => setPassword(obj.target.value)}/>
+                            <input type="submit" id="submitNewPassword" value="Update Password" />
+                        </form>
                     </div>
                     <br />
                     <div class="groups">
-                        <p>Groups:</p>
+                        <p class="infoTitle">Groups:</p>
                         <ul>
                             {groups.map(group => {
-                                return <li>{group.groupName}</li>
+                                return <li class="infoList">{group.groupName}</li>
                             })}
                         </ul>
                     </div>
                 </div>
                 <div class="subInfo">
                     <div class="foods">
-                        <p>Favorite foods:</p>
+                        <p class="infoTitle">Favorite foods:</p>
                         <ul>
                             {favorites.map(foodName => {
-                                if(foodName != ''){
-                                    return <li>{foodName}</li>
-                                }
+                                return <li class="infoList">{foodName}</li>
                             })}
                         </ul>
                     </div>
                     <br />
                     <div class="invitations">
-                        <p>Invitations:</p>
+                        <p class="infoTitle">Invitations:</p>
                         <ul>
                             {invitations.map(invite => {
-                                console.log(invite[0])
-                                return <li>{invite}</li>
+                                return <li class="infoList">{invite}</li>
                             })}
                         </ul>
                     </div>

@@ -211,11 +211,9 @@ router.patch("/addToGroup", async (req, res) => {
 
 router.post("/changePassword", async (req, res) => {
     try {
-        console.log("a");
         const { password, id } = req.body;
         console.log(password, id);
 
-        console.log("b");
         if (!password) // checkinf if all fields were submitted
             return res.status(400).json({ msg: "Not all fields completed" })
         if (password.length < 5) // checking if password is too short or not
@@ -223,7 +221,6 @@ router.post("/changePassword", async (req, res) => {
                 .status(400)
                 .json({ msg: "Password must be at least 6 characters long" })
         
-        console.log("c");
 
         const user = await User.findById(id);
         if (!user)
@@ -231,17 +228,13 @@ router.post("/changePassword", async (req, res) => {
                 .status(400)
                 .json({ msg: "User not found" })
 
-        console.log("d");
        res.user = user;
        const salt = await bcrypt.genSalt(); // "salting" a password into a random string for extra security       
        const passwordHash = await bcrypt.hash(password, salt);
 
-       console.log("e");
        res.user.password = passwordHash;
        const updatedUser = await res.user.save();       
        res.json(updatedUser);
-       
-       console.log("f");
     }
     catch (err) {
         res.status(505).json({ error: err.message });
