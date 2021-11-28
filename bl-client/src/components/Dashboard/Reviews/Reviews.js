@@ -1,10 +1,10 @@
 import "./Home.css";
 
-function Home() {
+function Reviews() {
   return (
     <div className="header">
-      <h2> HOME </h2>
+      <h2> Reviews </h2>
     </div>
   );
 }
-export default Home;
+export default Reviews;

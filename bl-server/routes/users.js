@@ -43,7 +43,9 @@ router.post('/register', async (req, res) => {
             email,
             username,
             password: passwordHash,
-            favFoods
+            favFoods: [],
+            groups: [],
+            invitations: []
         })
         const savedUser = await newUser.save();
         res.json(savedUser);
@@ -81,7 +83,9 @@ router.post('/login', async (req, res) => {
             user: {
                 id: user._id,
                 username: user.username,
-                favFoods: user.favFoods
+                favFoods: user.favFoods,
+                groups: user.groups,
+                invitations: user.invitations
             }
         })
     } catch (err) {
@@ -107,12 +111,23 @@ router.post("/tokenIsValid", async (req, res) => {
   });
   
   router.get("/", auth, async (req, res) => {
-    const user = await User.findById(req.user);
-    res.json({
-      displayName: user.displayName,
-      id: user._id,
-      favFoods: user.favFoods,
-    });
+      try {
+        const user = await User.findById(req.user);
+        const allUsers = await User.find({});
+        const selectedProperties = ["username", "favFoods"]
+        const basicAllUsersInfo = allUsers.map(({username, favFoods}) => ({username, favFoods}))
+        console.log("basicAllUsersInfo", basicAllUsersInfo)
+        res.json({
+            username: user.username,
+            id: user._id,
+            favFoods: user.favFoods,
+            groups: user.groups,
+            invitations: user.invitations,
+            allUsers: basicAllUsersInfo
+        });
+      } catch (err) {
+          res.status(500).json({ error: err.message });
+      }
   });
 
   router.patch("/addFavFood", async (req, res) => {
@@ -141,7 +156,6 @@ router.post("/tokenIsValid", async (req, res) => {
           if (!user) {
               return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
           }
-          const group = await Group.findById(req.body.groupId)
           res.user = user;
           console.log("Before group created for user", res.user.groups);
           var groupName = req.body.groupName;
@@ -166,7 +180,34 @@ router.post("/tokenIsValid", async (req, res) => {
       }
   })
 
-  router.patch("/addToGroup", async (req, res) => {
+  router.patch("/inviteToGroup", async (req, res) => { // Call will also be from User's GROUPS list req.body includes username of person inviting to group (inviteeUsername), the groupName invitation, the username of the inviter (inviterUsername)
+      try {
+        const invitee = await User.findOne({ username: req.body.inviteeUsername })
+        console.log("INVITEE", invitee)
+        const inviter = await User.findOne({ username: req.body.inviterUsername })
+        console.log("INVITER", inviter)
+        const invitation = {}
+        invitation.groupName = req.body.groupName
+        invitation.groupId = req.body.groupId
+        invitation.inviter = req.body.inviterUsername
+        console.log("INVITATION INVITER", invitation.inviter)
+        const inviteList = invitee.invitations
+        const groupList = invitee.groups
+        console.log("GROUPLIST", groupList)
+        console.log("invite", inviteList)
+        if (inviteList.findIndex(x => x.groupId === req.body.groupId) !== -1)
+            return res.status(400).json({ message: 'User has already been invited to group'}) // when user has already been invited to group
+        if (groupList.findIndex(x => x.groupId === req.body.groupId) !== -1)
+            return res.status(400).json({ message: 'User is already in group'}) // when user has already been invited to group
+        inviteList.push(invitation) // adding invitation to user's list of invitation
+        const updatedUser = await invitee.save();
+        res.json({updatedUser})
+      } catch (err) {
+        res.status(400).json({ error: err.message });
+      }
+  })
+
+  router.patch("/acceptInvite", async (req, res) => { // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
       try {
           console.log("USER ID", req.body.id)
           console.log("GROUP ID", req.body.groupId)
@@ -192,6 +233,9 @@ router.post("/tokenIsValid", async (req, res) => {
                 console.log("IN THE IF STATEMENT")
                 return res.status(400).json("error, user already in group")
               }
+              const inviteList = user.invitations
+              const indexOfInvite = inviteList.findIndex(x => x.groupId === req.body.groupId)
+              inviteList.splice(indexOfInvite, 1)
               groupMembers.push(user.username) // adding new user to the exsting group
               newGroupList.push({groupName, groupId}) // adding new group name to list of groups for the user
               group.groupMembers = groupMembers
@@ -204,5 +248,21 @@ router.post("/tokenIsValid", async (req, res) => {
         res.status(400).json({ error: err.message });
       }
   })
+
+  router.patch("/rejectInvite", async (req, res) => { // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
+    try {
+      const user = await User.findById(req.body.id); // finding user in database
+        if (!user) {
+            return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
+        }
+        const inviteList = user.invitations
+        const indexOfInvite = inviteList.findIndex(x => x.groupName === req.body.groupId)
+        inviteList.splice(indexOfInvite, 1)
+        const updatedUser = await user.save();
+        res.json({updatedUser});
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+})
 
 module.exports = router;

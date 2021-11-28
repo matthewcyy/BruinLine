@@ -9,6 +9,9 @@ router.post('/addFood', async (req, res) => {
             return res.status(400).json({ msg: "Not all information is filled out"})
         if (!onTodaysMenu)
             onTodaysMenu = 'false'
+        const foodItemExists = await Food.findOne({ itemName: itemName, diningHall: diningHall })
+        if (foodItemExists) 
+            return res.status(400).json({ msg: "Food item already in database"})
         const newFood = new Food({
             itemName,
             onTodaysMenu,

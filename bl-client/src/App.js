@@ -1,16 +1,37 @@
 import React, {useState, useEffect } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import axios from 'axios';
-import Home from './components/Dashboard/Home/Home';
+import Reviews from './components/Dashboard/Reviews/Reviews';
 import Profile from './components/Dashboard/Profile/Profile';
 import Rankings from './components/Dashboard/Rankings/Rankings';
 import DiningHalls from './components/Dashboard/DiningHalls/DiningHalls';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import UserContext from './context/userContext';
+import Navbar from './Navbar';
 
 import './App.css';
 import LandingPage from "./components/LandingPage/LandingPage";
+
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+
+const theme = createTheme({
+    typography: {
+      fontFamily: [
+        'Arial',
+      ].join(','),
+      button: {
+        textTransform: 'none'
+      }
+    },
+    components: {
+      MuiButtonBase: {
+        defaultProps: {
+          disableRipple: true
+        }
+      }
+    }
+  });
 
 function App() {
   const [userData, setUserData] = useState({
@@ -25,7 +46,7 @@ function App() {
         localStorage.setItem("auth-token", "");
         token = "";
       }
-      const tokenResponse = await axios.post('http://localhost:5000/users/tokenIsValid', null, {headers: {"x-auth-token": token}}); //Change back to minipokedexherokuapp.com/users/ later
+      const tokenResponse = await axios.post('http://localhost:5000/users/tokenIsValid', null, {headers: {"x-auth-token": token}}); // getting token for authorization
       if (tokenResponse.data) {
         const userRes = await axios.get("http://localhost:5000/users/", {
           headers: { "x-auth-token": token },
@@ -43,55 +64,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <UserContext.Provider value={{ userData, setUserData }}>
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/dininghalls" component={DiningHalls} />
-          <Route path="/home" component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/rankings" component={Rankings} />
-        </Switch>
-      </UserContext.Provider>
-      <div className="nav">
-        <Link to="/">
-          <button type="button" className="button1">
-            Home
-          </button>
-        </Link>
-
-        <Link to="/register">
-          <button type="button" className="button1">
-            Register
-          </button>
-        </Link>
-        <Link to="/login">
-          <button type="button" className="button1">
-            Login
-          </button>
-        </Link>
-        <Link to="/dininghalls">
-          <button type="button" className="button1">
-            Dining Halls
-          </button>
-        </Link>
-        <Link to="/home">
-          <button type="button" className="button1">
-            Home
-          </button>
-        </Link>
-        <Link to="/profile">
-          <button type="button" className="button1">
-            Profile
-          </button>
-        </Link>
-        <Link to="/rankings">
-          <button type="button" className="button1">
-            Rankings
-          </button>
-        </Link>
-      </div>
+      <ThemeProvider theme={theme}>
+        <UserContext.Provider value={{ userData, setUserData }}>
+        <Navbar/>
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/dininghalls" component={DiningHalls} />
+            <Route path="/reviews" component={Reviews} />
+            <Route path="/profile" component={Profile} />
+            <Route path="/rankings" component={Rankings} />
+          </Switch>
+        </UserContext.Provider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

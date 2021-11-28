@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import UserContext from "../../context/userContext";
+import { NavLink } from 'react-router-dom'
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 function AuthOptions () {
     const { userData, setUserData } = useContext(UserContext);
@@ -13,18 +16,30 @@ function AuthOptions () {
             token: undefined,
             user: undefined
         })
-        history.push("/login");
+        history.push("/");
         localStorage.setItem("auth-token","");
     };
 
     return (
         <nav className="auth-options">
             {userData.user ? (
-                <button className="btn btn-primary mr-2" onClick={logout}>Logout</button>
+                <NavLink to="/" style={{textDecoration: 'none' }}>
+                    <Button onClick={logout}>
+                        <Box sx={{ color: '#f8b827', fontWeight: 'bold', fontSize: '1.25rem' }}>Logout</Box>
+                    </Button>
+                </NavLink>
             ) : (
                 <>
-                <button className="btn btn-primary mr-2" onClick={register}>Sign Up</button>
-                <button className="btn btn-primary mr-2" onClick={login}>Login</button>
+                <NavLink to="/register" style={{textDecoration: 'none' }}>
+                    <Button onClick={register}>
+                        <Box sx={{ color: '#f8b827', fontWeight: 'bold', fontSize: '1.25rem', marginRight: '0.5rem' }}>Register</Box>
+                    </Button>
+                </NavLink>
+                <NavLink to="/login" style={{textDecoration: 'none' }}>
+                    <Button onClick={login}>
+                        <Box sx={{ color: '#f8b827', fontWeight: 'bold', fontSize: '1.25rem' }}>Login</Box>
+                    </Button>
+                </NavLink>
                 </>
             )}
         </nav>
