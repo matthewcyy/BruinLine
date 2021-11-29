@@ -46,8 +46,12 @@ function Profile() {
             const reqBody = {}
             reqBody.id = id
             reqBody.groupId = groupId
+            debugger;
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            setInvitations(invitations.splice(indexOfInvite, 1))
+            console.log("INVITE'S INDEX", indexOfInvite)
+            var invitationsCopy = invitations
+            invitationsCopy.splice(indexOfInvite, 1)
+            await setInvitations(invitationsCopy)
             const patchReq = await axios.patch("http://localhost:5000/users/rejectInvite", reqBody)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
@@ -64,7 +68,10 @@ function Profile() {
             setGroups(newGroups)
             reqBody.id = id
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            await setInvitations(invitations.splice(indexOfInvite, 1))
+            console.log("INVITE'S INDEX", indexOfInvite)
+            var invitationsCopy = invitations
+            invitationsCopy.splice(indexOfInvite, 1)
+            await setInvitations(invitationsCopy)
             const patchReq = await axios.patch("http://localhost:5000/users/acceptInvite", reqBody)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
