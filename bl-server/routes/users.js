@@ -283,7 +283,7 @@ router.post("/changePassword", async (req, res) => {
 })
 
 
-  router.patch("/rejectInvite", async (req, res) => { // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
+router.patch("/rejectInvite", async (req, res) => { // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
     try {
       const user = await User.findById(req.body.id); // finding user in database
         if (!user) {
@@ -292,6 +292,22 @@ router.post("/changePassword", async (req, res) => {
         const inviteList = user.invitations
         const indexOfInvite = inviteList.findIndex(x => x.groupId === req.body.groupId)
         inviteList.splice(indexOfInvite, 1)
+        const updatedUser = await user.save();
+        res.json({updatedUser});
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+})
+
+router.patch("/leaveGroup", async (req, res) => { // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
+    try {
+      const user = await User.findById(req.body.id); // finding user in database
+        if (!user) {
+            return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
+        }
+        const groupList = user.groups
+        const indexOfGroup = groupList.findIndex(x => x.groupId === req.body.groupId)
+        groupList.splice(indexOfGroup, 1)
         const updatedUser = await user.save();
         res.json({updatedUser});
     } catch (err) {
