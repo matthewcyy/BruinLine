@@ -40,14 +40,14 @@ function Reviews() {
   console.log("USERDATA", userData)
   return (
     <div className="header">
-      <h2> Reviews </h2>
+      <h1> Reviews </h1>
       <Grid style={{width: '100%'}} sx={{ flexGrow: 1 }} container className="Container">
       <Grid item xs={12}>
         <Grid container justifyContent="center" textAlign="center" marginTop="1rem">
           {[0, 1, 2, 3].map((value) => (
-            <Grid item key={value} style={{width: '24.5%'}} margin="auto" align="center">
+            <Grid item key={value} style={{width: '24.5%'}} margin="0 auto">
               {/* <Paper sx={{ height: 500, width: 100 }} /> */}
-              <Box textAlign="center" sx={{fontWeight: 'bold', fontSize: '1.25rem', borderRadius: '8px', border: 1, borderWidth: 1.75, borderColor: 'grey.500'}} display="block">
+              <Box textAlign="center" sx={{fontWeight: 'bold', fontSize: '1.5rem', borderRadius: '8px', border: 1, borderWidth: 2, borderColor: 'grey.500'}} display="block">
                 <>
                   {columnHeader[value]}
                   {
