@@ -4,9 +4,9 @@ const groupSchema = new mongoose.Schema({
   groupName: { type: String, required: true },
   groupMembers: [{ type: String, required: true }], // array of group members, containing each group member's username
   votes: { 
-    deNeve: { type: Number, default: 0 },
-    epicuria: { type: Number, default: 0 },
-    feast: { type: Number, default: 0 },
+    DeNeve: { type: Number, default: 0 },
+    Epicuria: { type: Number, default: 0 },
+    Feast: { type: Number, default: 0 },
     bPlate: { type: Number, default: 0 }
    }
 });
