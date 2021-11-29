@@ -10,6 +10,7 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import UserContext from './context/userContext';
 import Navbar from './Navbar';
+import Voting from './components/Dashboard/Voting/MajorityVote';
 
 import './App.css';
 import LandingPage from "./components/LandingPage/LandingPage";
@@ -77,6 +78,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/groups" component={Groups} />
             <Route path="/rankings" component={Rankings} />
+            <Route path="/voting" component={Voting} />
           </Switch>
         </UserContext.Provider>
       </ThemeProvider>

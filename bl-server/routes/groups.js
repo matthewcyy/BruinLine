@@ -20,6 +20,19 @@ router.patch('/vote', async (req, res) => {
     }
 })
 
+router.post('/getVotes', async(req, res) => {
+    try {
+        const group = await Group.findById(req.body.groupId)
+        console.log("WHAT BODY", req.body.groupId)
+        if (!group)
+            return res.status(400).json({ msg: "Cannot find group" })
+        const Votes = group.votes
+        res.json({Votes})
+    } catch (err) {
+        res.status(400).json({ err: err.message })
+    }
+})
+
 router.post('/getGroupMembers', async (req, res) => {
     try {
         const group = await Group.findById(req.body.groupId)
