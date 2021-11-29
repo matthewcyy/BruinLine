@@ -22,7 +22,7 @@ function Login () {
                 user: loginResponse.data.user
             });
             localStorage.setItem("auth-token", loginResponse.data.token);
-            history.push("/home");
+            history.push("/");
         } catch(err) {
             err.response.data.msg && setError(err.response.data.msg)
         }
