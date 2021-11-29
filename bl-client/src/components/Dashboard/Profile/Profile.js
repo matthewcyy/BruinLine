@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Profile.css';
 import logo from '../../../images/BLINE LOGO OUTLINED.png';
 import axios from 'axios';
+import UserContext from "../../../context/userContext"
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -15,6 +16,10 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 function Profile() {
+    const { userData, setUserData } =  useContext(UserContext);
+    console.log("USERDATAAA", userData.user);
+
+
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -24,22 +29,21 @@ function Profile() {
     const [id, setId] = useState();
     const [error, setError] = useState();
 
-    useEffect(() => {
-        async function getUserData() {
-            let token = localStorage.getItem("auth-token");
-            const userRes = await axios.get("http://localhost:5000/users/", {
-                headers: { "x-auth-token": token },
-            });
-            setUsername(userRes.data.username);
-            setEmail(userRes.data.email);
-            setGroups(userRes.data.groups);
-            setFavorites(userRes.data.favFoods);
-            setInvitations(userRes.data.invitations);
-            setId(userRes.data.id);
+    const updateUserData = async () => {
+        if(userData.user) {
+            setUsername(userData.user.username)
+            setEmail(userData.user.email)
+            setPassword(userData.user.password)
+            setGroups(userData.user.groups)
+            setFavorites(userData.user.favFoods)
+            setInvitations(userData.user.invitations)
+            setId(userData.user.id);
         }
+    }
 
-        getUserData(); 
-    }, []);
+    useEffect(() => {
+        updateUserData();
+    }, [userData])
 
     const rejectInvite = async (groupId) => {
         try {
