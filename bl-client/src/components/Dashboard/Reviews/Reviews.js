@@ -2,8 +2,6 @@ import "./Reviews.css";
 import React, { useState, useContext, useEffect } from 'react';
 import UserContext from '../../../context/userContext';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box'
 import axios from 'axios';
 import ReviewCard from './ReviewCard';
@@ -138,7 +136,7 @@ function Reviews() {
                 <TextField label="Review" variant="outlined" size="Normal" value={reviewDesc} onChange={(e) => setReviewDesc(e.target.value)} fullWidth multiline rows={4}/>
               </Grid>
               <Grid item xs={12} marginTop="0.5rem">
-                <Button onClick={() => submitReview()} outlined={true}>
+                <Button onClick={() => submitReview()} variant="contained">
                   Submit
                 </Button>
               </Grid>
