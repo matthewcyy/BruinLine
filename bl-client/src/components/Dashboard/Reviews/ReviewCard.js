@@ -17,7 +17,7 @@ function ReviewCard(props) {
                 <CardContent>
                     <Grid container spacing={0.5}>
                         <Grid item xs={8}>
-                            <Box sx={{fontSize:"1rem", fontWeight:"bold"}} gutterBottom>
+                            <Box sx={{fontSize:"1rem", fontWeight:"bold"}}>
                                 {props.reviewObj.itemName}
                             </Box>
                         </Grid>
@@ -26,7 +26,12 @@ function ReviewCard(props) {
                                 {props.reviewObj.rating}/5
                             </Box>
                         </Grid>
-                        <Grid item xs={3.6}>
+                        <Grid item xs={5.7}>
+                            <Box sx={{fontSize:"0.75rem", fontWeight:"bold"}} gutterBottom>
+                                Reviewer: {props.reviewObj.reviewer}
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6} marginLeft="0.5rem">
                             <Box sx={{fontSize:"0.75rem", fontWeight:"medium"}} gutterBottom>
                                 {props.reviewObj.date}
                             </Box>
