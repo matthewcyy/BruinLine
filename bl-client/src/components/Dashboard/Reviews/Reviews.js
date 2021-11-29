@@ -13,33 +13,7 @@ import CardContent from '@mui/material/CardContent';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
-var diningHallsWithFoods = {'DeNeve': [], 'Feast': [], 'B-Plate': [], 'Epicuria': []}
-const getAllReviews = async () => {
-  var allReviews = await axios.get('http://localhost:5000/foods/getAllReviews') // getting all reviews for all items
-  allReviews = allReviews.data.allFoodReviews
-  // console.log("ALLREVIEWS", allReviews)
-  allReviews.map(x => {
-    // console.log("OUTER THING", x)
-    x.reviews.map(y => {
-      // console.log("REVIEW", y)
-      var reviewObject = {}
-      reviewObject.itemName = x.itemName
-      reviewObject.reviewer = y.reviewer
-      reviewObject.date = y.date
-      reviewObject.rating = y.rating
-      reviewObject.description = y.description
-      diningHallsWithFoods[x.diningHall].push(reviewObject)
-      // console.log("REVIEW OBJECT", reviewObject)
-    })
-  })
-  console.log('DININGHALLSWITHFOODS', diningHallsWithFoods)
-}
-
 function Reviews() {
-  useEffect(() => {
-    getAllReviews()
-  }, []);
-
   const ratingOptions = [1, 2, 3, 4, 5]
   const diningHallOptions = ["DeNeve", "Feast", "B-Plate", "Epicuria"]
   ratingOptions.map(x => console.log("MAPPING", x))
@@ -47,9 +21,37 @@ function Reviews() {
   const [diningHallReview, setDiningHallReview] = useState("")
   const [foodRating, setRating] = useState(0)
   const [reviewDesc, setReviewDesc] = useState("")
-
+  const [diningHallsWithFoods, setDiningHallsWithFoods] = useState({'DeNeve': [], 'Feast': [], 'B-Plate': [], 'Epicuria': []})
   const columnHeader = {0: 'DeNeve', 1: 'Feast', 2: 'B-Plate', 3: 'Epicuria'}
   const { userData, setUserData } = useContext(UserContext);
+
+  // var diningHallsWithFoods = {'DeNeve': [], 'Feast': [], 'B-Plate': [], 'Epicuria': []}
+  const getAllReviews = async () => {
+    var allReviews = await axios.get('http://localhost:5000/foods/getAllReviews') // getting all reviews for all items
+    allReviews = allReviews.data.allFoodReviews
+    // console.log("ALLREVIEWS", allReviews)
+    allReviews.map(x => {
+      // console.log("OUTER THING", x)
+      x.reviews.map(y => {
+        // console.log("REVIEW", y)
+        var reviewObject = {}
+        reviewObject.itemName = x.itemName
+        reviewObject.reviewer = y.reviewer
+        reviewObject.date = y.date
+        reviewObject.rating = y.rating
+        reviewObject.description = y.description
+        // diningHallsWithFoods[x.diningHall].push(reviewObject)
+        var newObj = {...diningHallsWithFoods}
+        newObj[x.diningHall].push(reviewObject) 
+        setDiningHallsWithFoods(newObj)
+        // console.log("REVIEW OBJECT", reviewObject)
+      })
+    })
+    console.log('DININGHALLSWITHFOODS', diningHallsWithFoods)
+}
+  useEffect(() => {
+    getAllReviews()
+  }, []);
 
   const submitReview = async () => {
     if (userData.user) {
@@ -63,10 +65,16 @@ function Reviews() {
         date = mm + '/' + dd + '/' + yyyy;
         var reqObject = {reviewer, date}
         reqObject.itemName = foodItemReview
-        reqObject.diningHall = diningHallReview
         reqObject.rating = foodRating
         reqObject.description = reviewDesc
+        
+        var newObj = {...diningHallsWithFoods}
+        newObj[diningHallReview].push(reqObject) 
+        setDiningHallsWithFoods(newObj)
 
+        reqObject.diningHall = diningHallReview
+        // newObj[diningHallReview].push(reviewObject) 
+        // setDiningHallsWithFoods(newObj)
         const addReview = await axios.patch("http://localhost:5000/foods/reviewFood", reqObject);
         console.log("ADDREVIEW", addReview)
       } catch (err) {
