@@ -16,6 +16,7 @@ function Groups() {
     const [groups, setGroups] = useState([])
     const [inviter, setInviter] = useState("")
     const [newGroupName, setNewGroupName] = useState("")
+    const [groupMemberProp, setGroupMemberProp] = useState([])
     const updateStates = async () => {
         if (userData.user) {
             console.log("USERDATA", userData.user)
@@ -37,6 +38,7 @@ function Groups() {
             copyReqBody.groupMembers = [userData.user.username]
             copyReqBody.votes = {"DeNeve": 0, "Epicuria": 0, "Feast": 0, "bPlate": 0}
             var groupsCopy = groups
+            setGroupMemberProp([userData.user.username])
             const groupCreateResponse = await axios.patch("http://localhost:5000/users/makeGroup", reqBody)
             copyReqBody.groupId = groupCreateResponse.data._id
             groupsCopy.push(copyReqBody)
@@ -61,7 +63,7 @@ function Groups() {
                     groups.map((group) => (
                     <Grid item xs={4}>
                         <Box textAlign="center" sx={{fontWeight: 'bold', fontSize: '1.5rem', borderRadius: '8px', border: 1, borderWidth: 2, borderColor: 'grey.500'}} display="block">
-                            <GroupCard groupObj={group} inviter={inviter} style={{margin: "auto"}}/>
+                            <GroupCard groupObj={group} inviter={inviter} style={{margin: "auto"}} members={groupMemberProp}/>
                         </Box>
                     </Grid>
                     ))

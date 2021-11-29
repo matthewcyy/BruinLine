@@ -290,7 +290,7 @@ router.post("/changePassword", async (req, res) => {
             return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
         }
         const inviteList = user.invitations
-        const indexOfInvite = inviteList.findIndex(x => x.groupName === req.body.groupId)
+        const indexOfInvite = inviteList.findIndex(x => x.groupId === req.body.groupId)
         inviteList.splice(indexOfInvite, 1)
         const updatedUser = await user.save();
         res.json({updatedUser});

@@ -20,6 +20,19 @@ router.patch('/vote', async (req, res) => {
     }
 })
 
+router.post('/getGroupMembers', async (req, res) => {
+    try {
+        const group = await Group.findById(req.body.groupId)
+        console.log("WHAT BODY", req.body.groupId)
+        if (!group)
+            return res.status(400).json({ msg: "Cannot find group" })
+        const groupMembers = group.groupMembers
+        res.json({groupMembers})
+    } catch (err) {
+        res.status(400).json({ err: err.message })
+    }
+})
+
 // arr.map(json => await axios.post("https://localhost:5000/addFood", json))
 
 module.exports = router;

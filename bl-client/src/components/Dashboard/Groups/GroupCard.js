@@ -33,6 +33,10 @@ function GroupCard(props) {
     }
 
     useEffect(() => {
+        if (props.members.length !== 0)
+        {
+            setGroupMembers(props.members)
+        }
         getGroupMembers()
     }, [])
     console.log("HIHIHI")
