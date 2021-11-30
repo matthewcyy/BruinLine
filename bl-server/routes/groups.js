@@ -44,8 +44,8 @@ router.post('/getVotes', async(req, res) => {
         console.log("WHAT BODY", req.body.groupId)
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
-        const Votes = group.votes
-        res.json({Votes})
+        const groupVotes = group.votes
+        res.json({groupVotes})
     } catch (err) {
         res.status(400).json({ err: err.message })
     }
