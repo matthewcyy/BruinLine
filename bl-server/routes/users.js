@@ -305,11 +305,30 @@ router.patch("/leaveGroup", async (req, res) => { // When using this api call, g
         if (!user) {
             return res.status(404).json({ message: 'Cannot find user' }) // when user doesn't exist...
         }
-        const groupList = user.groups
+        var groupList = user.groups
         const indexOfGroup = groupList.findIndex(x => x.groupId === req.body.groupId)
+        if (indexOfGroup === -1) {
+            return res.status(400).json({ msg: "error, user not in group" })
+        }
+        console.log("INDEXOFGROUP", indexOfGroup)
         groupList.splice(indexOfGroup, 1)
         const updatedUser = await user.save();
-        res.json({updatedUser});
+        const group = await Group.findById(req.body.groupId)
+        console.log("GROUP", group)
+        console.log("USER", user)
+        var groupMembers = group.groupMembers
+        if (groupMembers.length === 1) {
+            console.log("IN THE IF")
+            console.log('GROUP ID', group._id)
+            Group.findByIdAndDelete(group._id)
+            const deletedGroup = await group.save();
+            res.json({updatedUser});
+        } else {
+            const indexOfMember = groupMembers.findIndex(x => x === user.username)
+            groupMembers.splice(indexOfMember, 1)
+            const updatedGroup = await group.save();
+            res.json({updatedUser, updatedGroup});
+        }
     } catch (err) {
       res.status(400).json({ error: err.message });
     }

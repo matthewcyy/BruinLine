@@ -75,6 +75,10 @@ function Reviews() {
         // setDiningHallsWithFoods(newObj)
         const addReview = await axios.patch("http://localhost:5000/foods/reviewFood", reqObject);
         console.log("ADDREVIEW", addReview)
+        setFoodItemReview("")
+        setDiningHallReview("")
+        setRating("")
+        setReviewDesc("")
       } catch (err) {
         console.log("ERROR", err.response.data.msg)
       }
