@@ -4,12 +4,15 @@ import logo from "../../../images/BLINE LOGO OUTLINED.png";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import UserContext from "../../../context/userContext";
-import Alert from "@mui/material/Alert";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function DiningHalls() {
   const [currentHall, setCurrentHall] = useState();
@@ -22,6 +25,12 @@ function DiningHalls() {
     Feast: 0,
   });
   const [isCheckedIn, setIsCheckedIn] = useState();
+  const [openmenu, setopenmenu] = useState({
+    DeNeve: false,
+    Epicuria: false,
+    bPlate: false,
+    Feast: false,
+  });
 
   const allDiningHalls = ["DeNeve", "Epicuria", "B-Plate", "Feast"];
   //   useEffect(() => {
@@ -104,7 +113,6 @@ function DiningHalls() {
   };
 
   useEffect(() => {
-    debugger;
     const getPeopleHall = async () => {
       try {
         const hallCreateResponse = await axios.get(
@@ -123,6 +131,20 @@ function DiningHalls() {
   }, [userData]);
 
   const [show, setShow] = useState(false);
+  const [expanded, setExpanded] = React.useState(false);
+
+  const showmenu = (hallbutton) => (event, isExpanded) => {
+    //console.log("CLICKED", hallbutton);
+    if (hallbutton == "B-Plate") {
+      hallbutton = "bPlate";
+    }
+    var newopen = openmenu;
+    newopen[hallbutton] = !openmenu[hallbutton];
+    setopenmenu(newopen);
+    setExpanded(isExpanded ? hallbutton : false);
+    // setShow((prev) => !prev);
+  };
+
   return (
     <div className="halls">
       <h2> Dining Halls </h2>
@@ -178,13 +200,37 @@ function DiningHalls() {
                   </Grid>
                   <Grid item xs={6} marginTop="0.5 rem">
                     <Box>
-                      <Button
-                        onClick={() => setShow((prev) => !prev)}
-                        variant="contained"
+                      <Accordion
+                        expanded={openmenu[hall]}
+                        onChange={showmenu(hall)}
                       >
-                        Show menu
-                      </Button>
-                      {show && <Box>This is your component</Box>}
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                          <Typography sx={{ width: "33%", flexShrink: 0 }}>
+                            Menu
+                          </Typography>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                          <Typography>THIS IS THE MENU FOR {hall}</Typography>
+                        </AccordionDetails>
+                      </Accordion>
+                      {/* {openmenu[hall] ? (
+                        <Button
+                          onClick={() => showmenu(hall)}
+                          variant="contained"
+                          id={hall}
+                        >
+                          hide menu
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={() => showmenu(hall)}
+                          variant="contained"
+                          id={hall}
+                        >
+                          show menu
+                        </Button>
+                      )}
+                      {openmenu[hall] && <Box>This is your component</Box>} */}
                     </Box>
                   </Grid>
                 </CardContent>
