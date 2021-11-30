@@ -31,3 +31,4 @@ mongoose.connect(
 app.use("/users", require("./routes/users"));
 app.use("/foods", require("./routes/foods"));
 app.use("/groups", require("./routes/groups"));
+app.use("/halls", require("./routes/halls"));
