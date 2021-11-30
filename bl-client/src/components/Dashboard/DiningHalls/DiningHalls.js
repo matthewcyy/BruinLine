@@ -104,7 +104,6 @@ function DiningHalls() {
   };
 
   useEffect(() => {
-    debugger;
     const getPeopleHall = async () => {
       try {
         const hallCreateResponse = await axios.get(
