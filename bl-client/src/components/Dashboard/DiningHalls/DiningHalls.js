@@ -149,92 +149,94 @@ function DiningHalls() {
     <div className="halls">
       <h2> Dining Halls </h2>
       <div style={{ textAlign: "center" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid container spacing={2} xs={12} margin="auto"></Grid>
+        <Grid container justify="space-between" direction={"row"}>
           {allDiningHalls.map((hall) => (
             <div style={{ width: "90%", margin: "2rem auto" }}>
-              <Card style={{ borderColor: "#2c7dc3" }}>
-                <CardContent>
-                  <Box
-                    sx={{
-                      fontWeight: "bold",
-                      fontSize: "1.5rem",
-                      marginBottom: "0.75rem",
-                    }}
-                  >
-                    {hall}
-                  </Box>
-                  <Grid item xs={6} marginTop="0.5rem">
-                    {userData.user ? (
-                      isCheckedIn ? (
-                        hall == currentHall ? (
-                          <Button
-                            onClick={() => removeHall(hall)}
-                            variant="contained"
-                          >
-                            Check out
-                          </Button>
+              <Grid item xs={12} marginTop="0.5rem">
+                <Card style={{ borderColor: "#2c7dc3" }}>
+                  <CardContent>
+                    <Grid container justify="space-between">
+                      <Grid item xs={5} marginTop="0.5rem" align="left">
+                        <Box
+                          sx={{
+                            fontWeight: "bold",
+                            fontSize: "2.0rem",
+                            marginBottom: "0.75rem",
+                          }}
+                        >
+                          {hall}
+                        </Box>
+                      </Grid>
+                      <Grid item merginTop="0.5rem" xs={6}>
+                        {" "}
+                      </Grid>
+                      <Grid item marginTop="0.5rem" float="left">
+                        {userData.user ? (
+                          isCheckedIn ? (
+                            hall == currentHall ? (
+                              <Button
+                                onClick={() => removeHall(hall)}
+                                variant="contained"
+                              >
+                                Check out
+                              </Button>
+                            ) : (
+                              <Button
+                                onClick={() => addHall(hall)}
+                                variant="contained"
+                                disabled
+                              >
+                                Check In
+                              </Button>
+                            )
+                          ) : (
+                            <Button
+                              onClick={() => addHall(hall)}
+                              variant="contained"
+                            >
+                              Check In
+                            </Button>
+                          )
                         ) : (
-                          <Button
-                            onClick={() => addHall(hall)}
-                            variant="contained"
-                            disabled
-                          >
-                            Check In
-                          </Button>
-                        )
-                      ) : (
-                        <Button
-                          onClick={() => addHall(hall)}
-                          variant="contained"
-                        >
-                          Check In
-                        </Button>
-                      )
-                    ) : (
-                      <div> </div>
-                    )}
-                  </Grid>
-                  <Grid item xs={6} marginTop="0.5 rem">
-                    <Box>Number of People: {peopleInHall[hall]}</Box>
-                  </Grid>
-                  <Grid item xs={6} marginTop="0.5 rem">
-                    <Box>
-                      <Accordion
-                        expanded={openmenu[hall]}
-                        onChange={showmenu(hall)}
+                          <div> </div>
+                        )}
+                      </Grid>
+                      <Grid
+                        item
+                        align="left"
+                        marginTop="1.0 rem"
+                        marginBottom="1.0rem"
                       >
-                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                          <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                            Menu
-                          </Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                          <Typography>THIS IS THE MENU FOR {hall}</Typography>
-                        </AccordionDetails>
-                      </Accordion>
-                      {/* {openmenu[hall] ? (
-                        <Button
-                          onClick={() => showmenu(hall)}
-                          variant="contained"
-                          id={hall}
-                        >
-                          hide menu
-                        </Button>
-                      ) : (
-                        <Button
-                          onClick={() => showmenu(hall)}
-                          variant="contained"
-                          id={hall}
-                        >
-                          show menu
-                        </Button>
-                      )}
-                      {openmenu[hall] && <Box>This is your component</Box>} */}
-                    </Box>
-                  </Grid>
-                </CardContent>
-              </Card>
+                        <Box>
+                          Number of Users in {hall}: {peopleInHall[hall]}
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} marginTop="0.5 rem">
+                        <Box>
+                          <Accordion
+                            expanded={openmenu[hall]}
+                            onChange={showmenu(hall)}
+                          >
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                              <Typography
+                                sx={{ width: "33%", flexShrink: 0 }}
+                                align="left"
+                              >
+                                Menu
+                              </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Typography>
+                                THIS IS THE MENU FOR {hall}
+                              </Typography>
+                            </AccordionDetails>
+                          </Accordion>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
             </div>
           ))}
         </Grid>
