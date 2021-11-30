@@ -8,12 +8,22 @@ import Grid from '@mui/material/Grid';
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Voting from '../Voting/MajorityVote';
 
 function GroupCard(props) {
     const [groupMembers, setGroupMembers] = useState([])
     const [inviteeUsername, setInviteeUsername] = useState("")
-
+    const [votes, setVotes] = useState({})
+    const [undoDisable, setUndoDisable] = useState(!(localStorage.getItem("vote") === "" || localStorage.getItem("vote") == null))
+    const getVotes = async () => {
+        var reqBody = {}
+        reqBody.groupId = props.groupObj.groupId
+        const getVotesResponse = await axios.post('http://localhost:5000/groups/getVotes', reqBody)
+        setVotes(getVotesResponse.data.Votes) 
+    }
     console.log("WHAT")
+    console.log("HEY", props.groupObj)
+    
     const getGroupMembers = async () => {
         const reqBody = {}
         reqBody.groupId = props.groupObj.groupId
@@ -32,12 +42,25 @@ function GroupCard(props) {
         const getResponse = await axios.patch('http://localhost:5000/users/inviteToGroup', reqBody);
     }
 
+    const changeVote = (diningHall) => {
+        var copyVotes = votes
+        copyVotes[diningHall] += 1
+        setVotes({...copyVotes})
+    }
+
+    const removeVote = (diningHall) => {
+        var copyVotes = votes
+        copyVotes[diningHall] = --copyVotes[diningHall]
+        setVotes({...copyVotes})
+    }
+
     useEffect(() => {
         if (props.members.length !== 0)
         {
             setGroupMembers(props.members)
         }
         getGroupMembers()
+        getVotes()
     }, [])
     console.log("HIHIHI")
     return (
@@ -64,6 +87,9 @@ function GroupCard(props) {
                                         </Grid>
                                     ))
                                 }
+                            </Grid>
+                            <Grid item xs={12}>
+                                <Voting votes={votes} groupId={props.groupObj.groupId} changeVote={changeVote} removeVote={removeVote} setDisable={setUndoDisable} undoDisable={undoDisable}/>
                             </Grid>
                         </Grid>
                         <Grid item xs={8}>
