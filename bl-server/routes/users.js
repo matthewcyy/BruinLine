@@ -83,6 +83,7 @@ router.post('/login', async (req, res) => {
             token,
             user: {
                 id: user._id,
+                email: user.email,
                 username: user.username,
                 favFoods: user.favFoods,
                 groups: user.groups,
@@ -124,6 +125,7 @@ router.post("/tokenIsValid", async (req, res) => {
             favFoods: user.favFoods,
             groups: user.groups,
             invitations: user.invitations,
+            email: user.email,
             allUsers: basicAllUsersInfo
         });
       } catch (err) {

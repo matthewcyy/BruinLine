@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Profile.css';
 import logo from '../../../images/BLINE LOGO OUTLINED.png';
 import axios from 'axios';
+import UserContext from "../../../context/userContext"
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -15,6 +16,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 function Profile() {
+    const { userData, setUserData } =  useContext(UserContext);
+    
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -24,34 +27,32 @@ function Profile() {
     const [id, setId] = useState();
     const [error, setError] = useState();
 
-    useEffect(() => {
-        async function getUserData() {
-            let token = localStorage.getItem("auth-token");
-            const userRes = await axios.get("http://localhost:5000/users/", {
-                headers: { "x-auth-token": token },
-            });
-            setUsername(userRes.data.username);
-            setEmail(userRes.data.email);
-            setGroups(userRes.data.groups);
-            setFavorites(userRes.data.favFoods);
-            setInvitations(userRes.data.invitations);
-            setId(userRes.data.id);
+    const updateUserData = async () => {
+        if(userData.user) {
+            setUsername(userData.user.username)
+            setEmail(userData.user.email)
+            setPassword(userData.user.password)
+            setGroups(userData.user.groups)
+            setFavorites(userData.user.favFoods)
+            setInvitations(userData.user.invitations)
+            setId(userData.user.id);
         }
+    }
 
-        getUserData(); 
-    }, []);
+    useEffect(() => {
+        updateUserData();
+    }, [userData])
 
     const rejectInvite = async (groupId) => {
         try {
             const reqBody = {}
             reqBody.id = id
             reqBody.groupId = groupId
-            debugger;
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            console.log("INVITE'S INDEX", indexOfInvite)
+            // console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
-            await setInvitations(invitationsCopy)
+            setInvitations([...invitationsCopy])
             const patchReq = await axios.patch("http://localhost:5000/users/rejectInvite", reqBody)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
@@ -65,13 +66,13 @@ function Profile() {
             reqBody.groupName = groupName
             var newGroups = groups
             newGroups.push(reqBody)
-            setGroups(newGroups)
+            setGroups([...newGroups])
             reqBody.id = id
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            console.log("INVITE'S INDEX", indexOfInvite)
+            // console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
-            await setInvitations(invitationsCopy)
+            setInvitations([...invitationsCopy])
             const patchReq = await axios.patch("http://localhost:5000/users/acceptInvite", reqBody)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
@@ -109,21 +110,21 @@ function Profile() {
                         </form>
                     </div>
                     <br />
-                    <div class="groups">
-                        <p class="infoTitle">Groups:</p>
-                        <ul>
-                            {groups.map(group => {
-                                return <li class="infoList">{group.groupName}</li>
-                            })}
-                        </ul>
-                    </div>
-                </div>
-                <div class="subInfo">
                     <div class="foods">
                         <p class="infoTitle">Favorite foods:</p>
                         <ul>
                             {favorites.map(foodName => {
                                 return <li class="infoList">{foodName}</li>
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                <div class="subInfo">
+                    <div class="groups">
+                        <p class="infoTitle">Groups:</p>
+                        <ul>
+                            {groups.map(group => {
+                                return <li class="infoList">{group.groupName}</li>
                             })}
                         </ul>
                     </div>
