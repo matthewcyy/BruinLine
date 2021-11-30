@@ -92,4 +92,11 @@ class Voting extends Component {
 	}
 }
 
-export default Voting;
+  return (
+    <div>
+      <canvas ref={chartContainer} />
+    </div>
+  );
+};
+
+export default Chart;
