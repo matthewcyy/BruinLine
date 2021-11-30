@@ -4,12 +4,15 @@ import logo from "../../../images/BLINE LOGO OUTLINED.png";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import axios from "axios";
-import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import UserContext from "../../../context/userContext";
-import Alert from "@mui/material/Alert";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function DiningHalls() {
   const [currentHall, setCurrentHall] = useState();
@@ -22,6 +25,12 @@ function DiningHalls() {
     Feast: 0,
   });
   const [isCheckedIn, setIsCheckedIn] = useState();
+  const [openmenu, setopenmenu] = useState({
+    DeNeve: false,
+    Epicuria: false,
+    bPlate: false,
+    Feast: false,
+  });
 
   const allDiningHalls = ["DeNeve", "Epicuria", "B-Plate", "Feast"];
   //   useEffect(() => {
@@ -104,7 +113,6 @@ function DiningHalls() {
   };
 
   useEffect(() => {
-    debugger;
     const getPeopleHall = async () => {
       try {
         const hallCreateResponse = await axios.get(
@@ -123,72 +131,112 @@ function DiningHalls() {
   }, [userData]);
 
   const [show, setShow] = useState(false);
+  const [expanded, setExpanded] = React.useState(false);
+
+  const showmenu = (hallbutton) => (event, isExpanded) => {
+    //console.log("CLICKED", hallbutton);
+    if (hallbutton == "B-Plate") {
+      hallbutton = "bPlate";
+    }
+    var newopen = openmenu;
+    newopen[hallbutton] = !openmenu[hallbutton];
+    setopenmenu(newopen);
+    setExpanded(isExpanded ? hallbutton : false);
+    // setShow((prev) => !prev);
+  };
+
   return (
     <div className="halls">
       <h2> Dining Halls </h2>
       <div style={{ textAlign: "center" }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid container spacing={2} xs={12} margin="auto"></Grid>
+        <Grid container justify="space-between" direction={"row"}>
           {allDiningHalls.map((hall) => (
             <div style={{ width: "90%", margin: "2rem auto" }}>
-              <Card style={{ borderColor: "#2c7dc3" }}>
-                <CardContent>
-                  <Box
-                    sx={{
-                      fontWeight: "bold",
-                      fontSize: "1.5rem",
-                      marginBottom: "0.75rem",
-                    }}
-                  >
-                    {hall}
-                  </Box>
-                  <Grid item xs={6} marginTop="0.5rem">
-                    {userData.user ? (
-                      isCheckedIn ? (
-                        hall == currentHall ? (
-                          <Button
-                            onClick={() => removeHall(hall)}
-                            variant="contained"
-                          >
-                            Check out
-                          </Button>
-                        ) : (
-                          <Button
-                            onClick={() => addHall(hall)}
-                            variant="contained"
-                            disabled
-                          >
-                            Check In
-                          </Button>
-                        )
-                      ) : (
-                        <Button
-                          onClick={() => addHall(hall)}
-                          variant="contained"
+              <Grid item xs={12} marginTop="0.5rem">
+                <Card style={{ borderColor: "#2c7dc3" }}>
+                  <CardContent>
+                    <Grid container justify="space-between">
+                      <Grid item xs={5} marginTop="0.5rem" align="left">
+                        <Box
+                          sx={{
+                            fontWeight: "bold",
+                            fontSize: "2.0rem",
+                            marginBottom: "0.75rem",
+                          }}
                         >
-                          Check In
-                        </Button>
-                      )
-                    ) : (
-                      <div> </div>
-                    )}
-                  </Grid>
-                  <Grid item xs={6} marginTop="0.5 rem">
-                    <Box>Number of People: {peopleInHall[hall]}</Box>
-                  </Grid>
-                  <Grid item xs={6} marginTop="0.5 rem">
-                    <Box>
-                      <Button
-                        onClick={() => setShow((prev) => !prev)}
-                        variant="contained"
+                          {hall}
+                        </Box>
+                      </Grid>
+                      <Grid item merginTop="0.5rem" xs={6}>
+                        {" "}
+                      </Grid>
+                      <Grid item marginTop="0.5rem" float="left">
+                        {userData.user ? (
+                          isCheckedIn ? (
+                            hall == currentHall ? (
+                              <Button
+                                onClick={() => removeHall(hall)}
+                                variant="contained"
+                              >
+                                Check out
+                              </Button>
+                            ) : (
+                              <Button
+                                onClick={() => addHall(hall)}
+                                variant="contained"
+                                disabled
+                              >
+                                Check In
+                              </Button>
+                            )
+                          ) : (
+                            <Button
+                              onClick={() => addHall(hall)}
+                              variant="contained"
+                            >
+                              Check In
+                            </Button>
+                          )
+                        ) : (
+                          <div> </div>
+                        )}
+                      </Grid>
+                      <Grid
+                        item
+                        align="left"
+                        marginTop="1.0 rem"
+                        marginBottom="1.0rem"
                       >
-                        Show menu
-                      </Button>
-                      {show && <Box>This is your component</Box>}
-                    </Box>
-                  </Grid>
-                </CardContent>
-              </Card>
+                        <Box>
+                          Number of Users in {hall}: {peopleInHall[hall]}
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} marginTop="0.5 rem">
+                        <Box>
+                          <Accordion
+                            expanded={openmenu[hall]}
+                            onChange={showmenu(hall)}
+                          >
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                              <Typography
+                                sx={{ width: "33%", flexShrink: 0 }}
+                                align="left"
+                              >
+                                Menu
+                              </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              <Typography>
+                                THIS IS THE MENU FOR {hall}
+                              </Typography>
+                            </AccordionDetails>
+                          </Accordion>
+                        </Box>
+                      </Grid>
+                    </Grid>
+                  </CardContent>
+                </Card>
+              </Grid>
             </div>
           ))}
         </Grid>
