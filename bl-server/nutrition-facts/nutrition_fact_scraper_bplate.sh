@@ -1,6 +1,6 @@
 #!/bin/bash
 website="https://menu.dining.ucla.edu/Menus/BruinPlate"
-P=$(curl -s $website|perl -Mopen=locale -pe 's/&#x([\da-f]+);/chr hex $1/gie')
+P=$(curl -s $website)
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>names.txt
