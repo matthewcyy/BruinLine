@@ -15,6 +15,7 @@ import Alert from "@mui/material/Alert";
 function Menus() {
   const { userData, setUserData } = useContext(UserContext);
   const [id, setId] = useState();
+  const [favorites, setFavorites] = useState([]);
 
   const [epicuriaMenu, setEpicuriaMenu] = useState([]);
   const [deNeveMenu, setDeNeveMenu] = useState([]);
@@ -23,6 +24,7 @@ function Menus() {
 
   const updateUserData = async () => {
     if (userData.user) {
+      setFavorites(userData.user.favFoods);
       setId(userData.user.id);
     }
   }
@@ -51,6 +53,14 @@ function Menus() {
     const getResponse = await axios.patch('http://localhost:5000/users/addFavFood', reqBody);
   }
 
+  const reviewItem = async (foodName) => {
+    const reqBody = {}
+    reqBody.id = id
+    reqBody.food = foodName
+    const getResponse = await axios.patch('http://localhost:5000/users/addFavFood', reqBody);
+  }
+
+
 
   return (
     <div className="container">
@@ -62,7 +72,7 @@ function Menus() {
             return (
               <div>
                 <p class="menuList">{item}</p>
-                <button>Review</button>
+                <button onClick={() => reviewItem(item)}>Review</button>
                 <button onClick={() => starItem(item)}>Star</button>
               </div>
             );
