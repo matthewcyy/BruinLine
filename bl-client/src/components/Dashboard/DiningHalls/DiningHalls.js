@@ -35,8 +35,6 @@ function DiningHalls() {
   //     getUserData();
   //   }, []);
 
-  var LoggedIn = false;
-
   const updateStates = async () => {
     if (userData.user) {
       setCurrentHall(userData.user.hall);
@@ -45,9 +43,6 @@ function DiningHalls() {
       } else {
         setIsCheckedIn(false);
       }
-      LoggedIn = true;
-    } else {
-      LoggedIn = false;
     }
   };
 
@@ -132,63 +127,71 @@ function DiningHalls() {
     <div className="halls">
       <h2> Dining Halls </h2>
       <div style={{ textAlign: "center" }}>
-        <Grid container spacing={2} margin="auto"></Grid>
-        {allDiningHalls.map((hall) => (
-          <div style={{ width: "90%", margin: "2rem auto" }}>
-            <Card style={{ borderColor: "#2c7dc3" }}>
-              <CardContent>
-                <Box
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "1.5rem",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  {hall}
-                </Box>
-                <Grid item xs={12} marginTop="0.5rem"></Grid>
-                <Grid item xs={12} marginTop="0.5rem">
-                  {isCheckedIn ? (
-                    hall == currentHall ? (
-                      <Button
-                        onClick={() => removeHall(hall)}
-                        variant="contained"
-                      >
-                        Check out
-                      </Button>
-                    ) : (
-                      <Button
-                        onClick={() => addHall(hall)}
-                        variant="contained"
-                        disabled
-                      >
-                        Check In
-                      </Button>
-                    )
-                  ) : (
-                    <Button onClick={() => addHall(hall)} variant="contained">
-                      Check In
-                    </Button>
-                  )}
-                </Grid>
-                <Grid item xs={12} marginTop="0.5 rem">
-                  <Box>Number of People: {peopleInHall[hall]}</Box>
-                </Grid>
-                <Grid item xs={12} marginTop="0.5 rem">
-                  <Box>
-                    <Button
-                      onClick={() => setShow((prev) => !prev)}
-                      variant="contained"
-                    >
-                      Show menu
-                    </Button>
-                    {show && <Box>This is your component</Box>}
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid container spacing={2} xs={12} margin="auto"></Grid>
+          {allDiningHalls.map((hall) => (
+            <div style={{ width: "90%", margin: "2rem auto" }}>
+              <Card style={{ borderColor: "#2c7dc3" }}>
+                <CardContent>
+                  <Box
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1.5rem",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    {hall}
                   </Box>
-                </Grid>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+                  <Grid item xs={6} marginTop="0.5rem">
+                    {userData.user ? (
+                      isCheckedIn ? (
+                        hall == currentHall ? (
+                          <Button
+                            onClick={() => removeHall(hall)}
+                            variant="contained"
+                          >
+                            Check out
+                          </Button>
+                        ) : (
+                          <Button
+                            onClick={() => addHall(hall)}
+                            variant="contained"
+                            disabled
+                          >
+                            Check In
+                          </Button>
+                        )
+                      ) : (
+                        <Button
+                          onClick={() => addHall(hall)}
+                          variant="contained"
+                        >
+                          Check In
+                        </Button>
+                      )
+                    ) : (
+                      <div> </div>
+                    )}
+                  </Grid>
+                  <Grid item xs={6} marginTop="0.5 rem">
+                    <Box>Number of People: {peopleInHall[hall]}</Box>
+                  </Grid>
+                  <Grid item xs={6} marginTop="0.5 rem">
+                    <Box>
+                      <Button
+                        onClick={() => setShow((prev) => !prev)}
+                        variant="contained"
+                      >
+                        Show menu
+                      </Button>
+                      {show && <Box>This is your component</Box>}
+                    </Box>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </Grid>
       </div>
     </div>
   );
