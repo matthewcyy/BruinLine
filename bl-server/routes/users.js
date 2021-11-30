@@ -141,15 +141,12 @@ router.post("/tokenIsValid", async (req, res) => {
 router.patch("/addFavFood", async (req, res) => {
   try {
     const user = await User.findById(req.body.id); // finding user in database
+    console.log(req.body.id)
     if (!user) {
       return res.status(404).json({ message: "Cannot find user" }); // when user doesn't exist...
     }
     res.user = user;
-    console.log("Before fav foods update", res.user.favFoods);
-    var favArr = req.body.putArr; // getting the new array of favorite foods from the request
-    if (req.body.putArr) {
-      res.user.favFoods = favArr; // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
-    }
+    res.user.favFoods.push(req.body.food); // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
     const updatedUser = await res.user.save();
     console.log(res.user.favFoods);
     res.json(updatedUser);

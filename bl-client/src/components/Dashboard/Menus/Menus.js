@@ -11,11 +11,21 @@ import Button from "@mui/material/Button";
 import UserContext from "../../../context/userContext";
 import Alert from "@mui/material/Alert";
 
+
 function Menus() {
+  const { userData, setUserData } = useContext(UserContext);
+  const [id, setId] = useState();
+
   const [epicuriaMenu, setEpicuriaMenu] = useState([]);
   const [deNeveMenu, setDeNeveMenu] = useState([]);
   const [bPlateMenu, setBPlateMenu] = useState([]);
   const [feastMenu, setFeastMenu] = useState([]);
+
+  const updateUserData = async () => {
+    if (userData.user) {
+      setId(userData.user.id);
+    }
+  }
 
   const updateMenus = async () => {
     const menus = await axios.get(
@@ -29,8 +39,18 @@ function Menus() {
   }
 
   useEffect(() => {
+    updateUserData();
     updateMenus();
-  }, [])
+  }, [userData])
+
+
+  const starItem = async (foodName) => {
+    const reqBody = {}
+    reqBody.id = id
+    reqBody.food = foodName
+    const getResponse = await axios.patch('http://localhost:5000/users/addFavFood', reqBody);
+  }
+
 
   return (
     <div className="container">
@@ -39,31 +59,31 @@ function Menus() {
         <div class="menuSection" id="DeNeve">
           <h3>De Neve</h3>
           {deNeveMenu.map(item => {
-              return (
-                <div>
-                  <p class="menuList">{item}</p>
-                  <button>Review</button>
-                  <button>Star</button>
-                </div>
-              );
+            return (
+              <div>
+                <p class="menuList">{item}</p>
+                <button>Review</button>
+                <button onClick={() => starItem(item)}>Star</button>
+              </div>
+            );
           })}
         </div>
         <div class="menuSection" id="Epicuria">
           <h3>Epicuria</h3>
           {epicuriaMenu.map(item => {
-              return <p class="menuList">{item}</p>
+            return <p class="menuList">{item}</p>
           })}
         </div>
         <div class="menuSection" id="bPlate">
           <h3>Bruin Plate</h3>
           {bPlateMenu.map(item => {
-              return <p class="menuList">{item}</p>
+            return <p class="menuList">{item}</p>
           })}
         </div>
         <div class="menuSection" id="Feast">
           <h3>Feast</h3>
           {feastMenu.map(item => {
-              return <p class="menuList">{item}</p>
+            return <p class="menuList">{item}</p>
           })}
         </div>
       </div>
