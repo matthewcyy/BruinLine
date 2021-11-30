@@ -18,8 +18,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 function Profile() {
     const { userData, setUserData } =  useContext(UserContext);
     console.log("USERDATAAA", userData.user);
-
-
+    
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -39,6 +38,7 @@ function Profile() {
             setInvitations(userData.user.invitations)
             setId(userData.user.id);
         }
+        console.log("updating user data")
     }
 
     useEffect(() => {
@@ -55,7 +55,7 @@ function Profile() {
             console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
-            await setInvitations(invitationsCopy)
+            setInvitations([...invitationsCopy])
             const patchReq = await axios.patch("http://localhost:5000/users/rejectInvite", reqBody)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
@@ -64,19 +64,21 @@ function Profile() {
 
     const acceptInvite = async (groupId, groupName) => {
         try {
+            debugger;
             const reqBody = {}
             reqBody.groupId = groupId
             reqBody.groupName = groupName
             var newGroups = groups
             newGroups.push(reqBody)
-            setGroups(newGroups)
+            setGroups([...newGroups])
             reqBody.id = id
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
             console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
-            await setInvitations(invitationsCopy)
+            setInvitations([...invitationsCopy])
             const patchReq = await axios.patch("http://localhost:5000/users/acceptInvite", reqBody)
+            console.log(groups)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
         }
@@ -113,21 +115,21 @@ function Profile() {
                         </form>
                     </div>
                     <br />
-                    <div class="groups">
-                        <p class="infoTitle">Groups:</p>
-                        <ul>
-                            {groups.map(group => {
-                                return <li class="infoList">{group.groupName}</li>
-                            })}
-                        </ul>
-                    </div>
-                </div>
-                <div class="subInfo">
                     <div class="foods">
                         <p class="infoTitle">Favorite foods:</p>
                         <ul>
                             {favorites.map(foodName => {
                                 return <li class="infoList">{foodName}</li>
+                            })}
+                        </ul>
+                    </div>
+                </div>
+                <div class="subInfo">
+                    <div class="groups">
+                        <p class="infoTitle">Groups:</p>
+                        <ul>
+                            {groups.map(group => {
+                                return <li class="infoList">{group.groupName}</li>
                             })}
                         </ul>
                     </div>
