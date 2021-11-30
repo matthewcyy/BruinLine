@@ -59,33 +59,34 @@ function Groups() {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Groups</h1>
-      <Grid container spacing={0.5} margin="auto">
+      {userData.user ? ( 
+      <div>     
+        <Grid container spacing={0.5} margin="auto">
         {groups.map((group) => (
-          <Grid item xs={4}>
-            <Box
-              textAlign="center"
-              sx={{
-                fontWeight: "bold",
-                fontSize: "1.5rem",
-                borderRadius: "8px",
-                border: 1,
-                borderWidth: 2,
-                borderColor: "grey.500",
-              }}
-              display="block"
-            >
-              <GroupCard
-                groupObj={group}
-                inviter={inviter}
-                style={{ margin: "auto" }}
-                members={groupMemberProp}
-              />
-            </Box>
-          </Grid>
+        <Grid item xs={4}>
+        <Box
+          textAlign="center"
+          sx={{
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            borderRadius: "8px",
+            border: 1,
+            borderWidth: 2,
+            borderColor: "grey.500",
+          }}
+          display="block"
+        >
+          <GroupCard
+            groupObj={group}
+            inviter={inviter}
+            style={{ margin: "auto" }}
+            members={groupMemberProp}
+          />
+        </Box>
+        </Grid>
         ))}
-      </Grid>
-
-      <div style={{ width: "50%", margin: "2rem auto" }}>
+        </Grid>
+        <div style={{ width: "50%", margin: "2rem auto" }}>
         <Card style={{ borderColor: "#2c7dc3" }}>
           <CardContent>
             <Box
@@ -114,7 +115,9 @@ function Groups() {
             </Grid>
           </CardContent>
         </Card>
-      </div>
+        </div>
+        </div>
+      ) : (<h2>Please login to use Groups</h2>)}
     </div>
   );
 }

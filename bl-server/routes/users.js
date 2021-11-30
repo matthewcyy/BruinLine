@@ -81,24 +81,24 @@ router.post("/login", async (req, res) => {
     if (!isMatch)
       return res.status(400).json({ msg: "Incorrect password or username" });
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); // creating a token to represent the user's unique _id, which will be used in the future in authorization to verify that the user is the user.
-        console.log("token: ", token);
-        console.log("user: ", user);
-        res.json({
-            token,
-            user: {
-                id: user._id,
-                email: user.email,
-                username: user.username,
-                favFoods: user.favFoods,
-                groups: user.groups,
-                invitations: user.invitations
-            }
-        })
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-})
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); // creating a token to represent the user's unique _id, which will be used in the future in authorization to verify that the user is the user.
+    console.log("token: ", token);
+    console.log("user: ", user);
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        email: user.email,
+        username: user.username,
+        favFoods: user.favFoods,
+        groups: user.groups,
+        invitations: user.invitations,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 router.post("/tokenIsValid", async (req, res) => {
   try {
@@ -111,32 +111,36 @@ router.post("/tokenIsValid", async (req, res) => {
     const user = await User.findById(verified.id);
     if (!user) return res.json(false);
 
-        return res.json(true);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-  });
-  
-  router.get("/", auth, async (req, res) => {
-      try {
-        const user = await User.findById(req.user);
-        const allUsers = await User.find({});
-        const selectedProperties = ["username", "favFoods"]
-        const basicAllUsersInfo = allUsers.map(({username, favFoods}) => ({username, favFoods}))
-        console.log("basicAllUsersInfo", basicAllUsersInfo)
-        res.json({
-            username: user.username,
-            id: user._id,
-            favFoods: user.favFoods,
-            groups: user.groups,
-            invitations: user.invitations,
-            email: user.email,
-            allUsers: basicAllUsersInfo
-        });
-      } catch (err) {
-          res.status(500).json({ error: err.message });
-      }
-  });
+    return res.json(true);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/", auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user);
+    const allUsers = await User.find({});
+    const selectedProperties = ["username", "favFoods"];
+    const basicAllUsersInfo = allUsers.map(({ username, favFoods }) => ({
+      username,
+      favFoods,
+    }));
+    console.log("basicAllUsersInfo", basicAllUsersInfo);
+    res.json({
+      username: user.username,
+      id: user._id,
+      favFoods: user.favFoods,
+      groups: user.groups,
+      invitations: user.invitations,
+      email: user.email,
+      allUsers: basicAllUsersInfo,
+      hall: user.currentHall,
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
 router.patch("/updateFavFood", async (req, res) => {
   try {

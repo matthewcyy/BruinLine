@@ -37,22 +37,33 @@ function DiningHalls() {
 
   const updateStates = async () => {
     if (userData.user) {
-      setCurrentHall(userData.user.currentHall);
-      setIsCheckedIn(!!userData.user.hall);
+      setCurrentHall(userData.user.hall);
+      if (userData.user.hall != "") {
+        setIsCheckedIn(true);
+      } else {
+        setIsCheckedIn(false);
+      }
     }
   };
 
   const addHall = async (hallName) => {
     console.log("ADD HALLNAMe", hallName);
     const reqBody = {};
+    setCurrentHall(hallName);
     if (hallName == "B-Plate") {
+      var copyPeople = peopleInHall;
+      copyPeople[hallName] += 1;
+      setPeopleInHall({ ...copyPeople });
       hallName = "bPlate";
+    } else {
+      var copyPeople = peopleInHall;
+      copyPeople[hallName] += 1;
+      setPeopleInHall({ ...copyPeople });
     }
-    var copyPeople = peopleInHall;
     var CheckedIn = true;
-    copyPeople[hallName] += 1;
-    setPeopleInHall({ ...copyPeople });
     setIsCheckedIn(CheckedIn);
+    console.log(hallName);
+
     reqBody.hallCheck = hallName;
     reqBody.userId = userData.user.id;
     const hallCreateResponse = await axios.patch(
@@ -65,13 +76,21 @@ function DiningHalls() {
     try {
       console.log("REMOVE HALLNAMe", hallName);
       const reqBody = {};
-      var copyPeople = peopleInHall;
       if (peopleInHall[hallName] <= 0) {
       } else {
+        if (hallName == "B-Plate") {
+          var copyPeople = peopleInHall;
+          copyPeople[hallName] = --copyPeople[hallName];
+          setPeopleInHall({ ...copyPeople });
+          hallName = "bPlate";
+        } else {
+          var copyPeople = peopleInHall;
+          copyPeople[hallName] = --copyPeople[hallName];
+          setPeopleInHall({ ...copyPeople });
+        }
+        setCurrentHall("");
         var CheckedIn = false;
         setIsCheckedIn(CheckedIn);
-        copyPeople[hallName] = --copyPeople[hallName];
-        setPeopleInHall({ ...copyPeople });
         reqBody.hallCheck = hallName;
         reqBody.userId = userData.user.id;
         const hallCreateResponse = await axios.patch(
@@ -85,6 +104,7 @@ function DiningHalls() {
   };
 
   useEffect(() => {
+    debugger;
     const getPeopleHall = async () => {
       try {
         const hallCreateResponse = await axios.get(
@@ -99,49 +119,79 @@ function DiningHalls() {
       }
     };
     getPeopleHall();
-  }, []);
+    updateStates();
+  }, [userData]);
 
+  const [show, setShow] = useState(false);
   return (
     <div className="halls">
       <h2> Dining Halls </h2>
       <div style={{ textAlign: "center" }}>
-        <Grid container spacing={2} margin="auto"></Grid>
-        {allDiningHalls.map((hall) => (
-          <div style={{ width: "90%", margin: "2rem auto" }}>
-            <Card style={{ borderColor: "#2c7dc3" }}>
-              <CardContent>
-                <Box
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "1.5rem",
-                    marginBottom: "0.75rem",
-                  }}
-                >
-                  {hall}
-                </Box>
-                <Grid item xs={12} marginTop="0.5rem"></Grid>
-                <Grid item xs={12} marginTop="0.5rem">
-                  <Grid item xs={5} marginTop="0.5rem">
-                    <Button onClick={() => addHall(hall)} variant="contained">
-                      Check In
-                    </Button>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid container spacing={2} xs={12} margin="auto"></Grid>
+          {allDiningHalls.map((hall) => (
+            <div style={{ width: "90%", margin: "2rem auto" }}>
+              <Card style={{ borderColor: "#2c7dc3" }}>
+                <CardContent>
+                  <Box
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1.5rem",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
+                    {hall}
+                  </Box>
+                  <Grid item xs={6} marginTop="0.5rem">
+                    {userData.user ? (
+                      isCheckedIn ? (
+                        hall == currentHall ? (
+                          <Button
+                            onClick={() => removeHall(hall)}
+                            variant="contained"
+                          >
+                            Check out
+                          </Button>
+                        ) : (
+                          <Button
+                            onClick={() => addHall(hall)}
+                            variant="contained"
+                            disabled
+                          >
+                            Check In
+                          </Button>
+                        )
+                      ) : (
+                        <Button
+                          onClick={() => addHall(hall)}
+                          variant="contained"
+                        >
+                          Check In
+                        </Button>
+                      )
+                    ) : (
+                      <div> </div>
+                    )}
                   </Grid>
-                  <Grid item xs={5} marginTop="0.5rem">
-                    <Button
-                      onClick={() => removeHall(hall)}
-                      variant="contained"
-                    >
-                      Check out
-                    </Button>
+                  <Grid item xs={6} marginTop="0.5 rem">
+                    <Box>Number of People: {peopleInHall[hall]}</Box>
                   </Grid>
-                </Grid>
-                <Grid item xs={12} marginTop="0.5 rem">
-                  <Box>Number of People: {peopleInHall[hall]}</Box>
-                </Grid>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+                  <Grid item xs={6} marginTop="0.5 rem">
+                    <Box>
+                      <Button
+                        onClick={() => setShow((prev) => !prev)}
+                        variant="contained"
+                      >
+                        Show menu
+                      </Button>
+                      {show && <Box>This is your component</Box>}
+                    </Box>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </Grid>
       </div>
     </div>
   );
