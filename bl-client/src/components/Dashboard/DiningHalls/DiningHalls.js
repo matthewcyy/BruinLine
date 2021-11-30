@@ -54,14 +54,21 @@ function DiningHalls() {
   const addHall = async (hallName) => {
     console.log("ADD HALLNAMe", hallName);
     const reqBody = {};
+    setCurrentHall(hallName);
     if (hallName == "B-Plate") {
+      var copyPeople = peopleInHall;
+      copyPeople[hallName] += 1;
+      setPeopleInHall({ ...copyPeople });
       hallName = "bPlate";
+    } else {
+      var copyPeople = peopleInHall;
+      copyPeople[hallName] += 1;
+      setPeopleInHall({ ...copyPeople });
     }
-    var copyPeople = peopleInHall;
     var CheckedIn = true;
-    copyPeople[hallName] += 1;
-    setPeopleInHall({ ...copyPeople });
     setIsCheckedIn(CheckedIn);
+    console.log(hallName);
+
     reqBody.hallCheck = hallName;
     reqBody.userId = userData.user.id;
     const hallCreateResponse = await axios.patch(
@@ -74,13 +81,21 @@ function DiningHalls() {
     try {
       console.log("REMOVE HALLNAMe", hallName);
       const reqBody = {};
-      var copyPeople = peopleInHall;
       if (peopleInHall[hallName] <= 0) {
       } else {
+        if (hallName == "B-Plate") {
+          var copyPeople = peopleInHall;
+          copyPeople[hallName] = --copyPeople[hallName];
+          setPeopleInHall({ ...copyPeople });
+          hallName = "bPlate";
+        } else {
+          var copyPeople = peopleInHall;
+          copyPeople[hallName] = --copyPeople[hallName];
+          setPeopleInHall({ ...copyPeople });
+        }
+        setCurrentHall("");
         var CheckedIn = false;
         setIsCheckedIn(CheckedIn);
-        copyPeople[hallName] = --copyPeople[hallName];
-        setPeopleInHall({ ...copyPeople });
         reqBody.hallCheck = hallName;
         reqBody.userId = userData.user.id;
         const hallCreateResponse = await axios.patch(
