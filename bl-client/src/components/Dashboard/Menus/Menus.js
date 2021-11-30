@@ -34,11 +34,10 @@ function Menus() {
 
   return (
     <div className="container">
-      <h2>Menus</h2>
+      <h2>Current Menus</h2>
       <div class="menuContainer">
         <div class="menuSection" id="DeNeve">
           <h3>De Neve</h3>
-          <br />
           {deNeveMenu.map(item => {
               return (
                 <div>
@@ -51,21 +50,18 @@ function Menus() {
         </div>
         <div class="menuSection" id="Epicuria">
           <h3>Epicuria</h3>
-          <br />
           {epicuriaMenu.map(item => {
               return <p class="menuList">{item}</p>
           })}
         </div>
         <div class="menuSection" id="bPlate">
           <h3>Bruin Plate</h3>
-          <br />
           {bPlateMenu.map(item => {
               return <p class="menuList">{item}</p>
           })}
         </div>
         <div class="menuSection" id="Feast">
           <h3>Feast</h3>
-          <br />
           {feastMenu.map(item => {
               return <p class="menuList">{item}</p>
           })}
