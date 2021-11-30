@@ -7,55 +7,19 @@ router.patch("/updateMenu", async (req, res) => {
   try {
     let { diningHall, menuItems } = req.body; // hallCheck = req.body.hallCheck
     // needs hallname
-    var entry = await Menus.findById("61a54697b2b28a17be702118"); //take the hall from the function call
-    console.log("HALL", hall);
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ message: "Cannot find user" });
-    }
-    if (!hall) {
-      return res.status(400).json({ msg: "Cannot find hall" });
-    }
-    var currhall = user.currentHall; // getting user's current hall
-
-    currhall = hallCheck; // changing current hall
-    hall[hallCheck] += 1; //increment ppl in hall
-    const updatedUser = await user.save(); // save your change into database
-    const savedHall = await hall.save();
-    res.json({ updatedUser, savedHall });
+    var entry = await Menus.findById("61a58124f3a8a112fec23b0b"); //take the main entry from the function call
+    entry[diningHall] = menuItems;
+    const savedEntry = await entry.save();
+    res.json({ savedEntry });
   } catch (err) {
     res.status(400).json({ err: err.message });
   }
 });
 
-router.patch("/checkout", async (req, res) => {
-  try {
-    let { hallCheck, userId } = req.body; // hallCheck = req.body.hallCheck
-    // needs hallname
-    var hall = await Halls.findById("61a54697b2b28a17be702118"); //take the hall from the function call
-    console.log("HALL", hall);
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({ message: "Cannot find user" });
-    }
-    if (!hall) {
-      return res.status(400).json({ msg: "Cannot find hall" });
-    }
-    var currhall = user.currentHall; // getting user's current hall
 
-    currhall = hallCheck; // changing current hall
-    hall[hallCheck] = --hall[hallCheck]; //increment ppl in hall
-    const updatedUser = await user.save(); // save your change into database
-    const savedHall = await hall.save();
-    res.json({ updatedUser, savedHall });
-  } catch (err) {
-    res.status(400).json({ err: err.message });
-  }
-});
-
-router.get("/getPeople", async (req, res) => {
+router.get("/getMenu", async (req, res) => {
   try {
-    var hall = await Halls.findById("61a54697b2b28a17be702118"); //take the hall from the function call
+    var hall = await Menus.findById("61a58124f3a8a112fec23b0b"); //take the hall from the function call
     res.json({ hall });
   } catch (err) {
     res.status(400).json({ err: err.message });
