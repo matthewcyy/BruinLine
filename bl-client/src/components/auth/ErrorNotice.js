@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
+import Alert from "@mui/material/Alert";
 
-function ErrorNotice (props) {
-    return (
-        <div className="error-notice">
-            <span>{props.message}</span>
-            <button onClick={props.clearError}>X</button>
-        </div>
-    );
+function ErrorNotice(props) {
+  return (
+    <div className="error-notice">
+      <Alert onClose={props.clearError} severity="error">
+        {props.message}
+      </Alert>
+    </div>
+  );
 }
 
 export default ErrorNotice;

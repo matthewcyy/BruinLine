@@ -127,6 +127,7 @@ function DiningHalls() {
     updateStates();
   }, [userData]);
 
+  const [show, setShow] = useState(false);
   return (
     <div className="halls">
       <h2> Dining Halls </h2>
@@ -147,35 +148,42 @@ function DiningHalls() {
                 </Box>
                 <Grid item xs={12} marginTop="0.5rem"></Grid>
                 <Grid item xs={12} marginTop="0.5rem">
-                  {LoggedIn ? (
-                    isCheckedIn ? (
-                      hall == currentHall ? (
-                        <Button
-                          onClick={() => removeHall(hall)}
-                          variant="contained"
-                        >
-                          Check out
-                        </Button>
-                      ) : (
-                        <Button
-                          onClick={() => addHall(hall)}
-                          variant="contained"
-                          disabled
-                        >
-                          Check In
-                        </Button>
-                      )
+                  {isCheckedIn ? (
+                    hall == currentHall ? (
+                      <Button
+                        onClick={() => removeHall(hall)}
+                        variant="contained"
+                      >
+                        Check out
+                      </Button>
                     ) : (
-                      <Button onClick={() => addHall(hall)} variant="contained">
+                      <Button
+                        onClick={() => addHall(hall)}
+                        variant="contained"
+                        disabled
+                      >
                         Check In
                       </Button>
                     )
                   ) : (
-                    <h6> login to check in </h6>
+                    <Button onClick={() => addHall(hall)} variant="contained">
+                      Check In
+                    </Button>
                   )}
                 </Grid>
                 <Grid item xs={12} marginTop="0.5 rem">
                   <Box>Number of People: {peopleInHall[hall]}</Box>
+                </Grid>
+                <Grid item xs={12} marginTop="0.5 rem">
+                  <Box>
+                    <Button
+                      onClick={() => setShow((prev) => !prev)}
+                      variant="contained"
+                    >
+                      Show menu
+                    </Button>
+                    {show && <Box>This is your component</Box>}
+                  </Box>
                 </Grid>
               </CardContent>
             </Card>
