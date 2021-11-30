@@ -35,10 +35,19 @@ function DiningHalls() {
   //     getUserData();
   //   }, []);
 
+  var LoggedIn = false;
+
   const updateStates = async () => {
     if (userData.user) {
-      setCurrentHall(userData.user.currentHall);
-      setIsCheckedIn(!!userData.user.hall);
+      setCurrentHall(userData.user.hall);
+      if (userData.user.hall != "") {
+        setIsCheckedIn(true);
+      } else {
+        setIsCheckedIn(false);
+      }
+      LoggedIn = true;
+    } else {
+      LoggedIn = false;
     }
   };
 
@@ -100,6 +109,7 @@ function DiningHalls() {
   };
 
   useEffect(() => {
+    debugger;
     const getPeopleHall = async () => {
       try {
         const hallCreateResponse = await axios.get(
@@ -114,7 +124,8 @@ function DiningHalls() {
       }
     };
     getPeopleHall();
-  }, []);
+    updateStates();
+  }, [userData]);
 
   return (
     <div className="halls">
@@ -136,27 +147,31 @@ function DiningHalls() {
                 </Box>
                 <Grid item xs={12} marginTop="0.5rem"></Grid>
                 <Grid item xs={12} marginTop="0.5rem">
-                  {isCheckedIn ? (
-                    hall == currentHall ? (
-                      <Button
-                        onClick={() => removeHall(hall)}
-                        variant="contained"
-                      >
-                        Check out
-                      </Button>
+                  {LoggedIn ? (
+                    isCheckedIn ? (
+                      hall == currentHall ? (
+                        <Button
+                          onClick={() => removeHall(hall)}
+                          variant="contained"
+                        >
+                          Check out
+                        </Button>
+                      ) : (
+                        <Button
+                          onClick={() => addHall(hall)}
+                          variant="contained"
+                          disabled
+                        >
+                          Check In
+                        </Button>
+                      )
                     ) : (
-                      <Button
-                        onClick={() => addHall(hall)}
-                        variant="contained"
-                        disabled
-                      >
+                      <Button onClick={() => addHall(hall)} variant="contained">
                         Check In
                       </Button>
                     )
                   ) : (
-                    <Button onClick={() => addHall(hall)} variant="contained">
-                      Check In
-                    </Button>
+                    <h6> login to check in </h6>
                   )}
                 </Grid>
                 <Grid item xs={12} marginTop="0.5 rem">
