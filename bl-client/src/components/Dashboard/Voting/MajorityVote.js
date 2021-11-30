@@ -1,89 +1,51 @@
 import React, { Component, useContext } from 'react';
-import CanvasJSReact from '../../assets/canvasjs.react';
+import CanvasJSReact from '../../../assets/canvasjs.react';
 import axios from 'axios';
-// import UserContext from '../../../context/userContext';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
-var updateInterval = 500;
+var CanvasJS = CanvasJSReact.CanvasJS;
 
 class Voting extends Component {
-	constructor(props) {
-		super(props);
-		this.updateChart = this.updateChart.bind(this);
-	}
-	componentDidMount(){
-		setInterval(this.updateChart, updateInterval);
-	}
-	updateChart() { //fetch data from mongodb 
-		var dpsTotal = 0, yVal;
-		var dps = this.chart.options.data[0].dataPoints;
-		
-		this.chart.options.data[0].dataPoints = dps;
-		this.chart.render();
+	addSymbols(e){
+		var suffixes = ["", "K", "M", "B"];
+		var order = Math.max(Math.floor(Math.log(e.value) / Math.log(1000)), 0);
+		if(order > suffixes.length - 1)
+			order = suffixes.length - 1;
+		var suffix = suffixes[order];
+		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
 	}
 	render() {
-		if ()//check if logged in
-			{
-				const options = {
-					theme: "dark2",
-					title: {
-						text: "Dining Hall Majority Vote"
-					},
-					subtitles: [{
-						text: "Where are we going to eat?"
-					}],
-					axisY: {
-						title: "Total Votes",
-						includeZero = True,
-					maximum: 100
-					},
-					data: [{
-						type: "column",
-						yValueFormatString: "#,###'%'",
-						indexLabel: "{y}",
-						dataPoints: [
-							{ label: "Epicuria", y: 0 },
-							{ label: "bPlate", y: 0 },
-							{ label: "De Neve", y: 0 },
-							{ label: "Feast", y: 0}
-						]
-					}]
-				}
-			}
-			else
-			{
-
-			}
+		const options = {
+			theme: "light2",
+			title:{
+				text: "Dining Hall Majority Vote"
+			},
+			axisX: {
+				title: "Dining Hall",
+				reversed: true,
+			},
+			axisY: {
+				title: "Number of Votes",
+				labelFormatter: this.addSymbols
+			},
+			data: [{
+				type: "bar",
+				dataPoints: [
+					{ y:  4, label: "B-Plate" },
+					{ y:  5, label: "Feast" },
+					{ y:  7, label: "De Neve" },
+					{ y:  6, label: "Epicuria" }
+				]
+			}]
+		}
 		
-		return ( //buttons here will send data to group mongodb 
-			<>
-				<div>
-					<button onClick={this.updateChart}> 
-						Epicuria
-					</button>
-				</div>			
-				<div>
-					<button onClick={this.updateChart}>
-						bPlate
-					</button>
-				</div>
-				<div>
-					<button onClick={this.updateChart}>
-						De Neve
-					</button>
-				</div>
-				<div>
-					<button onClick={this.updateChart}>
-						Feast
-					</button>
-				</div>
-				<div>
-					<CanvasJSChart options = {options}
-						 onRef={ref => this.chart = ref}
-					/>
-					{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-				</div> 
-			</>
+		return (
+		<div>
+			<h1>Vote Which Dining Hall You Want To Eat At!</h1>
+			<CanvasJSChart options = {options} 
+				/* onRef={ref => this.chart = ref} */
+			/>
+			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		</div>
 		);
 	}
 }
