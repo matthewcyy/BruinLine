@@ -138,7 +138,7 @@ router.post("/tokenIsValid", async (req, res) => {
       }
   });
 
-router.patch("/addFavFood", async (req, res) => {
+router.patch("/updateFavFood", async (req, res) => {
   try {
     const user = await User.findById(req.body.id); // finding user in database
     console.log(req.body.id)
@@ -146,7 +146,7 @@ router.patch("/addFavFood", async (req, res) => {
       return res.status(404).json({ message: "Cannot find user" }); // when user doesn't exist...
     }
     res.user = user;
-    res.user.favFoods.push(req.body.food); // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
+    res.user.favFoods = req.body.foods; // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
     const updatedUser = await res.user.save();
     console.log(res.user.favFoods);
     res.json(updatedUser);
@@ -154,6 +154,7 @@ router.patch("/addFavFood", async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+
 
 router.patch("/makeGroup", async (req, res) => {
   // group creation inside of users since a group must have at least one member in it; it's original creator

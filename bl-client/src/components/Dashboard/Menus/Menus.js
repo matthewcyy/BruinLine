@@ -10,6 +10,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import UserContext from "../../../context/userContext";
 import Alert from "@mui/material/Alert";
+import ItemCard from "./ItemCard"
 
 
 function Menus() {
@@ -45,21 +46,11 @@ function Menus() {
     updateMenus();
   }, [userData])
 
-
-  const starItem = async (foodName) => {
-    const reqBody = {}
-    reqBody.id = id
-    reqBody.food = foodName
-    const getResponse = await axios.patch('http://localhost:5000/users/addFavFood', reqBody);
-  }
-
-  const reviewItem = async (foodName) => {
-    const reqBody = {}
-    reqBody.id = id
-    reqBody.food = foodName
-    const getResponse = await axios.patch('http://localhost:5000/users/addFavFood', reqBody);
-  }
-
+  // const isItemStarred = (foodName) => {
+  //   return(foodName in favorites)
+  // }
+ 
+ 
 
 
   return (
@@ -70,30 +61,32 @@ function Menus() {
           <h3>De Neve</h3>
           {deNeveMenu.map(item => {
             return (
-              <div>
-                <p class="menuList">{item}</p>
-                <button onClick={() => reviewItem(item)}>Review</button>
-                <button onClick={() => starItem(item)}>Star</button>
-              </div>
+              <ItemCard name={item} favorites={favorites} setFavorites={setFavorites} id={id}/>
             );
           })}
         </div>
         <div class="menuSection" id="Epicuria">
           <h3>Epicuria</h3>
           {epicuriaMenu.map(item => {
-            return <p class="menuList">{item}</p>
+            return (
+              <ItemCard name={item} favorites={favorites} setFavorites={setFavorites} id={id}/>
+            );
           })}
         </div>
         <div class="menuSection" id="bPlate">
           <h3>Bruin Plate</h3>
           {bPlateMenu.map(item => {
-            return <p class="menuList">{item}</p>
+            return (
+              <ItemCard name={item} favorites={favorites} setFavorites={setFavorites} id={id}/>
+            );
           })}
         </div>
         <div class="menuSection" id="Feast">
           <h3>Feast</h3>
           {feastMenu.map(item => {
-            return <p class="menuList">{item}</p>
+            return (
+              <ItemCard name={item} favorites={favorites} setFavorites={setFavorites} id={id}/>
+            );
           })}
         </div>
       </div>
