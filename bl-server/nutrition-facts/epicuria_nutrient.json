@@ -873,14 +873,6 @@
 	"protein": 11.7 
 },
 {
-	"itemName": "Pork Crepinettes",
-	"diningHall": "Epicuria",
-	"calories": 434 ,
-	"fat": 38.3,
-	"carbs": 8.6,
-	"protein": 27.3 
-},
-{
 	"itemName": "Potato Chickpea Cake w/ Spinach &amp; Aioli",
 	"diningHall": "Epicuria",
 	"calories": 263 ,
@@ -1119,6 +1111,14 @@
 	"fat": 10,
 	"carbs": 40.2,
 	"protein": 14 
+},
+{
+	"itemName": "Spanakopita",
+	"diningHall": "Epicuria",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
 },
 {
 	"itemName": "Spanakorizo Rice",

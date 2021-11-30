@@ -1,11 +1,12 @@
 #!/bin/bash
 website="https://menu.dining.ucla.edu/Menus/BruinPlate"
-P=$(curl -s $website)
+P=$(curl -s $website|perl -Mopen=locale -pe 's/&#x([\da-f]+);/chr hex $1/gie')
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>names.txt
 dining_hall="BPlate"
 file_name_json="bplate_nutrient.json"
+#echo names.txt| perl -Mopen=locale -pe 's/&#x([\da-f]+);/chr hex $1/gie'>names.txt
 
 #paste -d "\n" names.txt urls.txt > combined
 #echo $N

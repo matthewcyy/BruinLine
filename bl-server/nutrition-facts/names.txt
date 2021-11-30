@@ -1,28 +1,874 @@
-"Chimmilier" Fried Chicken
-Kimbap-gobo
-Bean Sprouts
-Cilantro
-Daikon Radish Sprouts
-Edamame
-Jalapeño Peppers
-Kimchi
-Pickled Daikon
-Seaweed Salad
-Sesame Seeds
-Thai Basil
-Toasted Rice
-Togarashi
-Green Sriracha
-Red Sriracha
-&quot;Chimmilier&quot; Fried Chicken
-Kimbap-gobo
-Beef Pho Noodle Soup
-Vegetable Shoyu Ramen
-Pork Ramen w/ Soy Sauce Broth
-Vegetable Shoyu Ramen
-Szechuan Steamed Fish Hot Pot
-Vegetable Hot Pot
-Chicken Katsu Udon Noodle Bowl
-Veggie Tofu Udon
-Pork Ramen w/ Red Miso Broth
-Vegetarian Miso Ramen	
+Chicken Noodle Soup
+Tuscan Bean Soup
+Seared Tofu Quinoa Bowl w/ Ginger Miso Dressing
+Rotini, Pesto, &amp; Kale Bowl
+Sesame Salmon &amp; Bok Choy
+Mushroom-Spinach Lasagna
+Brown Calrose Rice
+Quinoa Pilaf
+Pan Roasted Mushrooms w/ Onions
+Sauteed Spinach &amp; Kale
+Grilled African Spiced Tofu
+Red Potato Hash
+Grilled Chicken Cilantro Jalapeno Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Cranberry Cupcake
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Brownie
+Whole Wheat Bread
+Almond Cashew Butter
+Butternut Squash Confit
+Cacao Butter
+Fig Compote
+Peanut Butter
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Apple Water
+Oatmeal
+Savory Grits
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Barley, Seasoned Turkey, Kale &amp; Egg Bowl
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Red Lentil Waffle
+Apple, Pear &amp; Cranberry Compote
+Maple Syrup
+Crunchy French Toast w/ Pistachio Butter &amp; Pineapple
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Lemon Blueberry Bread
+Multi-Grain Bread
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+A&#231;a&#237;-Blackberry Topping
+Cacao Butter
+Peanut Butter
+Blueberries
+Blueberry Yogurt
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Orange Hibiscus Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Steak, Black Lentil &amp; Butternut Squash Bowl
+Cauliflower, Fennel, &amp; Flageolet Bean Salad Bowl
+California Cobb Salad Wrap
+Roasted Beet &amp; Avocado Toast
+Brown Calrose Rice
+Quinoa
+Roasted Cauliflower
+Saut&#233;ed Spinach
+Cuban Pork Pizza
+Southwest Black Bean &amp; Avocado Tortilla Pizza
+Spinach &amp; White Bean Stacker w/ Arugula
+Baked Red Rose Potato
+Grilled Chicken Tenderloin - Chipotle BBQ Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Ganache Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Tofu Cranberry Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Apple, Pear &amp; Cranberry Compote
+A&#231;a&#237;-Blackberry Topping
+Cacao Butter
+Chocolate Peanut Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Orange Hibiscus Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Coffee-Braised Brisket w/ Turnip-Squash Mash &amp; Collards
+Whole Wheat Spaghetti w/ Wheatballs &amp; Spinach Bowl
+Spiced Chicken w/ Sweet Potatoes &amp; Brussel Sprouts
+Stuffed Peppers w/ Roasted Vegetables &amp; Farro
+Brown Calrose Rice
+Wheat Berry
+Chinese Kale w/ Toasted Garlic
+Roasted Broccoli
+Blackened Arctic Char		
+Grilled Pineapple
+Roasted Parsnips &amp; Carrots
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Ganache Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Tofu Cranberry Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Apple, Pear &amp; Cranberry Compote
+A&#231;a&#237;-Blackberry Topping
+Cacao Butter
+Chocolate Peanut Butter
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Kiwi  Water
+Cream of Wheat
+Oatmeal
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Egg White, Spinach, &amp; Turkey Sausage Sandwich
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Toasted Coconut Waffle
+Maple Syrup
+Plantain Butter
+Cinnamon Polenta Pancake w/ Apple Cranberry Compote
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Multi-Grain Bread
+Olive Oil Mocha Bread
+Raisin Walnut Bread
+Spiced Gingerbread
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Fennel Butter
+Plantain Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Lowfat Raspberry Yogurt
+Mango
+Vegan Coconut Yogurt
+Lime Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Black Quinoa, BBQ Chicken, &amp; Red Bean Bowl
+Black Quinoa, BBQ Tofu &amp; Red Bean Bowl
+Ground Beef, Farro &amp; Mushroom Wrap
+Spinach &amp; Bulgur Quesadilla
+Barley Pilaf
+Brown Calrose Rice
+Roasted Yams 1/2&quot;
+Sauteed Kale
+Spicy Beef &amp; Eggplant Flatbread
+Spinach &amp; Artichoke Flatbread
+Chickpea Stacker w/ Yogurt-Tahini Sauce
+Roasted Yukon Potatoes &amp; Fennel
+Grilled Chicken Breast - Dijon Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Earl Grey Lemon Crostada
+Multi-Grain Bread
+Raisin Walnut Bread
+Whole Wheat Bread
+Zucchini Chocolate Bar
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Fennel Butter
+Plantain Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Lime Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Chicken, Barley &amp; Portobello Bowl
+Greek Farro Bowl
+Scallops, Wild Rice w/ Butternut Squash Puree &amp; Romanesco
+Spicy Azuki &amp; Tempeh Chili w/ Potatoes
+Brown Calrose Rice
+Tri-Color Quinoa
+Garlic Edamame
+Sauteed Kale
+Grilled Santa Maria Tri-Tip
+Mojo-Marinated Grilled Tofu
+Grilled Potato &amp; Brussel Sprouts Cake
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Earl Grey Lemon Crostada
+Multi-Grain Bread
+Raisin Walnut Bread
+Roasted Apples w/ Cornmeal Streusel
+Whole Wheat Bread
+Zucchini Chocolate Bar
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Fennel Butter
+Plantain Butter
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Orange Pomegranate Water
+Oatmeal
+Quinoa Flakes &amp; Brown Rice Cereal
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Egg, Mushroom &amp; Kale on W.W. English Muffin
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Oat &amp; Whole Wheat Waffle
+Maple Syrup
+Roasted Beet &amp; Grilled Pineapple Butter
+Ginger Pancake w/ Banana Walnut Topping
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Coconut Pineapple Bread
+Cranberry Nut Flaxsnax Bread
+Multi-Grain Bread
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Butter
+Roasted Beet &amp; Grilled Pineapple Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Lowfat Peach Yogurt
+Mango
+Vegan Coconut Yogurt
+Pineapple Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Pork w/ Buckwheat Noodle in Roasted Vegetable Broth
+Sesame Tofu, Volcano Rice &amp; Mixed Cabbage Bowl
+Salmon, Dill Goat Cheese, &amp; Cucumber Stacker
+Chipotle Seitan Taco
+Brown Calrose Rice
+Mixed Grains -- Lentil, Chickpea, Quinoa &amp; Brown Rice
+Garlic Bok Choy
+Garlicky Green Beans
+Broccolini, Swiss Chard, Mozzarella Pizza
+Chicken, Arugula, &amp; Radish Flatbread
+Farro-Mushroom Stacker
+Potato &amp; Red Pepper Hash
+Grilled Chicken - Moroccan Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Multi-Grain Bread
+Olive Oil Torte
+Raisin Walnut Bread
+Vegan Brownie
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Chocolate Peanut Butter
+Pear Butter
+Roasted Beet &amp; Grilled Pineapple Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Pineapple Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Indian Marinated Pork, Lentil, Quinoa, &amp; Spinach Bowl
+Lemon Dill Tofu, Bulgur Wheat &amp; Cucumber Salad Bowl
+Red Chile Rotisserie Chicken
+Mashed Potatoes w/ Kale
+Flageolet Bean Ragout w/ Quinoa, Green Beans, &amp; Mushroom
+Brown Calrose Rice
+Mixed Grains -- Spelt, Wheatberry &amp; Brown Rice
+Roasted Butternut Squash &amp; Celery Root
+Saut&#233;ed Spinach
+Grilled Barramundi w/ Cabbage
+Grilled Balsamic Eggplant
+Roasted Plantains
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Multi-Grain Bread
+Olive Oil Torte
+Raisin Walnut Bread
+Vegan Brownie
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Chocolate Peanut Butter
+Pear Butter
+Roasted Beet &amp; Grilled Pineapple Butter
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Raspberry Water
+Malt-O-Meal
+Oatmeal
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Chicken &amp; Egg Breakfast Pita
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Whole Grain Banana Waffle
+Cacao Butter
+Maple Syrup
+French Green Lentil Pancake
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Multi-Grain Bread
+Raisin Bran Bread
+Raisin Walnut Bread
+Vegan Chocolate Loaf
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Butter
+Roasted Beet &amp; Grilled Pineapple Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Strawberry Yogurt
+Vegan Coconut Yogurt
+Passion Fruit &amp; Orange Water
+Fisherman&#39;s Stew
+Tuscan Bean Soup
+Warm Rosemary Shrimp, White Bean, &amp; Mizuna Salad Bowl
+Spaghetti Squash, Cauliflower, &amp; Escarole Saut&#233; Bowl
+Barley Salad
+Chicken Currant Pecan Salad
+Golden Beet Poke Salad
+Flatbread Sticks
+Cucumber &amp; Tomato Salad
+Curried Cauliflower Salad
+Tuscan Kale Salad
+Flatbread Sticks
+Brown Calrose Rice
+Wheat Berry
+Roasted Brussels Sprouts
+Sauteed Spinach &amp; Kale
+Cilantro Pesto w/ Tri-Tip Tortilla Pizza
+Wild Mushroom &amp; Arugula Flatbread
+Thai Tofu Stacker
+Baked Yam
+Grilled Chicken - Lemon-Ginger Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Apricot Almond Bar
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Tiramisu
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Kumquat Compote
+Peanut Butter
+Pear-Date Compote
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Passion Fruit &amp; Orange Water
+Fisherman&#39;s Stew
+Tuscan Bean Soup
+Chipotle Chicken, Brown Rice, &amp; Avocado Bowl
+Potato, Kale, Brown Rice, &amp; Red Bean Bowl
+Grilled Shrimp
+Mashed Cauliflower
+Scrambled Egg, Potato &amp; Swiss Chard Taco
+Brown Jasmine Rice
+Roasted Gold &amp; Red Beets
+Sauteed Kale
+Spiced Lamb Chop
+Banana Pecan Buckwheat Pancake
+Grilled Purple Sweet Potato
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Apricot Almond Bar
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Tiramisu
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Kumquat Compote
+Peanut Butter
+Pear-Date Compote
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Pineapple Water
+Oatmeal
+Quinoa Flakes &amp; Brown Rice Cereal
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Green Chile Rice w/ Black Beans &amp; Egg
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Oat &amp; Whole Wheat Waffle
+Maple Syrup
+Roasted Beet &amp; Grilled Pineapple Butter
+Tri-Color Quinoa Pancake w/ Blueberries
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Carrot Walnut Zucchini Bread
+Lemon Poppy Bread
+Multi-Grain Bread
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Peanut Butter
+Pear Butter
+Roasted Beet &amp; Grilled Pineapple Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Lowfat Peach Yogurt
+Mango
+Vegan Coconut Yogurt
+Kiwi  Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Chile Roasted Turkey w/ Jalapeno-Lime Slaw
+Spinach, Arugula, &amp; White Bean Guacamole Wrap
+Brown Calrose Rice
+Mixed Grains -- Spelt, Wheatberry &amp; Brown Rice
+Black Eyed Peas &amp; Collard Greens
+Roasted Broccoli
+BBQ Pork Tortilla Pizza
+BBQ Tofu Flatbread
+Falafel Stacker
+Baked Russet Potato
+Grilled Chicken Breast - Italian Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Angel Food Cake
+Multi-Grain Bread
+Pumpkin Walnut Flax Bar
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Chocolate Peanut Butter
+Green Lentil Butter
+Orange-Papaya Marmalade
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Kiwi  Water
+Chicken Noodle Soup
+Tuscan Bean Soup
+Greek Style Whole Wheat Penne w/ Chicken
+Seitan w/ Brown Rice, Kale &amp; Carrot Bowl
+Chayote, Tri-Tip &amp; Egg Bowl
+Lentils w/ Roasted Beets &amp; Carrots
+Brown Calrose Rice
+Steamed Barley
+Roasted Carrots &amp; Onions
+Saut&#233;ed Spinach
+Mojo-Marinated Grilled Pork Tenderloin
+Whole Wheat Pancakes w/ Amaranth &amp; Chocolate Chips
+Potato &amp; Red Pepper Hash
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Angel Food Cake
+Multi-Grain Bread
+Pumpkin Walnut Flax Bar
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Cacao Butter
+Chocolate Peanut Butter
+Green Lentil Butter
+Orange-Papaya Marmalade
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Lemon-Mint Water
+Oatmeal
+Savory Grits
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Tri-Color Quinoa &amp; Spinach Breakfast Bake
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Red Lentil Waffle
+Maple Syrup
+Pineapple Compote
+Whole Wheat Pancake
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Multi-Grain Bread
+Raisin Walnut Bread
+Spiced Apple Bread
+Vegan Pumpkin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Citrus Marmalade
+Peanut Butter
+Pineapple Compote
+Blueberries
+Blueberry Yogurt
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Cranberry Apple Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Chicken Spring Roll Whole Wheat Wrap
+BBQ Seitan Lettuce Wrap		
+Brown Basmati Rice
+Frijoles de la Olla
+Roasted Cauliflower
+Saut&#233;ed Spinach
+Beef, Black Bean &amp; Cabbage Tortilla Pizza
+Pineapple &amp; Goat Cheese Tortilla Pizza
+Red Quinoa &amp; Yam Stacker w/ Pineapple Salsa
+Grilled Sweet Potato w/ Lemon Chile Dressing
+Chicken Breast - Sage Marinated
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Key Lime Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Walnut Date Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Grapefruit, Ginger &amp; Rose Marmalade
+Green Tea-Shiso Marmalade
+Peanut Butter
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Cranberry Apple Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Arabic Chicken Bowl w/ Red Cabbage &amp; Whole Wheat Pita
+Eastern Spiced Tofu w/ Spelt Tabouli
+Flank Steak, Egg &amp; Brown Rice Bowl
+Parmesan Tempeh w/ Baked Purple Potato &amp; Kohlrabi
+Brown Calrose Rice
+Red Quinoa
+Roasted Broccoli
+Sauteed Spinach &amp; Kale
+Grilled Shrimp
+Lemon Cream Cheese Pancake
+Baked Russet Potato
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Key Lime Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Walnut Date Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Grapefruit, Ginger &amp; Rose Marmalade
+Green Tea-Shiso Marmalade
+Peanut Butter
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Pear Vanilla Water
+Oatmeal
+White Polenta
+Beef &amp; Mushroom Soup
+Tomato &amp; Wild Rice Soup
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Sweet Potato, Turkey &amp; Cranberry Bean Hash
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Chickpea &amp; Oat Waffle
+Maple Syrup
+Pear-Pineapple Compote
+Whole Wheat Pancakes w/ Amaranth &amp; Chocolate Chips
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Boston Brown Bread
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Banana Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Citrus Marmalade
+Peanut Butter
+Pineapple Compote
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Strawberry Yogurt
+Vegan Coconut Yogurt
+Kiwi  Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Tofu, Black-Eyed Peas &amp; Collard Greens Bowl
+Creamy Mushroom Pasta
+Fennel, Cucumber, &amp; Chicken Salad w/ Pita Chips
+Lentil Shepherd&#39;s Pie
+Brown Calrose Rice
+Quinoa Pilaf
+Roasted Parsnips, Carrots &amp; Onions
+Sauteed Bok Choy
+Armenian Lamb Flatbread
+Vegetable Quinoa Cassoulet Flatbread
+Tofu Caprese Stacker
+Spicy Fingerling Potatoes
+Grilled Chicken - Fennel Coriander Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Cranberry Cupcake
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Brownie
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Chocolate Peanut Butter
+Pear-Pineapple Compote
+Smoky Hibiscus Compote
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Kiwi  Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Tempeh, Spaghetti Squash, Wheat Berry &amp; Mushroom Broth Bowl
+Italian Style Seitan w/ Spinach &amp; WW Penne		
+Brown Basmati Rice
+Roast Chicken w/ Almond Mojo
+Stuffed Portobello w/ Red Bell Pepper Coulis
+Brown Calrose Rice
+Chinese Kale w/ Toasted Garlic
+Farro
+Roasted Cauliflower
+Seared Salmon
+Grilled Yuca w/ Honey Habanero &amp; Mojo
+Baked Red Rose Potato
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Cranberry Cupcake
+Multi-Grain Bread
+Raisin Walnut Bread
+Vegan Brownie
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Chocolate Peanut Butter
+Pear-Pineapple Compote
+Smoky Hibiscus Compote
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Passion Fruit &amp; Orange Water
+Oatmeal
+Savory Grits
+Bruin Scramble (Ham &amp; Cheddar)
+Bruin Scramble (Vegetarian)
+Tri-Color Quinoa &amp; Spinach Breakfast Bake
+Scrambled Egg Whites
+Scrambled Eggs
+Roasted Red Breakfast Potato Wedges
+Red Lentil Waffle
+Maple Syrup
+Pineapple Compote
+Chunky Apple Oatmeal Pancake
+Grapefruit
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Lemon Blueberry Bread
+Multi-Grain Bread
+Pistachio Bread
+Raisin Walnut Bread
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Citrus Marmalade
+Peanut Butter
+Pineapple Compote
+Blueberries
+Blueberry Yogurt
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Grapefruit-Ginger Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Grilled Chicken Pasta w/ Almond Tahini Sauce
+Calypso Bean, Shell Pasta, &amp; Arugula Saut&#233;
+Barramundi, Avocado &amp; Black Bean Stacker
+Calypso Bean &amp; Tri-Color Quinoa Taco
+Brown Calrose Rice
+Wheat Berry
+Chinese Kale w/ Five Spice
+Roasted Broccoli
+Guajillo Chili Chicken &amp; Poblano Pepper Tortilla Pizza
+Roasted Broccoli &amp; Sundried Tomato Hummus Flatbread
+Peppercorn-Crusted Portobello Stacker
+Grilled Purple Sweet Potato
+Grilled Chicken Cilantro Jalapeno Marinade
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Ganache Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Tofu Cranberry Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Citrus Marmalade
+Peanut Butter
+Pineapple Compote
+Blueberries
+Cottage Cheese
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Grapefruit-Ginger Water
+Chicken Noodle Soup
+Tomato &amp; Fresh Basil Soup
+Basil Oregano Chicken w/ Rice, Beans &amp; Kale Bowl
+Spelt Risotto w/ Butternut Squash
+Chipotle Beef Taco w/ Curtido
+Black Bean, Red Lentil, &amp; Sweet Potato Quesadilla
+Brown Calrose Rice
+Quinoa
+Roasted Butternut Squash
+Saut&#233;ed Spinach
+Grilled Flank Steak
+Grilled Portobello Mushroom
+Yukon Gold Potato Wedges
+Kiwi
+Orange
+Pineapple
+Red Grapes
+Ganache Tart
+Multi-Grain Bread
+Raisin Walnut Bread
+Tofu Cranberry Bar
+Whole Wheat Bread
+Almond Cashew Butter
+Blueberry Compote
+Citrus Marmalade
+Peanut Butter
+Pineapple Compote
+Blueberries
+Granola
+Lowfat Greek Yogurt
+Mango
+Vegan Coconut Yogurt
+Cucumber Mint Water
