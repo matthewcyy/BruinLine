@@ -3,7 +3,7 @@ website="https://menu.dining.ucla.edu/Menus/FeastAtRieber"
 P=$(curl -s $website)
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
-echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>names.txt
+echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>names.txt
 dining_hall="Feast"
 file_name_json="feast_nutrient.json"
 
@@ -11,7 +11,7 @@ file_name_json="feast_nutrient.json"
 echo "" > $file_name_json;
 
 curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>>names.txt
+curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
 
 for i in {2..8}
 do
@@ -20,7 +20,7 @@ do
     echo "$NEXT_DATE">>nextday.txt
     #P=$(curl -s "$website$NEXT_DATE)
     curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'>>names.txt
+    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
 
 done
 
