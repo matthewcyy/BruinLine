@@ -48,7 +48,6 @@ function Profile() {
             const reqBody = {}
             reqBody.id = id
             reqBody.groupId = groupId
-            debugger;
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
             // console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
@@ -62,7 +61,6 @@ function Profile() {
 
     const acceptInvite = async (groupId, groupName) => {
         try {
-            debugger;
             const reqBody = {}
             reqBody.groupId = groupId
             reqBody.groupName = groupName
