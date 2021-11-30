@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "MavenPro-Medium";
+  src: local("MavenPro"),
+    url(../../fonts/MavenPro/MavenPro-Medium.ttf) format("truetype");
+}
+
+.halls {
+  text-align: center;
+  color: black;
+  font-size: x-large;
+  font-family: MavenPro-Medium;
+}
+
+.subInfo {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #2774ae;
+  border-radius: 10pt;
+  border-width: 1pt;
+  padding: 20pt 50pt;
+  margin-right: 20pt;
+  width: 300pt;
+  text-align: left;
+}
