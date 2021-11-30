@@ -50,11 +50,6 @@ function NavBar() {
                                 <ListItemText primary={<Box sx={{ color: '#f8b827', fontWeight: 'bold', fontSize:'1.25rem' }}>Groups</Box>}/>
                             </ListItem>
                         </NavLink>
-                        <NavLink to="/rankings" style={{textDecoration: 'none', marginRight: '0.5rem' }} disableRipple>
-                            <ListItem button>
-                                <ListItemText primary={<Box sx={{ color: '#f8b827', fontWeight: 'bold', fontSize:'1.25rem' }}>Rankings</Box>}/>
-                            </ListItem>
-                        </NavLink>
                     </MenuItem>
                 </div>
                 <div>
