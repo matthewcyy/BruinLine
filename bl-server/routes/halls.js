@@ -66,4 +66,15 @@ router.get("/getPeople", async (req, res) => {
   }
 });
 
+router.post("/gethall", async (req, res) => {
+  try {
+    const user = req.body;
+    var curruser = await User.findById(user);
+    currhall = curruser.hall;
+    res.json({ currhall });
+  } catch (err) {
+    res.status(400).json({ err: err.message });
+  }
+});
+
 module.exports = router;
