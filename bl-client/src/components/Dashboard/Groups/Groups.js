@@ -35,15 +35,19 @@ function Groups() {
       reqBody.groupName = newGroupName;
       var copyReqBody = reqBody;
       reqBody.id = userData.user.id;
-      copyReqBody.groupMembers = [userData.user.username];
-      copyReqBody.votes = { DeNeve: 0, Epicuria: 0, Feast: 0, bPlate: 0 };
-      var groupsCopy = groups;
-      setGroupMemberProp([userData.user.username]);
       const groupCreateResponse = await axios.patch(
         "http://localhost:5000/users/makeGroup",
         reqBody
       );
-      copyReqBody.groupId = groupCreateResponse.data._id;
+      debugger;
+      var groupMemberObj = {}
+      groupMemberObj.username = userData.user.username
+      groupMemberObj.vote = ""
+      copyReqBody.groupMembers = [groupMemberObj]
+      copyReqBody.votes = { DeNeve: 0, Epicuria: 0, Feast: 0, bPlate: 0 };
+      var groupsCopy = groups;
+      setGroupMemberProp([copyReqBody]);
+      copyReqBody.groupId = groupCreateResponse.data.savedGroup._id;
       groupsCopy.push(copyReqBody);
       await setGroups(groupsCopy);
       setNewGroupName("");
