@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
+import BLineLogo from "../../images/logo_name.png";
 
 function Registration() {
   const [email, setEmail] = useState();
@@ -84,7 +85,20 @@ function Registration() {
                     clearError={() => setError(undefined)}
                   />
                 )}
-                <form onSubmit={submit}>
+              </Box>
+              <img
+                src={BLineLogo}
+                style={{ width: "25%" }}
+                alt="The BLine Logo; a hand-drawn teddy bear wearing a BruinLine beanie, holding a bowl of honey with a buzzing bee nearby"
+              />
+              <form onSubmit={submit} id="register">
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
                   <FormControl>
                     <InputLabel htmlFor="component-outlined">Email</InputLabel>
                     <OutlinedInput
@@ -93,6 +107,31 @@ function Registration() {
                       label="Email"
                     />
                   </FormControl>
+                </Box>
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  <FormControl>
+                    <InputLabel htmlFor="component-outlined">
+                      Display-Name
+                    </InputLabel>
+                    <OutlinedInput
+                      onChange={(e) => setUsername(e.target.value)}
+                      label="usernamesett"
+                    />
+                  </FormControl>
+                </Box>
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
                   <FormControl>
                     <InputLabel htmlFor="component-outlined">
                       Password
@@ -104,6 +143,14 @@ function Registration() {
                       type="password"
                     />
                   </FormControl>
+                </Box>
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
                   <FormControl>
                     <InputLabel htmlFor="component-outlined">
                       Confirm Password
@@ -114,23 +161,26 @@ function Registration() {
                       label="checkspasswords"
                     />
                   </FormControl>
+                </Box>
 
-                  <FormControl>
-                    <InputLabel htmlFor="component-outlined">
-                      Display-Name
-                    </InputLabel>
-                    <OutlinedInput
-                      onChange={(e) => setUsername(e.target.value)}
-                      label="usernamesett"
-                    />
-                  </FormControl>
-                  <input
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  <Button
                     type="submit"
                     value="Register"
-                    className="btn btn-primary"
-                  />
-                </form>
-              </Box>
+                    form="register"
+                    primary={true}
+                    variant="contained"
+                  >
+                    Register
+                  </Button>
+                </Box>
+              </form>
               <Grid item xs={12} marginTop="0.5rem"></Grid>
             </CardContent>
           </Card>
