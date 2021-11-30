@@ -63,9 +63,12 @@ function imgToNutritionFacts(imgSrc) {
             "http://localhost:5000/menus/updateMenu",
             reqBody
         );
-
-
         
+        // const req2 = {};
+        // req2.diningHall = "Epicuria";
+        // const getMenuResponse = await axios.get("http://localhost:5000/menus/getMenu", req2)
+        // .catch((e) => console.log(e));
+        // console.log(getMenuResponse.data.entry["Epicuria"]);
         // console.log(updateMenuResponse);
         // for await (const station of mealStations){
         //     const stationName = await station.evaluate((s) => s.innerText.split(/\n/)[0]);
