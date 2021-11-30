@@ -314,20 +314,4 @@ router.patch("/rejectInvite", async (req, res) => {
   }
 });
 
-router.patch("/addHall", async (req, res) => {
-  try {
-    const user = await User.findbyId(req.body.id);
-    if (!user) {
-      return res.status(404).json({ message: "Cannot find user" });
-    }
-    const currhall = user.currentHall;
-    const hall = req.body.hall;
-    currhall = hall;
-    const updatedUser = await user.save();
-    res.json(updatedUser);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-});
-
 module.exports = router;
