@@ -23,13 +23,12 @@ function Menus() {
   const [bPlateMenu, setBPlateMenu] = useState([]);
   const [feastMenu, setFeastMenu] = useState([]);
 
-  const updateUserData = async () => {
+  const getUserData = async () => {
     if (userData.user) {
       setFavorites(userData.user.favFoods);
       setId(userData.user.id);
     }
   }
-
   const updateMenus = async () => {
     const menus = await axios.get(
       "http://localhost:5000/menus/getMenu",
@@ -42,9 +41,23 @@ function Menus() {
   }
 
   useEffect(() => {
-    updateUserData();
+    getUserData();
     updateMenus();
-  }, [userData])
+  }, [])
+
+  const updateUserData = async () => {
+    try {
+      const newUserData = userData
+      newUserData.user.favFoods = favorites
+      setUserData({...newUserData})
+    } catch {
+      console.log("error updating user data")
+    }
+  }
+
+  useEffect(() => {
+    updateUserData();
+  }, [favorites])
 
   // const isItemStarred = (foodName) => {
   //   return(foodName in favorites)
