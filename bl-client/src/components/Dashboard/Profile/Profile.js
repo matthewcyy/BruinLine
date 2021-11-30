@@ -17,7 +17,6 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 function Profile() {
     const { userData, setUserData } =  useContext(UserContext);
-    console.log("USERDATAAA", userData.user);
     
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
@@ -38,7 +37,6 @@ function Profile() {
             setInvitations(userData.user.invitations)
             setId(userData.user.id);
         }
-        console.log("updating user data")
     }
 
     useEffect(() => {
@@ -52,7 +50,7 @@ function Profile() {
             reqBody.groupId = groupId
             debugger;
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            console.log("INVITE'S INDEX", indexOfInvite)
+            // console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
             setInvitations([...invitationsCopy])
@@ -73,12 +71,11 @@ function Profile() {
             setGroups([...newGroups])
             reqBody.id = id
             const indexOfInvite = invitations.findIndex(x => x.groupId === groupId)
-            console.log("INVITE'S INDEX", indexOfInvite)
+            // console.log("INVITE'S INDEX", indexOfInvite)
             var invitationsCopy = invitations
             invitationsCopy.splice(indexOfInvite, 1)
             setInvitations([...invitationsCopy])
             const patchReq = await axios.patch("http://localhost:5000/users/acceptInvite", reqBody)
-            console.log(groups)
         } catch (err) {
             console.log("ERROR", err.response.data.msg)
         }
