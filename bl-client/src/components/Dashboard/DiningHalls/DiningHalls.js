@@ -132,21 +132,6 @@ function DiningHalls() {
                 </Box>
                 <Grid item xs={12} marginTop="0.5rem"></Grid>
                 <Grid item xs={12} marginTop="0.5rem">
-<<<<<<< Updated upstream
-                  <Grid item xs={5} marginTop="0.5rem">
-                    <Button onClick={() => addHall(hall)} variant="contained">
-                      Check In
-                    </Button>
-                  </Grid>
-                  <Grid item xs={5} marginTop="0.5rem">
-                    <Button
-                      onClick={() => removeHall(hall)}
-                      variant="contained"
-                    >
-                      Check out
-                    </Button>
-                  </Grid>
-=======
                   {LoggedIn ? (
                     isCheckedIn ? (
                       hall == currentHall ? (
@@ -173,7 +158,6 @@ function DiningHalls() {
                   ) : (
                     <h6> login to check in </h6>
                   )}
->>>>>>> Stashed changes
                 </Grid>
                 <Grid item xs={12} marginTop="0.5 rem">
                   <Box>Number of People: {peopleInHall[hall]}</Box>
