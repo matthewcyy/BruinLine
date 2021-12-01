@@ -113,6 +113,7 @@ function Groups() {
                     style={{ margin: "auto" }}
                     members={groupMemberProp}
                     username={userData.user.username}
+                    auser = {userData.user.allUsers}
                   />
                 </Box>
               </Grid>

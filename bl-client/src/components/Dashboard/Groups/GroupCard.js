@@ -9,8 +9,17 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Voting from "../Voting/MajorityVote";
+import {Autocomplete, createFilterOptions} from '@material-ui/lab';
+
+const OPTIONS_LIMIT=5;
+const defaultFilterOptions = createFilterOptions();
+
+const filterOptions = (options, state) => {
+  return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
+};
 
 function GroupCard(props) {
+  const [myOptions, setMyOptions] = useState([]);
   const [groupMembers, setGroupMembers] = useState([]);
   const [inviteeUsername, setInviteeUsername] = useState("");
   const [votes, setVotes] = useState({});
@@ -34,6 +43,15 @@ function GroupCard(props) {
   };
   console.log("WHAT");
   console.log("HEY", props.groupObj);
+
+  const getOptions = () => {
+      
+  const optionsCopy = props.auser.map(x => {return x.username})
+  setMyOptions(optionsCopy)
+  console.log("LOLOL", myOptions)
+  }
+  
+
 
   const getGroupMembers = async () => {
     const reqBody = {};
@@ -79,6 +97,7 @@ function GroupCard(props) {
     }
     getGroupMembers();
     getVotes();
+    getOptions();
   }, []);
   console.log("HIHIHI");
   return (
@@ -137,7 +156,25 @@ function GroupCard(props) {
                 />
               </Grid>
             </Grid>
-            <Grid item xs={8}>
+            <Autocomplete
+        style={{ width: 500 }}
+        freeSolo
+        autoComplete
+        autoHighlight
+        options={myOptions}
+        filterOptions={filterOptions}
+        renderInput={(params) => (
+          <TextField {...params}
+          value={inviteeUsername}
+          onChange={(e) => setInviteeUsername(e.target.value)}
+          onSelect={(e) => setInviteeUsername(e.target.value)}
+
+            variant="outlined"
+            label="Search Box"
+          />
+        )}
+      />
+            {/* <Grid item xs={8}>
               <TextField
                 label="Invite a member by username"
                 variant="outlined"
@@ -146,7 +183,7 @@ function GroupCard(props) {
                 value={inviteeUsername}
                 onChange={(e) => setInviteeUsername(e.target.value)}
               />
-            </Grid>
+            </Grid> */}
             <Grid item xs={4}>
               <Button onClick={() => inviteUser()} variant="contained">
                 Submit
