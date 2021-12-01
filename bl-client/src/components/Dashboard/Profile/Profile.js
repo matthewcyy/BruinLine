@@ -192,40 +192,48 @@ function Profile() {
                   <Grid item xs={12}>
                     <Card>
                       <CardContent>
-                        <Grid container spacing={0.5}>
+                        <Grid
+                          container
+                          spacing={0.5}
+                          justify="space-between"
+                          sx={{ bm: 2.5 }}
+                        >
                           <Grid item xs={4}>
                             <Box sx={{ fontSize: "1.0rem" }}>
                               Group: {invite.groupName}
                             </Box>
                           </Grid>
-                          <Grid item xs={4}>
-                            <Box sx={{ fontSize: "1.0rem" }}>
-                              From: {invite.inviter}
-                            </Box>
-                          </Grid>
-                          <Grid item xs={5}>
-                            <Button
-                              variant="contained"
-                              onClick={() => rejectInvite(invite.groupId)}
-                            >
-                              Reject
-                            </Button>
-                            {/* <IconButton onClick={() => rejectInvite()}>
-                                                        <CancelIcon style={{color: 'red'}} />
-                                                    </IconButton> */}
-                          </Grid>
-                          <Grid item xs={1}>
+                          <Grid item xs={5} align="right" sx={{ bp: 0.5 }}>
                             <Button
                               variant="contained"
                               onClick={() =>
                                 acceptInvite(invite.groupId, invite.groupName)
                               }
+                              size="small"
                             >
                               Accept
                             </Button>
-                            {/* <IconButton onClick={() => acceptInvite()}>
-                                                        <CheckBoxIcon style={{color: 'green'}} />
-                                                    </IconButton> */}
+                          </Grid>
+                          <Grid item xs={2} align="right" sx={{ tp: 0.5 }}>
+                            <Button
+                              variant="contained"
+                              onClick={() => rejectInvite(invite.groupId)}
+                              size="small"
+                            >
+                              Reject
+                            </Button>
+                          </Grid>
+                        </Grid>
+                        <Grid
+                          container
+                          spacing={0.5}
+                          justify="space-between"
+                          sx={{ tm: 2 }}
+                        >
+                          <Grid item xs={6} align="left">
+                            <Box sx={{ fontSize: "1.0rem" }}>
+                              From: {invite.inviter}
+                            </Box>
                           </Grid>
                         </Grid>
                       </CardContent>
