@@ -25,6 +25,7 @@ function DiningHalls() {
   const [favorites, setFavorites] = useState([]);
   const [reviewItemName, setReviewItemName] = useState("Default");
   const [reviewPopShow, setReviewPopShow] = useState(false);
+  const [reviewHallName, setReviewHallName] = useState("Epicuria");
 
   const [currentHall, setCurrentHall] = useState();
   const [error, setError] = useState();
@@ -214,9 +215,10 @@ function DiningHalls() {
     updateUserData();
   }, [favorites]);
 
-  const submitReview = async (itemName, hallName) => {
+  const submitReview = async () => {
     if (userData.user) {
       try {
+        setReviewPopShow(false);
         const reviewer = userData.user.username;
         var date = new Date();
         const dd = String(date.getDate()).padStart(2, "0");
@@ -225,11 +227,11 @@ function DiningHalls() {
 
         date = mm + "/" + dd + "/" + yyyy;
         var reqObject = { reviewer, date };
-        reqObject.itemName = itemName;
+        reqObject.itemName = reviewItemName;
         reqObject.rating = rating;
         reqObject.description = reviewDescription;
 
-        reqObject.diningHall = hallName;
+        reqObject.diningHall = reviewHallName;
         // newObj[hallName].push(reviewObject)
         // setDiningHallsWithFoods(newObj)
         const addReview = await axios.patch(
@@ -331,6 +333,8 @@ function DiningHalls() {
                                 id={id}
                                 setReviewItemName={setReviewItemName}
                                 setReviewPopShow={setReviewPopShow}
+                                setReviewHallName={setReviewHallName}
+                                hall={hall}
                               />
                             </AccordionDetails>
                           </Accordion>
@@ -340,65 +344,65 @@ function DiningHalls() {
                   </CardContent>
                 </Card>
               </Grid>
-              <Modal open={reviewPopShow} onClose={handleClose}>
-                <Box sx={style}>
-                  <Box>
-                    <Typography
-                      id="modal-modal-title"
-                      variant="h6"
-                      component="h2"
-                      sx={{ p: 1.0 }}
-                    >
-                      {reviewItemName}
-                    </Typography>
-                    <Typography
-                      id="modal-modal-title"
-                      variant="h6"
-                      component="h2"
-                      sx={{ p: 1.0 }}
-                    >
-                      {hall}
-                    </Typography>
-                    <TextField
-                      label="Rating"
-                      select
-                      fullWidth
-                      size="small"
-                      onChange={(e) => setRating(e.target.value)}
-                      sx={{ p: 1.0 }}
-                    >
-                      {ratingOptions.map((option) => (
-                        <MenuItem key={option} value={option}>
-                          {option}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                  </Box>
-                  <TextField
-                    label="Review"
-                    variant="outlined"
-                    size="Normal"
-                    value={reviewDescription}
-                    onChange={(e) => setReviewDescription(e.target.value)}
-                    fullWidth
-                    multiline
-                    rows={4}
-                    sx={{ p: 1.0 }}
-                  />
-                  <Box sx={{ p: 1.0 }}>
-                    <Button
-                      onClick={() => submitReview(reviewItemName, hall)}
-                      variant="contained"
-                    >
-                      Submit
-                    </Button>
-                  </Box>
-                </Box>
-              </Modal>
             </div>
           ))}
         </Grid>
       </div>
+      <Modal open={reviewPopShow} onClose={handleClose}>
+        <Box sx={style}>
+            <Box>
+            <Typography
+                id="modal-modal-title"
+                variant="h6"
+                component="h2"
+                sx={{ p: 1.0 }}
+            >
+                {reviewItemName}
+            </Typography>
+            <Typography
+                id="modal-modal-title"
+                variant="h6"
+                component="h2"
+                sx={{ p: 1.0 }}
+            >
+                {reviewHallName}
+            </Typography>
+            <TextField
+                label="Rating"
+                select
+                fullWidth
+                size="small"
+                onChange={(e) => setRating(e.target.value)}
+                sx={{ p: 1.0 }}
+            >
+                {ratingOptions.map((option) => (
+                <MenuItem key={option} value={option}>
+                    {option}
+                </MenuItem>
+                ))}
+            </TextField>
+            </Box>
+            <TextField
+            label="Review"
+            variant="outlined"
+            size="Normal"
+            value={reviewDescription}
+            onChange={(e) => setReviewDescription(e.target.value)}
+            fullWidth
+            multiline
+            rows={4}
+            sx={{ p: 1.0 }}
+            />
+            <Box sx={{ p: 1.0 }}>
+            <Button
+                onClick={() => submitReview()}
+                variant="contained"
+            >
+                Submit
+            </Button>
+            </Box>
+        </Box>
+        </Modal>
     </div>
   );
 }

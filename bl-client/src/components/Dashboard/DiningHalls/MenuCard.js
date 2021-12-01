@@ -16,6 +16,8 @@ function MenuCard(props) {
                 id={props.id}
                 setReviewPopShow={props.setReviewPopShow}
                 setReviewItemName={props.setReviewItemName}
+                setReviewHallName={props.setReviewHallName}
+                hall={props.hall}
               />
             );
           })}
