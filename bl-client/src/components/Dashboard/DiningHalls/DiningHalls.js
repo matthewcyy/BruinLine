@@ -27,7 +27,7 @@ function DiningHalls() {
   const [reviewPopShow, setReviewPopShow] = useState(false);
   const [reviewHallName, setReviewHallName] = useState("Epicuria");
 
-  const [currentHall, setCurrentHall] = useState();
+  const [currentHall, setCurrentHall] = useState("");
   const [error, setError] = useState();
   const [peopleInHall, setPeopleInHall] = useState({
     DeNeve: 0,
@@ -76,6 +76,9 @@ function DiningHalls() {
     console.log("ADD HALLNAMe", hallName);
     const reqBody = {};
     setCurrentHall(hallName);
+    const newUserData = userData;
+    newUserData.user.hall = hallName;
+    setUserData({ ...newUserData });
     if (hallName == "B-Plate") {
       var copyPeople = peopleInHall;
       copyPeople[hallName] += 1;

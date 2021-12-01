@@ -47,8 +47,8 @@ function GroupCard(props) {
   const getOptions = () => {
       
   const optionsCopy = props.auser.map(x => {return x.username})
-  setMyOptions(optionsCopy)
-  console.log("LOLOL", myOptions)
+    setMyOptions(optionsCopy)
+    console.log("LOLOL", myOptions)
   }
   
 
