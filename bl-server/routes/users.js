@@ -125,6 +125,7 @@ router.post("/tokenIsValid", async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
   try {
+      console.log("Calling useres")
     const user = await User.findById(req.user);
     const allUsers = await User.find({});
     // console.log("ALLUSERS", allUsers)
@@ -133,7 +134,7 @@ router.get("/", auth, async (req, res) => {
       username,
       favFoods,
     }));
-    console.log("basicAllUsersInfo", basicAllUsersInfo);
+    console.log("basicAllUsersInfo", user);
     res.json({
       username: user.username,
       id: user._id,
