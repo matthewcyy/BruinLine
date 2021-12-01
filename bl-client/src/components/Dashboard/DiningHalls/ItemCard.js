@@ -19,7 +19,7 @@ function ItemCard(props) {
 
   const updateFavorite = () => {
       console.log('IN UPDATEFAV')
-    setIsFavorite(favorites.includes(itemName));
+      setIsFavorite(favorites.includes(itemName));
   };
 
   useEffect(() => {

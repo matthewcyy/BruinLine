@@ -164,10 +164,16 @@ function DiningHalls() {
   useEffect(() => {
     // debugger;
     getUserFavorites();
-    updateMenus();
-    getPeopleHall();
     updateUserData();
   }, [userData, favorites]);
+
+  useEffect(() => {
+    updateMenus();
+  }, [userData])
+
+  useEffect(() => {
+    getPeopleHall();
+  }, [])
 
   const updateUserData = async () => {
     try {
