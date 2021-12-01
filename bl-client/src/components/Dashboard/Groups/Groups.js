@@ -85,6 +85,7 @@ function Groups() {
             inviter={inviter}
             style={{ margin: "auto" }}
             members={groupMemberProp}
+            username={userData.user.username}
           />
         </Box>
         </Grid>

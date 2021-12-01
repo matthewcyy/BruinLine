@@ -4,7 +4,11 @@ var Group = require("../models/group_model");
 
 router.patch('/vote', async (req, res) => {
     try { // req.body needs: groupId, dining hall
-        const group = await Group.findById(req.body.groupId)
+        var group = await Group.findById(req.body.groupId)
+        const username = req.body.username
+        var userVoteIndex = group.groupMembers.findIndex(x => x.username === username)
+        console.log("INDEX", userVoteIndex)
+        group.groupMembers[userVoteIndex].vote = req.body.diningHall
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
         const groupVotes = group.votes
@@ -23,6 +27,10 @@ router.patch('/vote', async (req, res) => {
 router.patch('/removeVote', async (req, res) => {
     try { // req.body needs: groupId, dining hall
         const group = await Group.findById(req.body.groupId)
+        const username = req.body.username
+        var userVoteIndex = group.groupMembers.findIndex(x => x.username === username)
+        console.log("INDEX", userVoteIndex)
+        group.groupMembers[userVoteIndex].vote = ""
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
         const groupVotes = group.votes
@@ -41,11 +49,13 @@ router.patch('/removeVote', async (req, res) => {
 router.post('/getVotes', async(req, res) => {
     try {
         const group = await Group.findById(req.body.groupId)
-        console.log("WHAT BODY", req.body.groupId)
+        const username = req.body.username
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
         const Votes = group.votes
-        res.json({Votes})
+        var userVoteIndex = group.groupMembers.findIndex(x => x.username === username)
+        const userVote = group.groupMembers[userVoteIndex].vote
+        res.json({Votes, userVote})
     } catch (err) {
         res.status(400).json({ err: err.message })
     }
@@ -54,7 +64,6 @@ router.post('/getVotes', async(req, res) => {
 router.post('/getGroupMembers', async (req, res) => {
     try {
         const group = await Group.findById(req.body.groupId)
-        console.log("WHAT BODY", req.body.groupId)
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
         const groupMembers = group.groupMembers

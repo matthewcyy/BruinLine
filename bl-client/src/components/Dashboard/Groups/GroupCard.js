@@ -14,12 +14,15 @@ function GroupCard(props) {
     const [groupMembers, setGroupMembers] = useState([])
     const [inviteeUsername, setInviteeUsername] = useState("")
     const [votes, setVotes] = useState({})
+    const [userVote, setUserVote] = useState("")
     const [undoDisable, setUndoDisable] = useState(!(localStorage.getItem("vote") === "" || localStorage.getItem("vote") == null))
     const getVotes = async () => {
         var reqBody = {}
+        reqBody.username = props.username
         reqBody.groupId = props.groupObj.groupId
         const getVotesResponse = await axios.post('http://localhost:5000/groups/getVotes', reqBody)
-        setVotes(getVotesResponse.data.Votes) 
+        setVotes(getVotesResponse.data.Votes)
+        setUserVote(getVotesResponse.data.userVote)
     }
     console.log("WHAT")
     console.log("HEY", props.groupObj)
@@ -46,12 +49,14 @@ function GroupCard(props) {
         var copyVotes = votes
         copyVotes[diningHall] += 1
         setVotes({...copyVotes})
+        setUserVote(diningHall)
     }
 
     const removeVote = (diningHall) => {
         var copyVotes = votes
         copyVotes[diningHall] = --copyVotes[diningHall]
         setVotes({...copyVotes})
+        setUserVote("")
     }
 
     useEffect(() => {
@@ -89,7 +94,7 @@ function GroupCard(props) {
                                 }
                             </Grid>
                             <Grid item xs={12}>
-                                <Voting votes={votes} groupId={props.groupObj.groupId} changeVote={changeVote} removeVote={removeVote} setDisable={setUndoDisable} undoDisable={undoDisable}/>
+                                <Voting votes={votes} username={props.username} userVote={userVote} setUserVote={setUserVote} groupId={props.groupObj.groupId} changeVote={changeVote} removeVote={removeVote} setDisable={setUndoDisable} undoDisable={undoDisable}/>
                             </Grid>
                         </Grid>
                         <Grid item xs={8}>

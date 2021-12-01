@@ -22,6 +22,8 @@ class Voting extends Component {
 		var reqBody = {}
 		reqBody.groupId = this.props.groupId
 		reqBody.diningHall = diningHall
+		reqBody.username = this.props.username
+		this.props.setUserVote(diningHall)
 		const changeVote = await axios.patch('http://localhost:5000/groups/vote', reqBody)
 		localStorage.setItem("vote", diningHall)
 		this.props.setDisable(true)
@@ -40,6 +42,8 @@ class Voting extends Component {
 		var reqBody = {}
 		reqBody.groupId = this.props.groupId
 		reqBody.diningHall = diningHall
+		reqBody.username = this.props.username
+		this.props.setUserVote("")
 		const changeVote = await axios.patch('http://localhost:5000/groups/removeVote', reqBody)
 		localStorage.setItem("vote", "")
 		this.props.setDisable(false)
@@ -82,11 +86,11 @@ class Voting extends Component {
 				/* onRef={ref => this.chart = ref} */
 			/>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-			<Button disabled={this.props.undoDisable} onClick={()=>this.makeVote("B-Plate")}>B-Plate</Button>
-			<Button disabled={this.props.undoDisable} onClick={()=>this.makeVote("Feast")}>Feast</Button>
-			<Button disabled={this.props.undoDisable} onClick={()=>this.makeVote("De Neve")}>De Neve</Button>
-			<Button disabled={this.props.undoDisable} onClick={()=>this.makeVote("Epicuria")}>Epicuria</Button>
-			<Button disabled={!this.props.undoDisable} onClick={()=>this.removeVote()}>Undo Vote</Button>
+			<Button disabled={this.props.userVote !== ""} onClick={()=>this.makeVote("B-Plate")}>B-Plate</Button>
+			<Button disabled={this.props.userVote !== ""} onClick={()=>this.makeVote("Feast")}>Feast</Button>
+			<Button disabled={this.props.userVote !== ""} onClick={()=>this.makeVote("De Neve")}>De Neve</Button>
+			<Button disabled={this.props.userVote !== ""} onClick={()=>this.makeVote("Epicuria")}>Epicuria</Button>
+			<Button disabled={this.props.userVote === ""} onClick={()=>this.removeVote()}>Undo Vote</Button>
 		</div>
 		);
 	}
