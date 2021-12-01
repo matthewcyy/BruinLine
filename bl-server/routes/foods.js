@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const mongoose = require('mongoose');
 var Food = require("../models/food_model");
+var User = require("../models/user_model");
 
 router.post('/addFood', async (req, res) => {
     try {
@@ -32,9 +33,6 @@ router.post('/addFood', async (req, res) => {
 router.patch('/reviewFood', async (req, res) => {
     try {
         let { itemName, diningHall, rating, date, description, reviewer } = req.body;
-        const foodObject = await Food.findOne({ itemName: itemName, diningHall: diningHall }) // getting the food object
-        if (!foodObject)
-            return res.status(400).json({ msg: "Error, no such food item exists" })
         const reviewerObject = await User.findOne({ username: reviewer }) // getting the reviewer object
         const foodReview = {}
         foodReview.rating = rating
@@ -44,13 +42,10 @@ router.patch('/reviewFood', async (req, res) => {
         foodReview.reviewer = reviewer
         userReview.foodItem = itemName
         userReview.diningHall = diningHall
-        const foodReviewList = foodObject.reviews
         const userReviewList = reviewerObject.reviews
         console.log("FOOD REVIEW", foodReview)
         console.log("USER REVIEW", userReview)
-        foodReviewList.push(foodReview)
         userReviewList.push(userReview)
-        const savedFoodReview = await foodObject.save()
         const savedUserReview = await reviewerObject.save()
         res.json({savedFoodReview, savedUserReview})
     } catch (err) {
@@ -60,8 +55,9 @@ router.patch('/reviewFood', async (req, res) => {
 
 router.get('/getAllReviews', async (req, res) => {
     try {
-        var allFoodReviews = await Food.find({});
-        allFoodReviews = allFoodReviews.map(({itemName, diningHall, reviews}) => ({itemName, diningHall, reviews}))
+        var allFoodReviews = await User.find({});
+        // allFoodReviews = allFoodReviews.map(({itemName, diningHall, reviews}) => ({itemName, diningHall, reviews}))
+        allFoodReviews = allFoodReviews.map(({username, reviews}) => ({username, reviews}))
         console.log('ALLFOODREVIEWS', allFoodReviews)
         allFoodReviews.map(x => console.log("REVIEW", x.reviews))
         allFoodReviews = allFoodReviews.filter(x => x.reviews.length !== 0)

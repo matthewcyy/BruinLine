@@ -40,14 +40,14 @@ function Reviews() {
       x.reviews.map((y) => {
         // console.log("REVIEW", y)
         var reviewObject = {};
-        reviewObject.itemName = x.itemName;
-        reviewObject.reviewer = y.reviewer;
+        reviewObject.reviewer = x.username;
+        reviewObject.itemName = y.foodItem;
         reviewObject.date = y.date;
         reviewObject.rating = y.rating;
         reviewObject.description = y.description;
         // diningHallsWithFoods[x.diningHall].push(reviewObject)
         var newObj = { ...diningHallsWithFoods };
-        newObj[x.diningHall].push(reviewObject);
+        newObj[y.diningHall].push(reviewObject);
         setDiningHallsWithFoods(newObj);
         // console.log("REVIEW OBJECT", reviewObject)
       });
