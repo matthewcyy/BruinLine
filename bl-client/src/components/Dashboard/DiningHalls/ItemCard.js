@@ -29,6 +29,10 @@ function ItemCard(props) {
     if (!favorites.includes(itemName)) {
       favorites.push(itemName);
       props.setFavorites([...favorites]);
+      var retrievedUser = localStorage.getItem('user')
+      retrievedUser = JSON.parse(retrievedUser)
+      retrievedUser.favFoods = favorites
+      localStorage.setItem("user", JSON.stringify(retrievedUser))
       const reqBody = {};
       reqBody.id = id;
       reqBody.foods = favorites;

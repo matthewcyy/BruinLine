@@ -35,6 +35,8 @@ function Login() {
         user: loginResponse.data.user,
       });
       localStorage.setItem("auth-token", loginResponse.data.token);
+      localStorage.setItem("user", JSON.stringify(loginResponse.data.user))
+      console.log(localStorage.getItem("user"))
       history.push("/");
     } catch (err) {
       err.response.data.msg && setError(err.response.data.msg);

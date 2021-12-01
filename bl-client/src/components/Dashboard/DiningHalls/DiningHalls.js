@@ -63,12 +63,23 @@ function DiningHalls() {
 
   const updateStates = async () => {
     if (userData.user) {
+      console.log('in the if')
       setCurrentHall(userData.user.hall);
-      if (userData.user.hall != "") {
+      if (userData.user.hall !== "") {
         setIsCheckedIn(true);
       } else {
         setIsCheckedIn(false);
       }
+    } else {
+      var retrievedUser = localStorage.getItem('user')
+      retrievedUser = JSON.parse(retrievedUser)
+      console.log('RETRIEVED USER', retrievedUser)
+      setCurrentHall(retrievedUser.hall)
+      // if (userData.user.hall !== "") {
+      //   setIsCheckedIn(true);
+      // } else {
+      //   setIsCheckedIn(false);
+      // }
     }
   };
 
@@ -79,6 +90,11 @@ function DiningHalls() {
     const newUserData = userData;
     newUserData.user.hall = hallName;
     setUserData({ ...newUserData });
+    var retrievedUser = localStorage.getItem('user')
+    retrievedUser = JSON.parse(retrievedUser)
+    console.log('RETRIEVED USER', retrievedUser)
+    retrievedUser.hall = hallName
+    localStorage.setItem("user", JSON.stringify(retrievedUser))
     if (hallName == "B-Plate") {
       var copyPeople = peopleInHall;
       copyPeople[hallName] += 1;
@@ -167,8 +183,16 @@ function DiningHalls() {
 
   const getUserFavorites = async () => {
     if (userData.user) {
+      console.log('IN IF GETUSERS')
+      console.log('USERS FAVORITE FOODS', userData.user.favFoods)
       setFavorites(userData.user.favFoods);
       setId(userData.user.id);
+    } else {
+      console.log('IN ELSE GETUSERS')
+      var retrievedUser = localStorage.getItem('user')
+      retrievedUser = JSON.parse(retrievedUser)
+      setId(retrievedUser.id)
+      setFavorites(retrievedUser.favFoods)
     }
   };
 
