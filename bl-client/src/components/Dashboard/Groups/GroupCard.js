@@ -24,12 +24,7 @@ function GroupCard(props) {
   const [inviteeUsername, setInviteeUsername] = useState("");
   const [votes, setVotes] = useState({});
   const [userVote, setUserVote] = useState("");
-  const [undoDisable, setUndoDisable] = useState(
-    !(
-      localStorage.getItem("vote") === "" ||
-      localStorage.getItem("vote") == null
-    )
-  );
+  const [undoDisable, setUndoDisable] = useState();
   const getVotes = async () => {
     var reqBody = {};
     reqBody.username = props.username;
