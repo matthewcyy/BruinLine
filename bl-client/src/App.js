@@ -4,7 +4,6 @@ import axios from 'axios';
 import Reviews from './components/Dashboard/Reviews/Reviews';
 import Profile from './components/Dashboard/Profile/Profile';
 import DiningHalls from './components/Dashboard/DiningHalls/DiningHalls';
-import Menus from './components/Dashboard/Menus/Menus'
 import Groups from './components/Dashboard/Groups/Groups';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';

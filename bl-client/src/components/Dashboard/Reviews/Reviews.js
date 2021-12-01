@@ -94,46 +94,6 @@ function Reviews() {
   return (
     <div className="header">
       <h1> Reviews </h1>
-      <Grid
-        style={{ width: "100%" }}
-        sx={{ flexGrow: 1 }}
-        container
-        className="Container"
-      >
-        <Grid item xs={12}>
-          <Grid
-            container
-            justifyContent="center"
-            textAlign="center"
-            marginTop="1rem"
-          >
-            {[0, 1, 2, 3].map((value) => (
-              <Grid item key={value} style={{ width: "24.5%" }} margin="0 auto">
-                {/* <Paper sx={{ height: 500, width: 100 }} /> */}
-                <Box
-                  textAlign="center"
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "1.5rem",
-                    borderRadius: "8px",
-                  }}
-                  display="block"
-                >
-                  <Card marginTop="0.5rem" marginBottom="0.5rem">
-                    {columnHeader[value]}
-                    {diningHallsWithFoods[columnHeader[value]].map((review) => (
-                      <ReviewCard
-                        reviewObj={review}
-                        style={{ margin: "auto" }}
-                      />
-                    ))}
-                  </Card>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-      </Grid>
       <Grid item>
         <Grid
           container
@@ -212,6 +172,46 @@ function Reviews() {
               </Grid>
             </CardContent>
           </Card>
+        </Grid>
+      </Grid>
+      <Grid
+        style={{ width: "100%" }}
+        sx={{ flexGrow: 1 }}
+        container
+        className="Container"
+      >
+        <Grid item xs={12}>
+          <Grid
+            container
+            justifyContent="center"
+            textAlign="center"
+            marginTop="1rem"
+          >
+            {[0, 1, 2, 3].map((value) => (
+              <Grid item key={value} style={{ width: "24.5%" }} margin="0 auto">
+                {/* <Paper sx={{ height: 500, width: 100 }} /> */}
+                <Box
+                  textAlign="center"
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    borderRadius: "8px",
+                  }}
+                  display="block"
+                >
+                  <Card marginTop="0.5rem" marginBottom="0.5rem">
+                    {columnHeader[value]}
+                    {diningHallsWithFoods[columnHeader[value]].map((review) => (
+                      <ReviewCard
+                        reviewObj={review}
+                        style={{ margin: "auto" }}
+                      />
+                    ))}
+                  </Card>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
       </Grid>
     </div>
