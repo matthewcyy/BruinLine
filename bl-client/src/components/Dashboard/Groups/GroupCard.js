@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import UserContext from '../../../context/userContext';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import axios from 'axios'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Voting from '../Voting/MajorityVote';
+import React, { useState, useEffect } from "react";
+import UserContext from "../../../context/userContext";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import axios from "axios";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Voting from "../Voting/MajorityVote";
 
 function GroupCard(props) {
     const [groupMembers, setGroupMembers] = useState([])
@@ -36,14 +36,17 @@ function GroupCard(props) {
     }
 
     const inviteUser = async () => {
-        const reqBody = {}
-        reqBody.inviteeUsername = inviteeUsername
-        reqBody.inviterUsername = props.inviter
-        reqBody.groupName = props.groupObj.groupName
-        reqBody.groupId = props.groupObj.groupId
-        setInviteeUsername("")
-        const getResponse = await axios.patch('http://localhost:5000/users/inviteToGroup', reqBody);
-    }
+        const reqBody = {};
+        reqBody.inviteeUsername = inviteeUsername;
+        reqBody.inviterUsername = props.inviter;
+        reqBody.groupName = props.groupObj.groupName;
+        reqBody.groupId = props.groupObj.groupId;
+        setInviteeUsername("");
+        const getResponse = await axios.patch(
+        "http://localhost:5000/users/inviteToGroup",
+        reqBody
+        );
+    };
 
     const changeVote = (diningHall) => {
         var copyVotes = votes

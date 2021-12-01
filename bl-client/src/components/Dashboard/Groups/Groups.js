@@ -40,10 +40,10 @@ function Groups() {
         reqBody
       );
       debugger;
-      var groupMemberObj = {}
-      groupMemberObj.username = userData.user.username
-      groupMemberObj.vote = ""
-      copyReqBody.groupMembers = [groupMemberObj]
+      var groupMemberObj = {};
+      groupMemberObj.username = userData.user.username;
+      groupMemberObj.vote = "";
+      copyReqBody.groupMembers = [groupMemberObj];
       copyReqBody.votes = { DeNeve: 0, Epicuria: 0, Feast: 0, bPlate: 0 };
       var groupsCopy = groups;
       setGroupMemberProp([copyReqBody]);
@@ -122,7 +122,9 @@ function Groups() {
         </Card>
         </div>
         </div>
-      ) : (<h2>Please login to use Groups</h2>)}
+      ) : (
+        <h2>Please login to use Groups</h2>
+      )}
     </div>
   );
 }
