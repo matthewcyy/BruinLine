@@ -20,9 +20,7 @@ router.patch("/checkin", async (req, res) => {
     if (!hall) {
       return res.status(400).json({ msg: "Cannot find hall" });
     }
-    var currhall = user.currentHall; // getting user's current hall
-
-    currhall = hallCheck; // changing current hall
+    user.currentHall = hallCheck; // getting user's current hall
     hall[hallCheck] += 1; //increment ppl in hall
     const updatedUser = await user.save(); // save your change into database
     const savedHall = await hall.save();
