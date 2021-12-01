@@ -47,7 +47,7 @@ router.patch('/reviewFood', async (req, res) => {
         console.log("USER REVIEW", userReview)
         userReviewList.push(userReview)
         const savedUserReview = await reviewerObject.save()
-        res.json({savedFoodReview, savedUserReview})
+        res.json({savedUserReview})
     } catch (err) {
         res.status(400).json({ error: err.message});
     }
