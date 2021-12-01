@@ -18,15 +18,19 @@ function ItemCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const updateFavorite = () => {
-    setIsFavorite(favorites.includes(itemName));
+      console.log('IN UPDATEFAV')
+      setIsFavorite(favorites.includes(itemName));
   };
 
   useEffect(() => {
+      console.log("USEEFFECT");
     updateFavorite();
   }, [favorites]);
 
   const starItem = async () => {
+      console.log('IN STARITEM')
     if (!favorites.includes(itemName)) {
+        console.log('IN STARITEM IF')
       favorites.push(itemName);
       props.setFavorites([...favorites]);
       const reqBody = {};
@@ -41,9 +45,10 @@ function ItemCard(props) {
   };
 
   const unStarItem = async () => {
-    debugger;
+      console.log('IN UNSTARITEM')
     const index = favorites.indexOf(itemName);
     if (index > -1) {
+        console.log('IN UNSTARITEM IF')
       favorites.splice(index, 1);
       props.setFavorites([...favorites]);
       const reqBody = {};

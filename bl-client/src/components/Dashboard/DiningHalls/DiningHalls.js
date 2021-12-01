@@ -35,7 +35,6 @@ function DiningHalls() {
     bPlate: 0,
     Feast: 0,
   });
-  const [isCheckedIn, setIsCheckedIn] = useState();
   const [openmenu, setopenmenu] = useState({
     DeNeve: false,
     Epicuria: false,
@@ -50,25 +49,27 @@ function DiningHalls() {
   });
 
   const allDiningHalls = ["DeNeve", "Epicuria", "B-Plate", "Feast"];
-  //   useEffect(() => {
-  //     async function getUserData() {
-  //       let token = localStorage.getItem("auth-token");
-  //       const userRes = await axios.get("http://localhost:5000/users/", {
-  //         headers: { "x-auth-token": token },
-  //       });
-  //       setCurrentHall(userRes.data.currentHall);
-  //     }
-  //     getUserData();
-  //   }, []);
 
   const updateStates = async () => {
-    if (userData.user) {
-      setCurrentHall(userData.user.hall);
-      if (userData.user.hall != "") {
-        setIsCheckedIn(true);
-      } else {
-        setIsCheckedIn(false);
+      if (userData.user) {
+        console.log("gotdata",currentHall, userData.user.hall);
+        setCurrentHall(userData.user.hall);
       }
+      console.log("CALLING UPDATESTATES")
+  };
+
+  const getPeopleHall = async () => {
+    try {
+        console.log("HOWMANYTIMES")
+      const hallCreateResponse = await axios.get(
+        "http://localhost:5000/halls/getPeople"
+      );
+      hallCreateResponse.data.hall["B-Plate"] =
+        hallCreateResponse.data.hall["bPlate"];
+      setPeopleInHall(hallCreateResponse.data.hall);
+      console.log("ss", hallCreateResponse);
+    } catch (err) {
+      console.log("ERROR", err.response.data.msg);
     }
   };
 
@@ -80,17 +81,14 @@ function DiningHalls() {
     newUserData.user.hall = hallName;
     setUserData({ ...newUserData });
     if (hallName == "B-Plate") {
-      var copyPeople = peopleInHall;
-      copyPeople[hallName] += 1;
-      setPeopleInHall({ ...copyPeople });
-      hallName = "bPlate";
-    } else {
-      var copyPeople = peopleInHall;
-      copyPeople[hallName] += 1;
-      setPeopleInHall({ ...copyPeople });
+        hallName = "bPlate";
+      
     }
-    var CheckedIn = true;
-    setIsCheckedIn(CheckedIn);
+    var copyPeople = peopleInHall;
+    copyPeople[hallName] += 1;
+    setPeopleInHall({ ...copyPeople });
+
+    console.log(peopleInHall);
     console.log(hallName);
 
     reqBody.hallCheck = hallName;
@@ -105,21 +103,15 @@ function DiningHalls() {
     try {
       console.log("REMOVE HALLNAMe", hallName);
       const reqBody = {};
-      if (peopleInHall[hallName] <= 0) {
-      } else {
+      if (peopleInHall[hallName] > 0) {
         if (hallName == "B-Plate") {
+            hallName = "bPlate";
+        } 
           var copyPeople = peopleInHall;
           copyPeople[hallName] = --copyPeople[hallName];
           setPeopleInHall({ ...copyPeople });
-          hallName = "bPlate";
-        } else {
-          var copyPeople = peopleInHall;
-          copyPeople[hallName] = --copyPeople[hallName];
-          setPeopleInHall({ ...copyPeople });
-        }
+        
         setCurrentHall("");
-        var CheckedIn = false;
-        setIsCheckedIn(CheckedIn);
         reqBody.hallCheck = hallName;
         reqBody.userId = userData.user.id;
         const hallCreateResponse = await axios.patch(
@@ -133,20 +125,6 @@ function DiningHalls() {
   };
 
   useEffect(() => {
-    const getPeopleHall = async () => {
-      try {
-        const hallCreateResponse = await axios.get(
-          "http://localhost:5000/halls/getPeople"
-        );
-        hallCreateResponse.data.hall["B-Plate"] =
-          hallCreateResponse.data.hall["bPlate"];
-        setPeopleInHall(hallCreateResponse.data.hall);
-        console.log("ss", hallCreateResponse);
-      } catch (err) {
-        console.log("ERROR", err.response.data.msg);
-      }
-    };
-    getPeopleHall();
     updateStates();
   }, [userData]);
 
@@ -184,12 +162,22 @@ function DiningHalls() {
   };
 
   useEffect(() => {
+    // debugger;
     getUserFavorites();
+    updateUserData();
+  }, [userData, favorites]);
+
+  useEffect(() => {
     updateMenus();
-  }, []);
+  }, [userData])
+
+  useEffect(() => {
+    getPeopleHall();
+  }, [])
 
   const updateUserData = async () => {
     try {
+        console.log(newUserData.user.favFoods)
       const newUserData = userData;
       newUserData.user.favFoods = favorites;
       setUserData({ ...newUserData });
@@ -214,9 +202,10 @@ function DiningHalls() {
   const [reviewDescription, setReviewDescription] = useState("");
   const [rating, setRating] = useState(0);
 
-  useEffect(() => {
-    updateUserData();
-  }, [favorites]);
+//   useEffect(() => {
+//       debugger;
+//     updateUserData();
+//   }, [favorites, userData]);
 
   const submitReview = async () => {
     if (userData.user) {
@@ -275,8 +264,8 @@ function DiningHalls() {
                       </Grid>
                       <Grid item marginTop="0.5rem" float="left">
                         {userData.user ? (
-                          isCheckedIn ? (
-                            hall == currentHall ? (
+                          (currentHall!=="") ? (
+                            (hall === currentHall) ? (
                               <Button
                                 onClick={() => removeHall(hall)}
                                 variant="contained"
