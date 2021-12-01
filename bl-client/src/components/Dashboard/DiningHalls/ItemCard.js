@@ -59,6 +59,7 @@ function ItemCard(props) {
   const reviewItem = async (foodName) => {
     console.log("Reviewing");
     props.setReviewItemName(itemName);
+    props.setReviewHallName(props.hall)
     props.setReviewPopShow(true);
   };
 

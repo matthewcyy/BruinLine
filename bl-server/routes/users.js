@@ -63,7 +63,11 @@ router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     console.log("res.user", res.user);
-
+    const allUsers = await User.find({});
+    const basicAllUsersInfo = allUsers.map(({ username, favFoods }) => ({
+        username,
+        favFoods,
+      }));
     console.log(email, "hi");
     if (!email || !password)
       // if not sent the username/password
@@ -93,6 +97,8 @@ router.post("/login", async (req, res) => {
         favFoods: user.favFoods,
         groups: user.groups,
         invitations: user.invitations,
+        allUsers: basicAllUsersInfo,
+        hall: user.currentHall
       },
     });
   } catch (err) {
@@ -121,6 +127,7 @@ router.get("/", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user);
     const allUsers = await User.find({});
+    // console.log("ALLUSERS", allUsers)
     const selectedProperties = ["username", "favFoods"];
     const basicAllUsersInfo = allUsers.map(({ username, favFoods }) => ({
       username,

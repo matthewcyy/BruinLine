@@ -52,7 +52,7 @@ function Groups() {
       await setGroups(groupsCopy);
       setNewGroupName("");
     } catch (err) {
-      console.log("ERROR", err.response.data.msg);
+      console.log("ERROR", err);
     }
   };
 

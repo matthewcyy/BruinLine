@@ -9,9 +9,9 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Voting from "../Voting/MajorityVote";
-import {Autocomplete, createFilterOptions} from '@material-ui/lab';
+import { Autocomplete, createFilterOptions } from "@mui/material";
 
-const OPTIONS_LIMIT=5;
+const OPTIONS_LIMIT = 5;
 const defaultFilterOptions = createFilterOptions();
 
 const filterOptions = (options, state) => {
@@ -45,13 +45,12 @@ function GroupCard(props) {
   console.log("HEY", props.groupObj);
 
   const getOptions = () => {
-      
-  const optionsCopy = props.auser.map(x => {return x.username})
-  setMyOptions(optionsCopy)
-  console.log("LOLOL", myOptions)
-  }
-  
-
+    const optionsCopy = props.auser.map((x) => {
+      return x.username;
+    });
+    setMyOptions(optionsCopy);
+    console.log("LOLOL", myOptions);
+  };
 
   const getGroupMembers = async () => {
     const reqBody = {};
@@ -157,23 +156,23 @@ function GroupCard(props) {
               </Grid>
             </Grid>
             <Autocomplete
-        style={{ width: 500 }}
-        freeSolo
-        autoComplete
-        autoHighlight
-        options={myOptions}
-        filterOptions={filterOptions}
-        renderInput={(params) => (
-          <TextField {...params}
-          value={inviteeUsername}
-          onChange={(e) => setInviteeUsername(e.target.value)}
-          onSelect={(e) => setInviteeUsername(e.target.value)}
-
-            variant="outlined"
-            label="Search Box"
-          />
-        )}
-      />
+              style={{ width: 300 }}
+              freeSolo
+              autoComplete
+              autoHighlight
+              options={myOptions}
+              filterOptions={filterOptions}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  value={inviteeUsername}
+                  onChange={(e) => setInviteeUsername(e.target.value)}
+                  onSelect={(e) => setInviteeUsername(e.target.value)}
+                  variant="outlined"
+                  label="Search User"
+                />
+              )}
+            />
             {/* <Grid item xs={8}>
               <TextField
                 label="Invite a member by username"
