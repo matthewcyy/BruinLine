@@ -9,7 +9,7 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Voting from "../Voting/MajorityVote";
-import {Autocomplete, createFilterOptions} from '@material-ui/lab';
+import {Autocomplete, createFilterOptions} from '@mui/material';
 
 const OPTIONS_LIMIT=5;
 const defaultFilterOptions = createFilterOptions();
