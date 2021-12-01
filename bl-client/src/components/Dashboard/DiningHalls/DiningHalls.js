@@ -27,7 +27,7 @@ function DiningHalls() {
   const [reviewPopShow, setReviewPopShow] = useState(false);
   const [reviewHallName, setReviewHallName] = useState("Epicuria");
 
-  const [currentHall, setCurrentHall] = useState();
+  const [currentHall, setCurrentHall] = useState("");
   const [error, setError] = useState();
   const [peopleInHall, setPeopleInHall] = useState({
     DeNeve: 0,
@@ -350,39 +350,39 @@ function DiningHalls() {
       </div>
       <Modal open={reviewPopShow} onClose={handleClose}>
         <Box sx={style}>
-            <Box>
+          <Box>
             <Typography
-                id="modal-modal-title"
-                variant="h6"
-                component="h2"
-                sx={{ p: 1.0 }}
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ p: 1.0 }}
             >
-                {reviewItemName}
+              {reviewItemName}
             </Typography>
             <Typography
-                id="modal-modal-title"
-                variant="h6"
-                component="h2"
-                sx={{ p: 1.0 }}
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ p: 1.0 }}
             >
-                {reviewHallName}
+              {reviewHallName}
             </Typography>
             <TextField
-                label="Rating"
-                select
-                fullWidth
-                size="small"
-                onChange={(e) => setRating(e.target.value)}
-                sx={{ p: 1.0 }}
+              label="Rating"
+              select
+              fullWidth
+              size="small"
+              onChange={(e) => setRating(e.target.value)}
+              sx={{ p: 1.0 }}
             >
-                {ratingOptions.map((option) => (
+              {ratingOptions.map((option) => (
                 <MenuItem key={option} value={option}>
-                    {option}
+                  {option}
                 </MenuItem>
-                ))}
+              ))}
             </TextField>
-            </Box>
-            <TextField
+          </Box>
+          <TextField
             label="Review"
             variant="outlined"
             size="Normal"
@@ -392,17 +392,14 @@ function DiningHalls() {
             multiline
             rows={4}
             sx={{ p: 1.0 }}
-            />
-            <Box sx={{ p: 1.0 }}>
-            <Button
-                onClick={() => submitReview()}
-                variant="contained"
-            >
-                Submit
+          />
+          <Box sx={{ p: 1.0 }}>
+            <Button onClick={() => submitReview()} variant="contained">
+              Submit
             </Button>
-            </Box>
+          </Box>
         </Box>
-        </Modal>
+      </Modal>
     </div>
   );
 }
