@@ -245,7 +245,7 @@ function DiningHalls() {
 
   return (
     <div className="halls">
-      <h2> Dining Halls </h2>
+      <h1> Dining Halls </h1>
       <div style={{ textAlign: "center" }}>
         <Grid container justify="space-between" direction={"row"}>
           {allDiningHalls.map((hall) => (

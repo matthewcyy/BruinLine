@@ -106,7 +106,7 @@ function Profile() {
 
   return (
     <div class="container">
-      <h2 class="title">Profile</h2>
+      <h1 class="title">Profile</h1>
       <div class="ProfilePictureContainer">
         <img src={logo} class="profilePicture" />
       </div>

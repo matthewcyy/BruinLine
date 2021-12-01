@@ -62,65 +62,62 @@ function Groups() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Groups</h1>
-      {userData.user ? ( 
-      <div>     
-        <Grid container spacing={0.5} margin="auto">
-        {groups.map((group) => (
-        <Grid item xs={4}>
-        <Box
-          textAlign="center"
-          sx={{
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-            borderRadius: "8px",
-            border: 1,
-            borderWidth: 2,
-            borderColor: "grey.500",
-          }}
-          display="block"
-        >
-          <GroupCard
-            groupObj={group}
-            inviter={inviter}
-            style={{ margin: "auto" }}
-            members={groupMemberProp}
-            username={userData.user.username}
-          />
-        </Box>
-        </Grid>
-        ))}
-        </Grid>
-        <div style={{ width: "50%", margin: "2rem auto" }}>
-        <Card style={{ borderColor: "#2c7dc3" }}>
-          <CardContent>
-            <Box
-              sx={{
-                fontWeight: "bold",
-                fontSize: "1.5rem",
-                marginBottom: "0.75rem",
-              }}
-            >
-              Make a Group
-            </Box>
-            <Grid item xs={12} marginTop="0.5rem">
-              <TextField
-                label="New Group Name"
-                variant="outlined"
-                size="Normal"
-                value={newGroupName}
-                onChange={(e) => setNewGroupName(e.target.value)}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={12} marginTop="0.5rem">
-              <Button onClick={() => makeGroup()} variant="contained">
-                Submit
-              </Button>
-            </Grid>
-          </CardContent>
-        </Card>
-        </div>
+      <h1 className="title">Groups</h1>
+      {userData.user ? (
+        <div>
+          <Grid container spacing={0.5} margin="auto">
+            {groups.map((group) => (
+              <Grid item xs={4}>
+                <Box
+                  textAlign="center"
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    borderRadius: "8px",
+                  }}
+                  display="block"
+                >
+                  <GroupCard
+                    groupObj={group}
+                    inviter={inviter}
+                    style={{ margin: "auto" }}
+                    members={groupMemberProp}
+                    username={userData.user.username}
+                  />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+          <div style={{ width: "50%", margin: "2rem auto" }}>
+            <Card>
+              <CardContent>
+                <Box
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Make a Group
+                </Box>
+                <Grid item xs={12} marginTop="0.5rem">
+                  <TextField
+                    label="New Group Name"
+                    variant="outlined"
+                    size="Normal"
+                    value={newGroupName}
+                    onChange={(e) => setNewGroupName(e.target.value)}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={12} marginTop="0.5rem">
+                  <Button onClick={() => makeGroup()} variant="contained">
+                    Submit
+                  </Button>
+                </Grid>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       ) : (
         <h2>Please login to use Groups</h2>
