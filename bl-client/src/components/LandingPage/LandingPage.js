@@ -9,7 +9,9 @@ import Typography from "@mui/material/Typography";
 function LandingPage() {
   return (
     <div style={{ textAlign: "center" }}>
-      <h1 style={{ marginBottom: "10px" }}>Welcome to BruinLine!</h1>
+      <h1 className="header" style={{ marginBottom: "10px" }}>
+        Welcome to BruinLine!
+      </h1>
       <span
         style={{
           display: "inline-block",
