@@ -7,7 +7,6 @@ router.patch('/vote', async (req, res) => {
         var group = await Group.findById(req.body.groupId)
         const username = req.body.username
         var userVoteIndex = group.groupMembers.findIndex(x => x.username === username)
-        console.log("INDEX", userVoteIndex)
         group.groupMembers[userVoteIndex].vote = req.body.diningHall
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })
@@ -29,7 +28,6 @@ router.patch('/removeVote', async (req, res) => {
         const group = await Group.findById(req.body.groupId)
         const username = req.body.username
         var userVoteIndex = group.groupMembers.findIndex(x => x.username === username)
-        console.log("INDEX", userVoteIndex)
         group.groupMembers[userVoteIndex].vote = ""
         if (!group)
             return res.status(400).json({ msg: "Cannot find group" })

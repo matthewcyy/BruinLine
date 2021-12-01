@@ -14,7 +14,6 @@ import Button from "@mui/material/Button";
 function Reviews() {
   const ratingOptions = [1, 2, 3, 4, 5];
   const diningHallOptions = ["DeNeve", "Feast", "B-Plate", "Epicuria"];
-  ratingOptions.map((x) => console.log("MAPPING", x));
   const [foodItemReview, setFoodItemReview] = useState("");
   const [diningHallReview, setDiningHallReview] = useState("");
   const [foodRating, setRating] = useState(0);
@@ -34,11 +33,8 @@ function Reviews() {
       "http://localhost:5000/foods/getAllReviews"
     ); // getting all reviews for all items
     allReviews = allReviews.data.allFoodReviews;
-    // console.log("ALLREVIEWS", allReviews)
     allReviews.map((x) => {
-      // console.log("OUTER THING", x)
       x.reviews.map((y) => {
-        // console.log("REVIEW", y)
         var reviewObject = {};
         reviewObject.reviewer = x.username;
         reviewObject.itemName = y.foodItem;
@@ -49,10 +45,8 @@ function Reviews() {
         var newObj = { ...diningHallsWithFoods };
         newObj[y.diningHall].push(reviewObject);
         setDiningHallsWithFoods(newObj);
-        // console.log("REVIEW OBJECT", reviewObject)
       });
     });
-    console.log("DININGHALLSWITHFOODS", diningHallsWithFoods);
   };
   useEffect(() => {
     getAllReviews();
@@ -88,7 +82,6 @@ function Reviews() {
           "http://localhost:5000/foods/reviewFood",
           reqObject
         );
-        console.log("ADDREVIEW", addReview);
       } catch (err) {
         console.log("ERROR", err.response.data.msg);
       }

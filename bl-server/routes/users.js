@@ -30,18 +30,14 @@ router.post("/register", async (req, res) => {
         .json({ msg: "An account with this email already exists" });
     // findOne is a built-in mongoose feature for models, which allows you to search for different model instances
 
-    console.log("HEY, ABOUT TO FIND USER");
     const userUsernameExists = await User.findOne({ username: username }); // searching if a user with this username exists
     if (userUsernameExists)
       // if user with username exists, return error
       return res
         .status(400)
         .json({ msg: "An account with this username already exists" });
-    console.log("HEY");
     const salt = await bcrypt.genSalt(); // "salting" a password into a random string for extra security
-    console.log("GENERATED SALT");
     const passwordHash = await bcrypt.hash(password, salt);
-    console.log("HASHING PASSWORD");
 
     const newUser = new User({
       email,
@@ -62,13 +58,11 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("res.user", res.user);
     const allUsers = await User.find({});
     const basicAllUsersInfo = allUsers.map(({ username, favFoods }) => ({
         username,
         favFoods,
       }));
-    console.log(email, "hi");
     if (!email || !password)
       // if not sent the username/password
       return res.status(400).json({ msg: "Not all fields have been entered" });
@@ -86,8 +80,6 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ msg: "Incorrect password or username" });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET); // creating a token to represent the user's unique _id, which will be used in the future in authorization to verify that the user is the user.
-    console.log("token: ", token);
-    console.log("user: ", user);
     res.json({
       token,
       user: {
@@ -125,16 +117,13 @@ router.post("/tokenIsValid", async (req, res) => {
 
 router.get("/", auth, async (req, res) => {
   try {
-      console.log("Calling useres")
     const user = await User.findById(req.user);
     const allUsers = await User.find({});
-    // console.log("ALLUSERS", allUsers)
     const selectedProperties = ["username", "favFoods"];
     const basicAllUsersInfo = allUsers.map(({ username, favFoods }) => ({
       username,
       favFoods,
     }));
-    console.log("basicAllUsersInfo", user);
     res.json({
       username: user.username,
       id: user._id,
@@ -153,14 +142,12 @@ router.get("/", auth, async (req, res) => {
 router.patch("/updateFavFood", async (req, res) => {
   try {
     const user = await User.findById(req.body.id); // finding user in database
-    console.log(req.body.id)
     if (!user) {
       return res.status(404).json({ message: "Cannot find user" }); // when user doesn't exist...
     }
     res.user = user;
     res.user.favFoods = req.body.foods; // if exists, set the favorite foods for the user in the data base to the new one (i.e. the new array with the new favorte food(s))
     const updatedUser = await res.user.save();
-    console.log(res.user.favFoods);
     res.json(updatedUser);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -176,7 +163,6 @@ router.patch("/makeGroup", async (req, res) => {
       return res.status(404).json({ message: "Cannot find user" }); // when user doesn't exist...
     }
     res.user = user;
-    console.log("Before group created for user", res.user.groups);
     var groupName = req.body.groupName;
     var newGroupList = user.groups;
     if (groupName) {
@@ -185,13 +171,11 @@ router.patch("/makeGroup", async (req, res) => {
       var username = user.username
       var vote = ""
       groupMembers.push({username, vote})
-      console.log(groupMembers)
       const newGroup = new Group({
         groupName,
         groupMembers,
       });
       const groupId = newGroup._id.toString();
-      console.log("groupId", groupId);
       newGroupList.push({ groupName, groupId }); // adding new group name to list of groups for the user
       const savedGroup = await newGroup.save();
       const updatedUser = await user.save();
@@ -207,18 +191,13 @@ router.patch("/inviteToGroup", async (req, res) => {
   // Call will also be from User's GROUPS list req.body includes username of person inviting to group (inviteeUsername), the groupName invitation, the username of the inviter (inviterUsername)
   try {
     const invitee = await User.findOne({ username: req.body.inviteeUsername });
-    console.log("INVITEE", invitee);
     const inviter = await User.findOne({ username: req.body.inviterUsername });
-    console.log("INVITER", inviter);
     const invitation = {};
     invitation.groupName = req.body.groupName;
     invitation.groupId = req.body.groupId;
     invitation.inviter = req.body.inviterUsername;
-    console.log("INVITATION INVITER", invitation.inviter);
     const inviteList = invitee.invitations;
     const groupList = invitee.groups;
-    console.log("GROUPLIST", groupList);
-    console.log("invite", inviteList);
     if (inviteList.findIndex((x) => x.groupId === req.body.groupId) !== -1)
       return res
         .status(400)
@@ -236,29 +215,21 @@ router.patch("/inviteToGroup", async (req, res) => {
 router.patch("/acceptInvite", async (req, res) => {
   // When using this api call, get req.body information from User and from USER'S INVITE LIST. USED WHEN ACCEPTING INVITATIOn
   try {
-    console.log("USER ID", req.body.id);
-    console.log("GROUP ID", req.body.groupId);
     const user = await User.findById(req.body.id); // finding user in database
     if (!user) {
       return res.status(404).json({ message: "Cannot find user" }); // when user doesn't exist...
     }
     res.user = user;
-    console.log("Before user added to group", res.user.groups);
     var groupName = req.body.groupName;
     var newGroupList = user.groups;
     groupId = mongoose.Types.ObjectId(req.body.groupId);
-    console.log("NEW GROUP ID (OBJECT)", groupId);
     var group = await Group.findById(groupId);
-    console.log("GROUP HERE", group);
     if (group) {
       user.groups = newGroupList; // adding new group name for user
       groupMembers = group.groupMembers;
-      console.log("GROUP MEMBERS", groupMembers);
-      console.log("USER'S USERNAME", user.username);
       username = user.username;
       if (groupMembers.indexOf(user.username) !== -1) {
         // checking if user is already in the group...
-        console.log("IN THE IF STATEMENT");
         return res.status(400).json("error, user already in group");
       }
       const inviteList = user.invitations;
@@ -285,7 +256,6 @@ router.patch("/acceptInvite", async (req, res) => {
 router.post("/changePassword", async (req, res) => {
   try {
     const { password, id } = req.body;
-    console.log(password, id);
 
     if (!password)
       // checkinf if all fields were submitted

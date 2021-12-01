@@ -43,8 +43,6 @@ router.patch('/reviewFood', async (req, res) => {
         userReview.foodItem = itemName
         userReview.diningHall = diningHall
         const userReviewList = reviewerObject.reviews
-        console.log("FOOD REVIEW", foodReview)
-        console.log("USER REVIEW", userReview)
         userReviewList.push(userReview)
         const savedUserReview = await reviewerObject.save()
         res.json({savedUserReview})
@@ -58,8 +56,6 @@ router.get('/getAllReviews', async (req, res) => {
         var allFoodReviews = await User.find({});
         // allFoodReviews = allFoodReviews.map(({itemName, diningHall, reviews}) => ({itemName, diningHall, reviews}))
         allFoodReviews = allFoodReviews.map(({username, reviews}) => ({username, reviews}))
-        console.log('ALLFOODREVIEWS', allFoodReviews)
-        allFoodReviews.map(x => console.log("REVIEW", x.reviews))
         allFoodReviews = allFoodReviews.filter(x => x.reviews.length !== 0)
         res.json({allFoodReviews})
     } catch (err) {
