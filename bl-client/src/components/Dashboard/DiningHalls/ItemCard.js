@@ -52,6 +52,7 @@ function ItemCard(props) {
         console.log("Reviewing")
         props.setReviewItemName(itemName);
         props.setReviewPopShow(true);
+        props.setReviewHallName(props.hall);
     }
 
 
