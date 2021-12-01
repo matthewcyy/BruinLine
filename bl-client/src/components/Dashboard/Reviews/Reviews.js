@@ -78,6 +78,10 @@ function Reviews() {
         setDiningHallsWithFoods(newObj);
 
         reqObject.diningHall = diningHallReview;
+        setFoodItemReview("")
+        setDiningHallReview(undefined)
+        setRating(undefined)
+        setReviewDesc("")
         // newObj[diningHallReview].push(reviewObject)
         // setDiningHallsWithFoods(newObj)
         const addReview = await axios.patch(
@@ -128,6 +132,7 @@ function Reviews() {
                     select
                     fullWidth
                     size="small"
+                    value={diningHallReview}
                     onChange={(e) => setDiningHallReview(e.target.value)}
                   >
                     {diningHallOptions.map((option) => (
@@ -143,6 +148,7 @@ function Reviews() {
                     select
                     fullWidth
                     size="small"
+                    value={foodRating}
                     onChange={(e) => setRating(e.target.value)}
                   >
                     {ratingOptions.map((option) => (
