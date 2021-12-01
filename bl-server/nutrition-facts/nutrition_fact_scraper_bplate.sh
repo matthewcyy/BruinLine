@@ -3,7 +3,7 @@ website="https://menu.dining.ucla.edu/Menus/BruinPlate"
 P=$(curl -s $website)
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
-echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>names.txt
+echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode -f html..ascii >names.txt
 dining_hall="BPlate"
 file_name_json="bplate_nutrient.json"
 #echo names.txt| perl -Mopen=locale -pe 's/&#x([\da-f]+);/chr hex $1/gie'>names.txt
@@ -13,7 +13,7 @@ file_name_json="bplate_nutrient.json"
 echo "" > $file_name_json;
 
 curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
+curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode -f html..ascii >>names.txt
 DATE=$(date)
 for i in {2..8}
 do
@@ -22,7 +22,7 @@ do
     echo "$NEXT_DATE">>nextday.txt
     #P=$(curl -s "$website$NEXT_DATE)
     curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
+    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode -f html..ascii >>names.txt
 
 done
 
