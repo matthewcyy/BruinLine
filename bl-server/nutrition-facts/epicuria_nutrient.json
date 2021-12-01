@@ -1,0 +1,683 @@
+
+[
+{
+	"itemName": "All Meat Pizza",
+	"diningHall": "Epicuria",
+	"calories": 196 ,
+	"fat": 8.2,
+	"carbs": 21.6,
+	"protein": 10.6 
+},
+{
+	"itemName": "Angel Hair Pasta w/ Marinated Greek Style Chicken",
+	"diningHall": "Epicuria",
+	"calories": 302 ,
+	"fat": 11,
+	"carbs": 33.8,
+	"protein": 17 
+},
+{
+	"itemName": "Anise Biscotti",
+	"diningHall": "Epicuria",
+	"calories": 165 ,
+	"fat": 6.2,
+	"carbs": 25.2,
+	"protein": 3.1 
+},
+{
+	"itemName": "Apple Tarte Tatin",
+	"diningHall": "Epicuria",
+	"calories": 140 ,
+	"fat": 6.2,
+	"carbs": 20.1,
+	"protein": 1.6 
+},
+{
+	"itemName": "Apricot Almond Cookie",
+	"diningHall": "Epicuria",
+	"calories": 492 ,
+	"fat": 27.2,
+	"carbs": 61.6,
+	"protein": 5.5 
+},
+{
+	"itemName": "Arancini w/ Marinara",
+	"diningHall": "Epicuria",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
+},
+{
+	"itemName": "Arancini",
+	"diningHall": "Epicuria",
+	"calories": 157 ,
+	"fat": 6,
+	"carbs": 19.6,
+	"protein": 5.5 
+},
+{
+	"itemName": "Artichoke Spinach Dip",
+	"diningHall": "Epicuria",
+	"calories": 60 ,
+	"fat": 5.4,
+	"carbs": 1.8,
+	"protein": 1.3 
+},
+{
+	"itemName": "Baba Ghannouj",
+	"diningHall": "Epicuria",
+	"calories": 18 ,
+	"fat": 0.7,
+	"carbs": 3.1,
+	"protein": 0.5 
+},
+{
+	"itemName": "Baby Potatoes w/ Smoked Paprika",
+	"diningHall": "Epicuria",
+	"calories": 212 ,
+	"fat": 18.1,
+	"carbs": 10.8,
+	"protein": 1.5 
+},
+{
+	"itemName": "Beef & Lamb Gyro",
+	"diningHall": "Epicuria",
+	"calories": 319 ,
+	"fat": 9.5,
+	"carbs": 46,
+	"protein": 11.2 
+},
+{
+	"itemName": "Braised Cabbage, Mushroom, & Onion Saute",
+	"diningHall": "Epicuria",
+	"calories": 80 ,
+	"fat": 6.4,
+	"carbs": 5.6,
+	"protein": 1.4 
+},
+{
+	"itemName": "Braised Short Ribs",
+	"diningHall": "Epicuria",
+	"calories": 179 ,
+	"fat": 10.7,
+	"carbs": 1.8,
+	"protein": 17.2 
+},
+{
+	"itemName": "Braised Spicy Lentils w/ Potatoes & Tomatoes",
+	"diningHall": "Epicuria",
+	"calories": 85 ,
+	"fat": 3.2,
+	"carbs": 12.3,
+	"protein": 3 
+},
+{
+	"itemName": "Broccolini w/ Olive & Caper Tapenade",
+	"diningHall": "Epicuria",
+	"calories": 86 ,
+	"fat": 8.1,
+	"carbs": 4.2,
+	"protein": 0.8 
+},
+{
+	"itemName": "Butternut Squash & Mushroom Saute",
+	"diningHall": "Epicuria",
+	"calories": 72 ,
+	"fat": 4.4,
+	"carbs": 8.7,
+	"protein": 1.2 
+},
+{
+	"itemName": "Caesar Salad",
+	"diningHall": "Epicuria",
+	"calories": 137 ,
+	"fat": 9.3,
+	"carbs": 8.9,
+	"protein": 4.4 
+},
+{
+	"itemName": "Carrot Couscous",
+	"diningHall": "Epicuria",
+	"calories": 71 ,
+	"fat": 0.1,
+	"carbs": 14.8,
+	"protein": 2.4 
+},
+{
+	"itemName": "Cauliflower Fritter",
+	"diningHall": "Epicuria",
+	"calories": 47 ,
+	"fat": 1.1,
+	"carbs": 6.5,
+	"protein": 2.8 
+},
+{
+	"itemName": "Cheese Pizza",
+	"diningHall": "Epicuria",
+	"calories": 156 ,
+	"fat": 5.6,
+	"carbs": 21.2,
+	"protein": 7.1 
+},
+{
+	"itemName": "Chicken & Potato Kebab w/ Chermoula Vinaigrette",
+	"diningHall": "Epicuria",
+	"calories": 99 ,
+	"fat": 4.5,
+	"carbs": 4.6,
+	"protein": 9.8 
+},
+{
+	"itemName": "Chicken Hummus Pita w/ Tzatziki",
+	"diningHall": "Epicuria",
+	"calories": 328 ,
+	"fat": 13.2,
+	"carbs": 32,
+	"protein": 20 
+},
+{
+	"itemName": "Chicken Noodle Soup",
+	"diningHall": "Epicuria",
+	"calories": 175 ,
+	"fat": 4.5,
+	"carbs": 11.8,
+	"protein": 20.5 
+},
+{
+	"itemName": "Chicken Tagine",
+	"diningHall": "Epicuria",
+	"calories": 226 ,
+	"fat": 17.6,
+	"carbs": 6.6,
+	"protein": 10.4 
+},
+{
+	"itemName": "Chocolate & Caramel Cream Cake",
+	"diningHall": "Epicuria",
+	"calories": 320 ,
+	"fat": 20.4,
+	"carbs": 30.8,
+	"protein": 3.9 
+},
+{
+	"itemName": "Eggplant Peperonata",
+	"diningHall": "Epicuria",
+	"calories": 55 ,
+	"fat": 4.5,
+	"carbs": 3.9,
+	"protein": 0.6 
+},
+{
+	"itemName": "Eggplant, Chile, Mint, & Feta Fregola Sarda",
+	"diningHall": "Epicuria",
+	"calories": 331 ,
+	"fat": 13.3,
+	"carbs": 45.9,
+	"protein": 7 
+},
+{
+	"itemName": "Falafel Pita",
+	"diningHall": "Epicuria",
+	"calories": 341 ,
+	"fat": 10.3,
+	"carbs": 50.9,
+	"protein": 10.2 
+},
+{
+	"itemName": "Fall Vegetable Tian",
+	"diningHall": "Epicuria",
+	"calories": 116 ,
+	"fat": 5.8,
+	"carbs": 15.7,
+	"protein": 2.5 
+},
+{
+	"itemName": "Farfalle w/ Sun-Dried Tomatoes & Spinach",
+	"diningHall": "Epicuria",
+	"calories": 243 ,
+	"fat": 10.4,
+	"carbs": 32.9,
+	"protein": 7.6 
+},
+{
+	"itemName": "Farfalle w/ Tomatoes & Bacon",
+	"diningHall": "Epicuria",
+	"calories": 247 ,
+	"fat": 10.9,
+	"carbs": 28,
+	"protein": 9.5 
+},
+{
+	"itemName": "Farro & Tomato Salad",
+	"diningHall": "Epicuria",
+	"calories": 91 ,
+	"fat": 3.6,
+	"carbs": 11.9,
+	"protein": 3.1 
+},
+{
+	"itemName": "Flan",
+	"diningHall": "Epicuria",
+	"calories": 140 ,
+	"fat": 5.8,
+	"carbs": 19.7,
+	"protein": 3.1 
+},
+{
+	"itemName": "Garlic Shrimp w/ Lemon & Parsely",
+	"diningHall": "Epicuria",
+	"calories": 72 ,
+	"fat": 3.5,
+	"carbs": 1.5,
+	"protein": 8.6 
+},
+{
+	"itemName": "Gemelli Pasta w/ Scallops in Butter Sauce",
+	"diningHall": "Epicuria",
+	"calories": 759 ,
+	"fat": 42.8,
+	"carbs": 69.6,
+	"protein": 25.6 
+},
+{
+	"itemName": "Grecian Style Shrimp w/ Grilled Zucchini",
+	"diningHall": "Epicuria",
+	"calories": 116 ,
+	"fat": 7.6,
+	"carbs": 6.2,
+	"protein": 6.6 
+},
+{
+	"itemName": "Greek Style Gemelli w/ Asparagus & Tomatoes",
+	"diningHall": "Epicuria",
+	"calories": 458 ,
+	"fat": 8.9,
+	"carbs": 78.8,
+	"protein": 14.4 
+},
+{
+	"itemName": "Grilled Eggplant Sandwich w/ Honey & Melted Cheese",
+	"diningHall": "Epicuria",
+	"calories": 526 ,
+	"fat": 28.6,
+	"carbs": 43.2,
+	"protein": 27.9 
+},
+{
+	"itemName": "Grilled Flank Steak",
+	"diningHall": "Epicuria",
+	"calories": 172 ,
+	"fat": 6.6,
+	"carbs": 0.5,
+	"protein": 26.1 
+},
+{
+	"itemName": "Harissa Roast Beef Sandwich",
+	"diningHall": "Epicuria",
+	"calories": 419 ,
+	"fat": 18.4,
+	"carbs": 28.2,
+	"protein": 33.1 
+},
+{
+	"itemName": "Herbed Rice Pilaf",
+	"diningHall": "Epicuria",
+	"calories": 66 ,
+	"fat": 0.8,
+	"carbs": 13.1,
+	"protein": 1.5 
+},
+{
+	"itemName": "Hummus",
+	"diningHall": "Epicuria",
+	"calories": 65 ,
+	"fat": 5,
+	"carbs": 4,
+	"protein": 1.6 
+},
+{
+	"itemName": "Italian Apple Olive Oil Cake",
+	"diningHall": "Epicuria",
+	"calories": 353 ,
+	"fat": 18,
+	"carbs": 45.6,
+	"protein": 4 
+},
+{
+	"itemName": "Italian Minestrone Soup",
+	"diningHall": "Epicuria",
+	"calories": 80 ,
+	"fat": 0.6,
+	"carbs": 16.1,
+	"protein": 3.3 
+},
+{
+	"itemName": "Italian Sausage Sandwich",
+	"diningHall": "Epicuria",
+	"calories": 266 ,
+	"fat": 15.4,
+	"carbs": 19,
+	"protein": 14 
+},
+{
+	"itemName": "Lebanese Style Barramundi",
+	"diningHall": "Epicuria",
+	"calories": 65 ,
+	"fat": 1,
+	"carbs": 0.6,
+	"protein": 15.8 
+},
+{
+	"itemName": "Lemon Rice",
+	"diningHall": "Epicuria",
+	"calories": 170 ,
+	"fat": 5.4,
+	"carbs": 29,
+	"protein": 2.4 
+},
+{
+	"itemName": "Mageirio",
+	"diningHall": "Epicuria",
+	"calories": 139 ,
+	"fat": 6.3,
+	"carbs": 18.8,
+	"protein": 4.1 
+},
+{
+	"itemName": "Mashed Potatoes",
+	"diningHall": "Epicuria",
+	"calories": 63 ,
+	"fat": 2.3,
+	"carbs": 9.8,
+	"protein": 1 
+},
+{
+	"itemName": "Meatball Pizza",
+	"diningHall": "Epicuria",
+	"calories": 264 ,
+	"fat": 11.7,
+	"carbs": 24.3,
+	"protein": 16.8 
+},
+{
+	"itemName": "Mediterranean Chicken Sausage",
+	"diningHall": "Epicuria",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
+},
+{
+	"itemName": "Mediterranean Garden Salad",
+	"diningHall": "Epicuria",
+	"calories": 56 ,
+	"fat": 5,
+	"carbs": 2.7,
+	"protein": 0.9 
+},
+{
+	"itemName": "Mediterranean Potato & Spinach Frittata",
+	"diningHall": "Epicuria",
+	"calories": 294 ,
+	"fat": 23.4,
+	"carbs": 8.2,
+	"protein": 13.6 
+},
+{
+	"itemName": "Mediterranean Spiced Chips",
+	"diningHall": "Epicuria",
+	"calories": 226 ,
+	"fat": 11.9,
+	"carbs": 28.5,
+	"protein": 3 
+},
+{
+	"itemName": "Mediterranean Yogurt Cake",
+	"diningHall": "Epicuria",
+	"calories": 252 ,
+	"fat": 11.4,
+	"carbs": 33.9,
+	"protein": 4.3 
+},
+{
+	"itemName": "Moroccan Pork",
+	"diningHall": "Epicuria",
+	"calories": 226 ,
+	"fat": 16.4,
+	"carbs": 1.6,
+	"protein": 17 
+},
+{
+	"itemName": "Mushroom, Pepper & Onion Pizza",
+	"diningHall": "Epicuria",
+	"calories": 150 ,
+	"fat": 4.2,
+	"carbs": 22,
+	"protein": 7.9 
+},
+{
+	"itemName": "Oatmeal Raisin Cookie",
+	"diningHall": "Epicuria",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
+},
+{
+	"itemName": "Oven Roasted Cauliflower",
+	"diningHall": "Epicuria",
+	"calories": 50 ,
+	"fat": 3.6,
+	"carbs": 4.2,
+	"protein": 1.8 
+},
+{
+	"itemName": "Oven Roasted Red Beets",
+	"diningHall": "Epicuria",
+	"calories": 61 ,
+	"fat": 1.7,
+	"carbs": 10.8,
+	"protein": 1.8 
+},
+{
+	"itemName": "Pan-Seared Cod",
+	"diningHall": "Epicuria",
+	"calories": 102 ,
+	"fat": 5.2,
+	"carbs": 1,
+	"protein": 12.3 
+},
+{
+	"itemName": "Pepperoni Pizza",
+	"diningHall": "Epicuria",
+	"calories": 195 ,
+	"fat": 8.5,
+	"carbs": 21.2,
+	"protein": 9.7 
+},
+{
+	"itemName": "Pignoli",
+	"diningHall": "Epicuria",
+	"calories": 487 ,
+	"fat": 31.6,
+	"carbs": 48.5,
+	"protein": 6.9 
+},
+{
+	"itemName": "Pork & Potato Saute w/ Coriander Sauce",
+	"diningHall": "Epicuria",
+	"calories": 275 ,
+	"fat": 13.6,
+	"carbs": 27.5,
+	"protein": 11.7 
+},
+{
+	"itemName": "Roasted Artichoke Hearts w/ Spicy Lemon Aioli",
+	"diningHall": "Epicuria",
+	"calories": 187 ,
+	"fat": 15.6,
+	"carbs": 8.8,
+	"protein": 2.9 
+},
+{
+	"itemName": "Roasted Broccolini",
+	"diningHall": "Epicuria",
+	"calories": 20 ,
+	"fat": 0.7,
+	"carbs": 3.5,
+	"protein": 1 
+},
+{
+	"itemName": "Roasted Brussels Sprouts",
+	"diningHall": "Epicuria",
+	"calories": 46 ,
+	"fat": 1.9,
+	"carbs": 6.4,
+	"protein": 2.3 
+},
+{
+	"itemName": "Roasted Butternut Squash",
+	"diningHall": "Epicuria",
+	"calories": 36 ,
+	"fat": 0.4,
+	"carbs": 8.6,
+	"protein": 0.7 
+},
+{
+	"itemName": "Roasted Cod Bruschetta",
+	"diningHall": "Epicuria",
+	"calories": 192 ,
+	"fat": 6.1,
+	"carbs": 23.3,
+	"protein": 11.2 
+},
+{
+	"itemName": "Roasted Eggplant",
+	"diningHall": "Epicuria",
+	"calories": 57 ,
+	"fat": 3.6,
+	"carbs": 6.6,
+	"protein": 0.6 
+},
+{
+	"itemName": "Rotini Florentine",
+	"diningHall": "Epicuria",
+	"calories": 655 ,
+	"fat": 13.7,
+	"carbs": 100.7,
+	"protein": 32.2 
+},
+{
+	"itemName": "Rotini, Pesto, & Kale Bowl",
+	"diningHall": "Epicuria",
+	"calories": 158 ,
+	"fat": 6.5,
+	"carbs": 21.8,
+	"protein": 5.3 
+},
+{
+	"itemName": "Salted Cod Pakora",
+	"diningHall": "Epicuria",
+	"calories": 62 ,
+	"fat": 3.5,
+	"carbs": 5.2,
+	"protein": 2.4 
+},
+{
+	"itemName": "Sauteed Kale w/ Dates & Pistachios",
+	"diningHall": "Epicuria",
+	"calories": 101 ,
+	"fat": 4.9,
+	"carbs": 13,
+	"protein": 4.4 
+},
+{
+	"itemName": "Sauteed Rapini",
+	"diningHall": "Epicuria",
+	"calories": 50 ,
+	"fat": 1.2,
+	"carbs": 5.2,
+	"protein": 4.6 
+},
+{
+	"itemName": "Sautéed Spinach",
+	"diningHall": "Epicuria",
+	"calories": 30 ,
+	"fat": 1.4,
+	"carbs": 3.6,
+	"protein": 1.5 
+},
+{
+	"itemName": "Spanakorizo Rice",
+	"diningHall": "Epicuria",
+	"calories": 72 ,
+	"fat": 1.4,
+	"carbs": 13.5,
+	"protein": 1.8 
+},
+{
+	"itemName": "Spanish Chorizo & Manchego Bocadillo",
+	"diningHall": "Epicuria",
+	"calories": 266 ,
+	"fat": 10.6,
+	"carbs": 30.8,
+	"protein": 10.8 
+},
+{
+	"itemName": "Spice Market Duck Sandwich",
+	"diningHall": "Epicuria",
+	"calories": 537 ,
+	"fat": 34.5,
+	"carbs": 36.4,
+	"protein": 18.7 
+},
+{
+	"itemName": "Spinach & Chickpea Sauté",
+	"diningHall": "Epicuria",
+	"calories": 78 ,
+	"fat": 3.8,
+	"carbs": 8.7,
+	"protein": 3.4 
+},
+{
+	"itemName": "Tomato Couscous",
+	"diningHall": "Epicuria",
+	"calories": 84 ,
+	"fat": 0.1,
+	"carbs": 18.7,
+	"protein": 1.6 
+},
+{
+	"itemName": "Tzatziki Sauce",
+	"diningHall": "Epicuria",
+	"calories": 21 ,
+	"fat": 0.5,
+	"carbs": 1.3,
+	"protein": 2.7 
+},
+{
+	"itemName": "Vegan Cappucino Cookies",
+	"diningHall": "Epicuria",
+	"calories": 394 ,
+	"fat": 18.6,
+	"carbs": 52.6,
+	"protein": 4 
+},
+{
+	"itemName": "White Bean, Feta, & Za'atar Spread",
+	"diningHall": "Epicuria",
+	"calories": 63 ,
+	"fat": 4.4,
+	"carbs": 4.2,
+	"protein": 2.2 
+},
+{
+	"itemName": "Ziti w/ Pepperoni & Marinara",
+	"diningHall": "Epicuria",
+	"calories": 467 ,
+	"fat": 15.2,
+	"carbs": 67.5,
+	"protein": 14 
+}
+]

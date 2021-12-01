@@ -1,1 +1,455 @@
 
+[
+{
+	"itemName": "Al Pastor-Style Mushroom Taco (Taco de Hongos)",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "All Meat Pizza",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Angel Hair Pasta w/ Marinated Greek Style Chicken",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Arancini",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Austin Style Vegan Chili Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Avocado & Kale Cheese Melt",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Avocado Bacon Turkey Burger",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "BBQ Chicken Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Bacon",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Banana Pecan Buckwheat Pancake",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Barley Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Beef Teriyake Bowl",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Braised Short Ribs",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Braised Spicy Lentils w/ Potatoes & Tomatoes",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Breaded Pork Chops",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Broccolini, Swiss Chard, Mozzarella Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Bruin Scramble (Ham & Cheddar)",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Bruin Scramble (Vegetarian)",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Butternut Squash & Mushroom Saute",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Cauliflower Fritter",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken & Egg Breakfast Pita",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken & Potato Kebab w/ Chermoula Vinaigrette",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken Currant Pecan Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken Fajitas",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Chicken Fiesta Nachos",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken Hummus Pita w/ Tzatziki",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken, Arugula, & Radish Flatbread",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chicken, Barley & Portobello Bowl",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Chili Cheese Burger",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Chipotle Chicken, Brown Rice, & Avocado Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Chipotle Seitan Taco",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Cilantro Pesto w/ Tri-Tip Tortilla Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Col. Karapet's Yardbird Cruncher",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Crisp Bacon & Cheddar Breakfast Burrito",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Cuban Mojo Chicken",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Cucumber & Tomato Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Curried Cauliflower Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Egg Whites Omelet",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Egg, Mushroom & Kale on W.W. English Muffin",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Eggplant, Chile, Mint, & Feta Fregola Sarda",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Farfalle w/ Sun-Dried Tomatoes & Spinach",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Farfalle w/ Tomatoes & Bacon",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Farro-Mushroom Stacker",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Flageolet Bean Ragout w/ Quinoa, Green Beans, & Mushroom",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "French Green Lentil Pancake",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "French Toast",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Garlic Shrimp w/ Lemon & Parsely",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Gemelli Pasta w/ Scallops in Butter Sauce",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Ginger Pancake w/ Banana Walnut Topping",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Golden Beet Poke Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Greek Farro Bowl",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Greek Style Gemelli w/ Asparagus & Tomatoes",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Grilled Balsamic Eggplant",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Grilled Barramundi w/ Cabbage",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Grilled Flank Steak",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Grilled Santa Maria Tri-Tip",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Grilled Shrimp",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Habanero Fried Chicken Sandwich",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Ham Scramble",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Harissa Roast Beef Sandwich",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Indian Marinated Pork, Lentil, Quinoa, & Spinach Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Italian Sausage Sandwich",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Jalapeo Popper Pizza",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Kansas-Style BBQ Fried Chicken Sandwich",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Lebanese Style Barramundi",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Lemon Dill Tofu, Bulgur Wheat & Cucumber Salad Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Little Italy Burger",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Mageirio",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Meatball Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Mediterranean Potato & Spinach Frittata",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Mid-West Honey Mustard Chicken",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Mojo-Marinated Grilled Tofu",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Mole Chilaquiles w/ Lime Crema",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Moroccan Pork",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Mushroom Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Mushroom, Pepper & Onion Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "NOLA Style Blackened Salmon",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Oat & Whole Wheat Waffle",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Omelet Bar",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Pan-Seared Cod",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Pancakes",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Pork Pozole",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Pork Sausage",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Pork w/ Buckwheat Noodle in Roasted Vegetable Broth",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Potato, Kale, Brown Rice, & Red Bean Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Red Chile Rotisserie Chicken",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Roasted Artichoke Hearts w/ Spicy Lemon Aioli",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Rotini, Pesto, & Kale Bowl",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Salmon, Dill Goat Cheese, & Cucumber Stacker",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Salted Cod Pakora",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Scallops, Wild Rice w/ Butternut Squash Puree & Romanesco",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Scrambled Egg, Potato & Swiss Chard Taco",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Scrambled Eggs",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Seafood Marinara Pizza",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Seafood Tacos",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Sesame Tofu, Volcano Rice & Mixed Cabbage Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Smoked Salmon Egg Benedict",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Spaghetti Squash, Cauliflower, & Escarole Saut Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Spanish Chorizo & Manchego Bocadillo",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Spice Market Duck Sandwich",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Spiced Lamb Chop",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Spicy Azuki & Tempeh Chili w/ Potatoes",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Spinach & Chickpea Saut",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Teriyaki Veggie Bowl",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Thai Tofu Stacker",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Turkey Sausage Patty",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Tuscan Kale Salad",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Vegan Chicken & Mango w/ Rice & Beans",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Vegan Frito Pie",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Vegetable Fajitas",
+	"nextAvailable": "2021-12-01"
+},
+{
+	"itemName": "Warm Rosemary Shrimp, White Bean, & Mizuna Salad Bowl",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Whole Grain Banana Waffle",
+	"nextAvailable": "2021-12-03"
+},
+{
+	"itemName": "Wild Mushroom & Arugula Flatbread",
+	"nextAvailable": "2021-12-03"
+}
+]
