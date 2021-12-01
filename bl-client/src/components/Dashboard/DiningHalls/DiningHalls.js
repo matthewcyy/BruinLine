@@ -68,7 +68,6 @@ function DiningHalls() {
             } else {
                 setIsCheckedIn(false);
             }
-
         }
     };
 
@@ -142,13 +141,13 @@ function DiningHalls() {
             } catch (err) {
                 console.log("ERROR", err.response.data.msg);
             }
-        }
+        };
         getPeopleHall();
         updateStates();
     }, [userData]);
 
     const [show, setShow] = useState(false);
-    const [expanded, setExpanded] = useState(false);
+    const [expanded, setExpanded] = React.useState(false);
 
     const showmenu = (hallbutton) => (event, isExpanded) => {
         //console.log("CLICKED", hallbutton);
@@ -161,6 +160,7 @@ function DiningHalls() {
         setExpanded(isExpanded ? hallbutton : false);
         // setShow((prev) => !prev);
     };
+
 
     const getUserFavorites = async () => {
         if (userData.user) {
@@ -245,85 +245,104 @@ function DiningHalls() {
         }
     }
 
+
     return (
         <div className="halls">
             <h2> Dining Halls </h2>
             <div style={{ textAlign: "center" }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid container spacing={2} xs={12} margin="auto"></Grid>
+                <Grid container justify="space-between" direction={"row"}>
                     {allDiningHalls.map((hall) => (
                         <div style={{ width: "90%", margin: "2rem auto" }}>
-                            <Card style={{ borderColor: "#2c7dc3" }}>
-                                <CardContent>
-                                    <Box
-                                        sx={{
-                                            fontWeight: "bold",
-                                            fontSize: "1.5rem",
-                                            marginBottom: "0.75rem",
-                                        }}
-                                    >
-                                        {hall}
-                                    </Box>
-                                    <Grid item xs={6} marginTop="0.5rem">
-                                        {userData.user ? (
-                                            isCheckedIn ? (
-                                                hall == currentHall ? (
-                                                    <Button
-                                                        onClick={() => removeHall(hall)}
-                                                        variant="contained"
-                                                    >
-                                                        Check out
-                                                    </Button>
-                                                ) : (
-                                                    <Button
-                                                        onClick={() => addHall(hall)}
-                                                        variant="contained"
-                                                        disabled
-                                                    >
-                                                        Check In
-                                                    </Button>
-                                                )
-                                            ) : (
-                                                <Button
-                                                    onClick={() => addHall(hall)}
-                                                    variant="contained"
+                            <Grid item xs={12} marginTop="0.5rem">
+                                <Card style={{ borderColor: "#2c7dc3" }}>
+                                    <CardContent>
+                                        <Grid container justify="space-between">
+                                            <Grid item xs={5} marginTop="0.5rem" align="left">
+                                                <Box
+                                                    sx={{
+                                                        fontWeight: "bold",
+                                                        fontSize: "2.0rem",
+                                                        marginBottom: "0.75rem",
+                                                    }}
                                                 >
-                                                    Check In
-                                                </Button>
-                                            )
-                                        ) : (
-                                            <div> </div>
-                                        )}
-                                    </Grid>
-                                    <Grid item xs={6} marginTop="0.5 rem">
-                                        <Box>Number of People: {peopleInHall[hall]}</Box>
-                                    </Grid>
-                                    <Grid item xs={6} marginTop="0.5 rem">
-                                        <Box>
-                                            <Accordion
-                                                expanded={openmenu[hall]}
-                                                onChange={showmenu(hall)}
+                                                    {hall}
+                                                </Box>
+                                            </Grid>
+                                            <Grid item merginTop="0.5rem" xs={6}>
+                                                {" "}
+                                            </Grid>
+                                            <Grid item marginTop="0.5rem" float="left">
+                                                {userData.user ? (
+                                                    isCheckedIn ? (
+                                                        hall == currentHall ? (
+                                                            <Button
+                                                                onClick={() => removeHall(hall)}
+                                                                variant="contained"
+                                                            >
+                                                                Check out
+                                                            </Button>
+                                                        ) : (
+                                                            <Button
+                                                                onClick={() => addHall(hall)}
+                                                                variant="contained"
+                                                                disabled
+                                                            >
+                                                                Check In
+                                                            </Button>
+                                                        )
+                                                    ) : (
+                                                        <Button
+                                                            onClick={() => addHall(hall)}
+                                                            variant="contained"
+                                                        >
+                                                            Check In
+                                                        </Button>
+                                                    )
+                                                ) : (
+                                                    <div> </div>
+                                                )}
+                                            </Grid>
+                                            <Grid
+                                                item
+                                                align="left"
+                                                marginTop="1.0 rem"
+                                                marginBottom="1.0rem"
                                             >
-                                                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                                    <Typography sx={{ width: "33%", flexShrink: 0 }}>
-                                                        Menu
-                                                    </Typography>
-                                                </AccordionSummary>
-                                                <AccordionDetails>
-                                                    <MenuCard
-                                                        menu={menus[hall]}
-                                                        favorites={favorites}
-                                                        setFavorites={setFavorites}
-                                                        id={id}
-                                                        setReviewItemName={setReviewItemName}
-                                                        setReviewPopShow={setReviewPopShow}
-                                                    />
-                                                </AccordionDetails>
-                                            </Accordion>
-                                        </Box>
-                                    </Grid>
-                                </CardContent>
-                            </Card>
+                                                <Box>
+                                                    Number of Users in {hall}: {peopleInHall[hall]}
+                                                </Box>
+                                            </Grid>
+                                            <Grid item xs={12} marginTop="0.5 rem">
+                                                <Box>
+                                                    <Accordion
+                                                        expanded={openmenu[hall]}
+                                                        onChange={showmenu(hall)}
+                                                    >
+                                                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                                                            <Typography
+                                                                sx={{ width: "33%", flexShrink: 0 }}
+                                                                align="left"
+                                                            >
+                                                                Menu
+                                                            </Typography>
+                                                        </AccordionSummary>
+                                                        <AccordionDetails>
+                                                            <MenuCard
+                                                                menu={menus[hall]}
+                                                                favorites={favorites}
+                                                                setFavorites={setFavorites}
+                                                                id={id}
+                                                                setReviewItemName={setReviewItemName}
+                                                                setReviewPopShow={setReviewPopShow}
+                                                            />
+                                                        </AccordionDetails>
+                                                    </Accordion>
+                                                </Box>
+                                            </Grid>
+                                        </Grid>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
                             <Modal
                                 open={reviewPopShow}
                                 onClose={handleClose}

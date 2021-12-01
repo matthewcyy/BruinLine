@@ -82,7 +82,7 @@ function GroupCard(props) {
                                     groupMembers.map((member) => (
                                         <Grid item xs={3}>
                                             <Box sx={{fontSize:"1.15rem", fontWeight:"normal", textAlign:"left"}}>
-                                                {member}
+                                                {member.username}
                                             </Box>
                                         </Grid>
                                     ))
