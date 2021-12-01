@@ -73,27 +73,6 @@ function NavBar() {
               </ListItem>
             </NavLink>
             <NavLink
-              to="/menus"
-              style={{ textDecoration: "none", marginRight: "0.5rem" }}
-              disableRipple
-            >
-              <ListItem button>
-                <ListItemText
-                  primary={
-                    <Box
-                      sx={{
-                        color: "#f8b827",
-                        fontWeight: "bold",
-                        fontSize: "1.25rem",
-                      }}
-                    >
-                      Menus
-                    </Box>
-                  }
-                />
-              </ListItem>
-            </NavLink>
-            <NavLink
               to="/reviews"
               style={{ textDecoration: "none", marginRight: "0.5rem" }}
               disableRipple
