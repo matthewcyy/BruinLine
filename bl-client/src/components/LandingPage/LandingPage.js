@@ -48,7 +48,7 @@ function LandingPage() {
             </li>
             <li>'Like' their favorite foods on different menus</li>
             <li>
-              Create groups to see other users' favorite foods and vote on which
+              Create groups to vote on which
               dining hall to eat at together
             </li>
             <li>Write reviews for various items</li>
