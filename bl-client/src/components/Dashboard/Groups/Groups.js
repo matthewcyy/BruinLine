@@ -65,30 +65,6 @@ function Groups() {
       <h1 className="title">Groups</h1>
       {userData.user ? (
         <div>
-          <Grid container spacing={0.5} margin="auto">
-            {groups.map((group) => (
-              <Grid item xs={4}>
-                <Box
-                  textAlign="center"
-                  sx={{
-                    fontWeight: "bold",
-                    fontSize: "1.5rem",
-                    borderRadius: "8px",
-                  }}
-                  display="block"
-                >
-                  <GroupCard
-                    groupObj={group}
-                    inviter={inviter}
-                    style={{ margin: "auto" }}
-                    members={groupMemberProp}
-                    username={userData.user.username}
-                    auser = {userData.user.allUsers}
-                  />
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
           <div style={{ width: "50%", margin: "2rem auto" }}>
             <Card>
               <CardContent>
@@ -119,6 +95,30 @@ function Groups() {
               </CardContent>
             </Card>
           </div>
+          <Grid container spacing={0.5} margin="auto">
+            {groups.map((group) => (
+              <Grid item xs={4}>
+                <Box
+                  textAlign="center"
+                  sx={{
+                    fontWeight: "bold",
+                    fontSize: "1.5rem",
+                    borderRadius: "8px",
+                  }}
+                  display="block"
+                >
+                  <GroupCard
+                    groupObj={group}
+                    inviter={inviter}
+                    style={{ margin: "auto" }}
+                    members={groupMemberProp}
+                    username={userData.user.username}
+                    auser = {userData.user.allUsers}
+                  />
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
         </div>
       ) : (
         <h2>Please login to use Groups</h2>
