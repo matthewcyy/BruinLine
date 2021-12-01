@@ -173,7 +173,11 @@ router.patch("/makeGroup", async (req, res) => {
     var newGroupList = user.groups;
     if (groupName) {
       user.groups = newGroupList; // adding new group name for user
-      groupMembers = [user.username];
+      var groupMembers = []
+      var username = user.username
+      var vote = ""
+      groupMembers.push({username, vote})
+      console.log(groupMembers)
       const newGroup = new Group({
         groupName,
         groupMembers,
@@ -254,7 +258,10 @@ router.patch("/acceptInvite", async (req, res) => {
         (x) => x.groupId === req.body.groupId
       );
       inviteList.splice(indexOfInvite, 1);
-      groupMembers.push(user.username); // adding new user to the exsting group
+      var groupMemberObj = {}
+      groupMemberObj.username = user.username
+      groupMemberObj.vote = ""
+      groupMembers.push(groupMemberObj)
       newGroupList.push({ groupName, groupId }); // adding new group name to list of groups for the user
       group.groupMembers = groupMembers;
       const savedGroup = await group.save();

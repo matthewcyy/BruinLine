@@ -3,9 +3,7 @@ import { BrowserRouter, Switch, Route, } from 'react-router-dom';
 import axios from 'axios';
 import Reviews from './components/Dashboard/Reviews/Reviews';
 import Profile from './components/Dashboard/Profile/Profile';
-import Rankings from './components/Dashboard/Rankings/Rankings';
 import DiningHalls from './components/Dashboard/DiningHalls/DiningHalls';
-import Menus from './components/Dashboard/Menus/Menus'
 import Groups from './components/Dashboard/Groups/Groups';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -75,11 +73,9 @@ function App() {
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
             <Route path="/dininghalls" component={DiningHalls} />
-            <Route path="/menus" component={Menus} />
             <Route path="/reviews" component={Reviews} />
             <Route path="/profile" component={Profile} />
             <Route path="/groups" component={Groups} />
-            <Route path="/rankings" component={Rankings} />
             <Route path="/voting" component={Voting} />
           </Switch>
         </UserContext.Provider>

@@ -1,14 +1,7 @@
-@font-face {
-  font-family: "MavenPro-Medium";
-  src: local("MavenPro"),
-    url(../../fonts/MavenPro/MavenPro-Medium.ttf) format("truetype");
-}
-
 .halls {
   text-align: center;
   color: black;
-  font-size: x-large;
-  font-family: MavenPro-Medium;
+  padding: 20px;
 }
 
 .subInfo {

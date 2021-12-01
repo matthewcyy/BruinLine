@@ -1,17 +1,10 @@
-@font-face {
-  font-family: "MavenPro-Medium";
-  src: local("MavenPro"),
-    url(../../fonts/MavenPro/MavenPro-Medium.ttf) format("truetype");
-}
-
 .container {
   text-align: center;
 }
 
 .title {
   color: black;
-  font-size: 30pt;
-  font-family: MavenPro-Medium;
+  padding: 20px;
 }
 
 .profilePicture {
@@ -44,18 +37,16 @@
 }
 
 .infoTitle {
-  color: white;
+  color: black;
   font-size: x-large;
-  font-family: MavenPro-Medium;
 }
 
 .infoList {
-  color: white;
+  color: black;
   font-size: large;
-  font-family: MavenPro-Medium;
 }
 
-#newPassword {
+/* #newPassword {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -67,9 +58,9 @@
 
 #newPassword:focus {
   background-color: lightblue;
-}
+} */
 
-#submitNewPassword {
+/* #submitNewPassword {
   background-color: lightblue;
   border: #2774ae;
   border-radius: 4px;
@@ -79,4 +70,4 @@
   margin: 4px 2px;
   cursor: pointer;
   font-family: MavenPro-Medium;
-}
+} */
