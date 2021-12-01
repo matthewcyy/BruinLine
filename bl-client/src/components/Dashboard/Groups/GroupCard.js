@@ -157,7 +157,7 @@ function GroupCard(props) {
               </Grid>
             </Grid>
             <Autocomplete
-        style={{ width: 500 }}
+        style={{ width: 300 }}
         freeSolo
         autoComplete
         autoHighlight
