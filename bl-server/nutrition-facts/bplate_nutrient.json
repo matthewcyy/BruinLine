@@ -33,22 +33,6 @@
 	"protein": 3 
 },
 {
-	"itemName": "Arabic Chicken Bowl w/ Red Cabbage & Whole Wheat Pita",
-	"diningHall": "BPlate",
-	"calories": 275 ,
-	"fat": 15.5,
-	"carbs": 19.5,
-	"protein": 15.6 
-},
-{
-	"itemName": "Armenian Lamb Flatbread",
-	"diningHall": "BPlate",
-	"calories": 118 ,
-	"fat": 3.4,
-	"carbs": 16.7,
-	"protein": 6.1 
-},
-{
 	"itemName": "BBQ Pork Tortilla Pizza",
 	"diningHall": "BPlate",
 	"calories": 112 ,
@@ -57,36 +41,12 @@
 	"protein": 9.3 
 },
 {
-	"itemName": "BBQ Seitan Lettuce Wrap",
-	"diningHall": "BPlate",
-	"calories": 203 ,
-	"fat": 2.3,
-	"carbs": 17,
-	"protein": 30.4 
-},
-{
 	"itemName": "BBQ Tofu Flatbread",
 	"diningHall": "BPlate",
 	"calories": 512 ,
 	"fat": 16.2,
 	"carbs": 73.1,
 	"protein": 25.7 
-},
-{
-	"itemName": "Baby Arugula, Chickpea & Avocado Salad",
-	"diningHall": "BPlate",
-	"calories": 101 ,
-	"fat": 5.2,
-	"carbs": 11.8,
-	"protein": 3.8 
-},
-{
-	"itemName": "Baked Red Rose Potato",
-	"diningHall": "BPlate",
-	"calories": 89 ,
-	"fat": 3.3,
-	"carbs": 13.5,
-	"protein": 1.6 
 },
 {
 	"itemName": "Baked Russet Potato",
@@ -113,60 +73,12 @@
 	"protein": 4.2 
 },
 {
-	"itemName": "Barley Pilaf",
-	"diningHall": "BPlate",
-	"calories": 73 ,
-	"fat": 0.9,
-	"carbs": 15.4,
-	"protein": 1.4 
-},
-{
 	"itemName": "Barley Salad",
 	"diningHall": "BPlate",
 	"calories": 115 ,
 	"fat": 6.6,
 	"carbs": 12.2,
 	"protein": 2.5 
-},
-{
-	"itemName": "Barramundi, Avocado & Black Bean Stacker",
-	"diningHall": "BPlate",
-	"calories": 195 ,
-	"fat": 6.4,
-	"carbs": 18.4,
-	"protein": 19.5 
-},
-{
-	"itemName": "Basil Oregano Chicken w/ Rice, Beans & Kale Bowl",
-	"diningHall": "BPlate",
-	"calories": 178 ,
-	"fat": 6.1,
-	"carbs": 14.2,
-	"protein": 17.2 
-},
-{
-	"itemName": "Beef & Mushroom Soup",
-	"diningHall": "BPlate",
-	"calories": 106 ,
-	"fat": 3.4,
-	"carbs": 14.4,
-	"protein": 6.5 
-},
-{
-	"itemName": "Beef, Black Bean & Cabbage Tortilla Pizza",
-	"diningHall": "BPlate",
-	"calories": 90 ,
-	"fat": 3.3,
-	"carbs": 10.4,
-	"protein": 4.7 
-},
-{
-	"itemName": "Black Bean, Red Lentil, & Sweet Potato Quesadilla",
-	"diningHall": "BPlate",
-	"calories": 135 ,
-	"fat": 0.7,
-	"carbs": 27.3,
-	"protein": 5.8 
 },
 {
 	"itemName": "Black Eyed Peas & Collard Greens",
@@ -201,43 +113,20 @@
 	"protein": 0.1 
 },
 {
-	"itemName": "Blueberry Compote",
-	"diningHall": "BPlate",
-	"calories": 29 ,
-	"fat": 0.1,
-	"carbs": 7.4,
-	"protein": 0.1 
-},
-{
-	"itemName": "Blueberry Yogurt",
-	"diningHall": "BPlate",
-	"calories": 29 ,
-	"fat": 0.3,
-	"carbs": 5.4,
-	"protein": 1.2 
-},
-{
 	"itemName": "Boston Brown Bread",
 	"diningHall": "BPlate",
-	"calories": 93 ,
-	"fat": 0.4,
-	"carbs": 21.8,
-	"protein": 1.9 
+	"calories": 185 ,
+	"fat": 0.8,
+	"carbs": 43.7,
+	"protein": 3.9 
 },
 {
 	"itemName": "Broccolini, Swiss Chard, Mozzarella Pizza",
 	"diningHall": "BPlate",
+	"calories": 165 ,
 	"fat": 4.7,
 	"carbs": 27.4,
 	"protein": 6.7 
-},
-{
-	"itemName": "Brown Basmati Rice",
-	"diningHall": "BPlate",
-	"calories": 249 ,
-	"fat": 2.7,
-	"carbs": 55.1,
-	"protein": 5.3 
 },
 {
 	"itemName": "Brown Calrose Rice",
@@ -272,36 +161,12 @@
 	"protein": 7.4 
 },
 {
-	"itemName": "Butternut Squash Soup",
-	"diningHall": "BPlate",
-	"calories": 39 ,
-	"fat": 0.5,
-	"carbs": 8.7,
-	"protein": 1 
-},
-{
 	"itemName": "Cacao Butter",
 	"diningHall": "BPlate",
 	"calories": 29 ,
 	"fat": 0.6,
 	"carbs": 5.7,
 	"protein": 0.6 
-},
-{
-	"itemName": "Calypso Bean & Tri-Color Quinoa Taco",
-	"diningHall": "BPlate",
-	"calories": 177 ,
-	"fat": 6.1,
-	"carbs": 22.4,
-	"protein": 8.2 
-},
-{
-	"itemName": "Calypso Bean, Shell Pasta, & Arugula Saut",
-	"diningHall": "BPlate",
-	"calories": 350 ,
-	"fat": 7.3,
-	"carbs": 59.3,
-	"protein": 13 
 },
 {
 	"itemName": "Carrot Walnut Zucchini Bread",
@@ -328,22 +193,6 @@
 	"protein": 18.2 
 },
 {
-	"itemName": "Chicken & Roasted Beet Hummus Flatbread",
-	"diningHall": "BPlate",
-	"calories": 141 ,
-	"fat": 4.2,
-	"carbs": 17.7,
-	"protein": 8.3 
-},
-{
-	"itemName": "Chicken Breast - Sage Marinated",
-	"diningHall": "BPlate",
-	"calories": 86 ,
-	"fat": 2.3,
-	"carbs": 0.1,
-	"protein": 15 
-},
-{
 	"itemName": "Chicken Currant Pecan Salad",
 	"diningHall": "BPlate",
 	"calories": 66 ,
@@ -358,22 +207,6 @@
 	"fat": 4.3,
 	"carbs": 10.9,
 	"protein": 20.4 
-},
-{
-	"itemName": "Chicken Spring Roll Whole Wheat Wrap",
-	"diningHall": "BPlate",
-	"calories": 196 ,
-	"fat": 5.1,
-	"carbs": 25.7,
-	"protein": 12.4 
-},
-{
-	"itemName": "Chicken Taco w/ Freekeh",
-	"diningHall": "BPlate",
-	"calories": 254 ,
-	"fat": 4.6,
-	"carbs": 34.6,
-	"protein": 18.6 
 },
 {
 	"itemName": "Chicken, Arugula, & Radish Flatbread",
@@ -392,22 +225,6 @@
 	"protein": 15.5 
 },
 {
-	"itemName": "Chickpea & Oat Waffle",
-	"diningHall": "BPlate",
-	"calories": 288 ,
-	"fat": 10.3,
-	"carbs": 42.7,
-	"protein": 8.9 
-},
-{
-	"itemName": "Chickpea Panisse, Mixed Grains, & Rapini Bowl",
-	"diningHall": "BPlate",
-	"calories": 165 ,
-	"fat": 1.9,
-	"carbs": 30.6,
-	"protein": 7.4 
-},
-{
 	"itemName": "Chickpea Stacker w/ Yogurt-Tahini Sauce",
 	"diningHall": "BPlate",
 	"calories": 286 ,
@@ -422,30 +239,6 @@
 	"fat": 6.6,
 	"carbs": 7.1,
 	"protein": 26.8 
-},
-{
-	"itemName": "Chinese Kale w/ Five Spice",
-	"diningHall": "BPlate",
-	"calories": 34 ,
-	"fat": 2.9,
-	"carbs": 2.1,
-	"protein": 0.7 
-},
-{
-	"itemName": "Chinese Kale w/ Toasted Garlic",
-	"diningHall": "BPlate",
-	"calories": 20 ,
-	"fat": 1.2,
-	"carbs": 2.2,
-	"protein": 0.6 
-},
-{
-	"itemName": "Chipotle Beef Taco w/ Curtido",
-	"diningHall": "BPlate",
-	"calories": 231 ,
-	"fat": 11.9,
-	"carbs": 18.2,
-	"protein": 12.2 
 },
 {
 	"itemName": "Chipotle Chicken, Brown Rice, & Avocado Bowl",
@@ -472,36 +265,12 @@
 	"protein": 3.2 
 },
 {
-	"itemName": "Chunky Apple Oatmeal Pancake",
-	"diningHall": "BPlate",
-	"calories": 177 ,
-	"fat": 3.7,
-	"carbs": 35.2,
-	"protein": 4.2 
-},
-{
 	"itemName": "Cilantro Pesto w/ Tri-Tip Tortilla Pizza",
 	"diningHall": "BPlate",
 	"calories": 126 ,
 	"fat": 7.5,
 	"carbs": 8.1,
 	"protein": 6.9 
-},
-{
-	"itemName": "Cinnamon Polenta Pancake w/ Apple Cranberry Compote",
-	"diningHall": "BPlate",
-	"calories": 100 ,
-	"fat": 2.4,
-	"carbs": 17.3,
-	"protein": 2.7 
-},
-{
-	"itemName": "Citrus Marmalade",
-	"diningHall": "BPlate",
-	"calories": 99 ,
-	"fat": 0,
-	"carbs": 25.9,
-	"protein": 0.2 
 },
 {
 	"itemName": "Coconut Pineapple Bread",
@@ -520,22 +289,6 @@
 	"protein": 3 
 },
 {
-	"itemName": "Cranberry Apple Water",
-	"diningHall": "BPlate",
-	"calories": 19 ,
-	"fat": 0,
-	"carbs": 4.6,
-	"protein": 0 
-},
-{
-	"itemName": "Cranberry Cupcake",
-	"diningHall": "BPlate",
-	"calories": 102 ,
-	"fat": 5.1,
-	"carbs": 12.6,
-	"protein": 1.2 
-},
-{
 	"itemName": "Cranberry Nut Flaxsnax Bread",
 	"diningHall": "BPlate",
 	"calories": 169 ,
@@ -544,44 +297,12 @@
 	"protein": 2.5 
 },
 {
-	"itemName": "Cream of Wheat",
-	"diningHall": "BPlate",
-	"calories": 87 ,
-	"fat": 0.2,
-	"carbs": 18.9,
-	"protein": 2.7 
-},
-{
-	"itemName": "Creamy Mushroom Pasta",
-	"diningHall": "BPlate",
-	"calories": 182 ,
-	"fat": 6,
-	"carbs": 23.8,
-	"protein": 8.9 
-},
-{
-	"itemName": "Crostini",
-	"diningHall": "BPlate",
-	"calories": 127 ,
-	"fat": 8.5,
-	"carbs": 11.5,
-	"protein": 2.4 
-},
-{
 	"itemName": "Cucumber & Tomato Salad",
 	"diningHall": "BPlate",
 	"calories": 104 ,
 	"fat": 10.2,
 	"carbs": 2.8,
 	"protein": 1.2 
-},
-{
-	"itemName": "Cucumber Mint Water",
-	"diningHall": "BPlate",
-	"calories": 1 ,
-	"fat": 0,
-	"carbs": 0.1,
-	"protein": 0 
 },
 {
 	"itemName": "Curried Cauliflower Salad",
@@ -600,22 +321,6 @@
 	"protein": 1.8 
 },
 {
-	"itemName": "Eastern Spiced Tofu w/ Spelt Tabouli",
-	"diningHall": "BPlate",
-	"calories": 126 ,
-	"fat": 5.7,
-	"carbs": 10.1,
-	"protein": 11.8 
-},
-{
-	"itemName": "Egg White, Spinach, & Turkey Sausage Sandwich",
-	"diningHall": "BPlate",
-	"calories": 422 ,
-	"fat": 5.3,
-	"carbs": 70.3,
-	"protein": 24.6 
-},
-{
 	"itemName": "Egg, Mushroom & Kale on W.W. English Muffin",
 	"diningHall": "BPlate",
 	"calories": 173 ,
@@ -632,28 +337,20 @@
 	"protein": 7 
 },
 {
+	"itemName": "Farro Pilaf",
+	"diningHall": "BPlate",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
+},
+{
 	"itemName": "Farro-Mushroom Stacker",
 	"diningHall": "BPlate",
 	"calories": 162 ,
 	"fat": 11.7,
 	"carbs": 13.4,
 	"protein": 2.6 
-},
-{
-	"itemName": "Farro",
-	"diningHall": "BPlate",
-	"calories": 76 ,
-	"fat": 0.3,
-	"carbs": 17.1,
-	"protein": 2.8 
-},
-{
-	"itemName": "Fennel, Cucumber, & Chicken Salad w/ Pita Chips",
-	"diningHall": "BPlate",
-	"calories": 157 ,
-	"fat": 7.1,
-	"carbs": 10.1,
-	"protein": 13.4 
 },
 {
 	"itemName": "Fisherman's Stew",
@@ -672,14 +369,6 @@
 	"protein": 6.2 
 },
 {
-	"itemName": "Flank Steak, Egg & Brown Rice Bowl",
-	"diningHall": "BPlate",
-	"calories": 179 ,
-	"fat": 8.3,
-	"carbs": 8,
-	"protein": 16.7 
-},
-{
 	"itemName": "Flatbread Sticks",
 	"diningHall": "BPlate",
 	"calories": 46 ,
@@ -696,44 +385,12 @@
 	"protein": 19 
 },
 {
-	"itemName": "Frijoles de la Olla",
-	"diningHall": "BPlate",
-	"calories": 75 ,
-	"fat": 0.3,
-	"carbs": 14,
-	"protein": 4.7 
-},
-{
-	"itemName": "Ganache Tart",
-	"diningHall": "BPlate",
-	"calories": 268 ,
-	"fat": 19.9,
-	"carbs": 22.5,
-	"protein": 2.9 
-},
-{
 	"itemName": "Garlic Bok Choy",
 	"diningHall": "BPlate",
 	"calories": 27 ,
 	"fat": 0.7,
 	"carbs": 4.6,
 	"protein": 1.8 
-},
-{
-	"itemName": "Garlic Coriander Grilled Pork",
-	"diningHall": "BPlate",
-	"calories": 66 ,
-	"fat": 1.7,
-	"carbs": 0.1,
-	"protein": 11.9 
-},
-{
-	"itemName": "Garlic Cumin Rotisserie Chicken",
-	"diningHall": "BPlate",
-	"calories": 145 ,
-	"fat": 8.4,
-	"carbs": 3.2,
-	"protein": 14.2 
 },
 {
 	"itemName": "Garlic Edamame",
@@ -776,23 +433,8 @@
 	"protein": 2.3 
 },
 {
-	"itemName": "Grapefruit, Ginger & Rose Marmalade",
-	"diningHall": "BPlate",
-	"calories": 67 ,
-	"fat": 0.1,
-	"carbs": 17.9,
-	"protein": 0.1 
-},
-{
-	"itemName": "Grapefruit-Ginger Water",
-	"diningHall": "BPlate",
-	"calories": 3 ,
-	"fat": 0,
-	"carbs": 0.8,
-	"protein": 0.1 
-},
-{
 	"itemName": "Grapefruit",
+	"diningHall": "BPlate",
 	"calories": 38 ,
 	"fat": 0.1,
 	"carbs": 9.8,
@@ -815,14 +457,6 @@
 	"protein": 8 
 },
 {
-	"itemName": "Green Chile Eggs Benedict",
-	"diningHall": "BPlate",
-	"calories": 204 ,
-	"fat": 9.5,
-	"carbs": 19.7,
-	"protein": 11 
-},
-{
 	"itemName": "Green Chile Rice w/ Black Beans & Egg",
 	"diningHall": "BPlate",
 	"calories": 150 ,
@@ -837,14 +471,6 @@
 	"fat": 0.1,
 	"carbs": 9.2,
 	"protein": 2.7 
-},
-{
-	"itemName": "Green Tea-Shiso Marmalade",
-	"diningHall": "BPlate",
-	"calories": 49 ,
-	"fat": 0.1,
-	"carbs": 12.8,
-	"protein": 0.1 
 },
 {
 	"itemName": "Grilled Balsamic Eggplant",
@@ -863,11 +489,843 @@
 	"protein": 12.6 
 },
 {
-	"itemName": "Grilled Chicken - Fennel Coriander Marinade",
+	"itemName": "Grilled Chicken - Lemon-Ginger Marinade",
 	"diningHall": "BPlate",
-	"calories": 114 ,
-	"fat": 4.8,
+	"calories": 88 ,
+	"fat": 2.1,
+	"carbs": 1.1,
+	"protein": 15.1 
+},
+{
+	"itemName": "Grilled Chicken - Moroccan Marinade",
+	"diningHall": "BPlate",
+	"calories": 88 ,
+	"fat": 2.3,
+	"carbs": 0.8,
+	"protein": 15.1 
+},
+{
+	"itemName": "Grilled Chicken Breast - Dijon Marinade",
+	"diningHall": "BPlate",
+	"calories": 103 ,
+	"fat": 3.8,
+	"carbs": 0.1,
+	"protein": 15.9 
+},
+{
+	"itemName": "Grilled Chicken Breast - Italian Marinade",
+	"diningHall": "BPlate",
+	"calories": 96 ,
+	"fat": 2.8,
+	"carbs": 0.6,
+	"protein": 15.9 
+},
+{
+	"itemName": "Grilled Potato & Brussel Sprouts Cake",
+	"diningHall": "BPlate",
+	"calories": 86 ,
+	"fat": 3.6,
+	"carbs": 11.9,
+	"protein": 1.6 
+},
+{
+	"itemName": "Grilled Purple Sweet Potato",
+	"diningHall": "BPlate",
+	"calories": 50 ,
+	"fat": 0.1,
+	"carbs": 11.5,
+	"protein": 1.1 
+},
+{
+	"itemName": "Grilled Santa Maria Tri-Tip",
+	"diningHall": "BPlate",
+	"calories": 102 ,
+	"fat": 5.5,
+	"carbs": 0.2,
+	"protein": 12.1 
+},
+{
+	"itemName": "Grilled Shrimp",
+	"diningHall": "BPlate",
+	"calories": 41 ,
+	"fat": 1.5,
+	"carbs": 0.5,
+	"protein": 5.9 
+},
+{
+	"itemName": "Ground Beef, Farro & Mushroom Wrap",
+	"diningHall": "BPlate",
+	"calories": 121 ,
+	"fat": 5.6,
+	"carbs": 13,
+	"protein": 6.7 
+},
+{
+	"itemName": "Indian Marinated Pork, Lentil, Quinoa, & Spinach Bowl",
+	"diningHall": "BPlate",
+	"calories": 153 ,
+	"fat": 3.9,
+	"carbs": 13.9,
+	"protein": 15.7 
+},
+{
+	"itemName": "Kiwi Water",
+	"diningHall": "BPlate",
+	"calories": 12 ,
+	"fat": 0.1,
+	"carbs": 2.9,
+	"protein": 0.2 
+},
+{
+	"itemName": "Kiwi",
+	"diningHall": "BPlate",
+	"calories": 19 ,
+	"fat": 0.1,
+	"carbs": 4.6,
+	"protein": 0.3 
+},
+{
+	"itemName": "Kumquat Compote",
+	"diningHall": "BPlate",
+	"calories": 43 ,
+	"fat": 0.2,
+	"carbs": 10.9,
+	"protein": 0.4 
+},
+{
+	"itemName": "Lemon Blueberry Bread",
+	"diningHall": "BPlate",
+	"calories": 196 ,
+	"fat": 6.3,
+	"carbs": 33.9,
+	"protein": 2.2 
+},
+{
+	"itemName": "Lemon Dill Tofu, Bulgur Wheat & Cucumber Salad Bowl",
+	"diningHall": "BPlate",
+	"calories": 185 ,
+	"fat": 12,
+	"carbs": 10.7,
+	"protein": 12 
+},
+{
+	"itemName": "Lemon Poppy Bread",
+	"diningHall": "BPlate",
+	"calories": 57 ,
+	"fat": 1.8,
+	"carbs": 10,
+	"protein": 0.8 
+},
+{
+	"itemName": "Lemon-Mint Water",
+	"diningHall": "BPlate",
+	"calories": 2 ,
+	"fat": 0,
+	"carbs": 0.9,
+	"protein": 0.1 
+},
+{
+	"itemName": "Lentils w/ Roasted Beets & Carrots",
+	"diningHall": "BPlate",
+	"calories": 158 ,
+	"fat": 9.3,
+	"carbs": 15.6,
+	"protein": 4.7 
+},
+{
+	"itemName": "Lowfat Greek Yogurt",
+	"diningHall": "BPlate",
+	"calories": 21 ,
+	"fat": 0.6,
+	"carbs": 1.1,
+	"protein": 2.8 
+},
+{
+	"itemName": "Lowfat Peach Yogurt",
+	"diningHall": "BPlate",
+	"calories": 29 ,
+	"fat": 0.3,
+	"carbs": 5.4,
+	"protein": 1.2 
+},
+{
+	"itemName": "Lowfat Peach Yogurt",
+	"diningHall": "BPlate",
+	"calories": 174 ,
+	"fat": 1.8,
+	"carbs": 32.4,
+	"protein": 7.4 
+},
+{
+	"itemName": "Malt-O-Meal",
+	"diningHall": "BPlate",
+	"calories": 103 ,
+	"fat": 0.2,
+	"carbs": 21.9,
+	"protein": 3.3 
+},
+{
+	"itemName": "Mango",
+	"diningHall": "BPlate",
+	"calories": 17 ,
+	"fat": 0.1,
+	"carbs": 4.2,
+	"protein": 0.2 
+},
+{
+	"itemName": "Maple Syrup",
+	"diningHall": "BPlate",
+	"calories": 77 ,
+	"fat": 0,
+	"carbs": 19.9,
+	"protein": 0 
+},
+{
+	"itemName": "Mashed Cauliflower",
+	"diningHall": "BPlate",
+	"calories": 32 ,
+	"fat": 1.5,
+	"carbs": 4.1,
+	"protein": 1.2 
+},
+{
+	"itemName": "Mashed Potatoes w/ Kale",
+	"diningHall": "BPlate",
+	"calories": 94 ,
+	"fat": 5.3,
+	"carbs": 9.9,
+	"protein": 2.3 
+},
+{
+	"itemName": "Mixed Grains -- Lentil, Chickpea, Quinoa & Brown Rice",
+	"diningHall": "BPlate",
+	"calories": 139 ,
+	"fat": 1.6,
+	"carbs": 28.6,
+	"protein": 4.4 
+},
+{
+	"itemName": "Mixed Grains -- Spelt, Wheatberry & Brown Rice",
+	"diningHall": "BPlate",
+	"calories": 95 ,
+	"fat": 0.6,
+	"carbs": 20.2,
+	"protein": 3.2 
+},
+{
+	"itemName": "Mojo-Marinated Grilled Pork Tenderloin",
+	"diningHall": "BPlate",
+	"calories": 97 ,
+	"fat": 3.5,
+	"carbs": 0.6,
+	"protein": 14.9 
+},
+{
+	"itemName": "Mojo-Marinated Grilled Tofu",
+	"diningHall": "BPlate",
+	"calories": 97 ,
+	"fat": 6.4,
 	"carbs": 2.2,
-	"protein": 15.4 
+	"protein": 9.9 
+},
+{
+	"itemName": "Multi-Grain Bread",
+	"diningHall": "BPlate",
+	"calories": 100 ,
+	"fat": 0.7,
+	"carbs": 20.4,
+	"protein": 4.2 
+},
+{
+	"itemName": "Oat & Whole Wheat Waffle",
+	"diningHall": "BPlate",
+	"calories": 167 ,
+	"fat": 4.2,
+	"carbs": 27.1,
+	"protein": 5.7 
+},
+{
+	"itemName": "Oatmeal",
+	"diningHall": "BPlate",
+	"calories": 292 ,
+	"fat": 5.2,
+	"carbs": 49.8,
+	"protein": 12 
+},
+{
+	"itemName": "Olive Oil Torte",
+	"diningHall": "BPlate",
+	"calories": 128 ,
+	"fat": 3.2,
+	"carbs": 24.8,
+	"protein": 1.4 
+},
+{
+	"itemName": "Orange Hibiscus Water",
+	"diningHall": "BPlate",
+	"calories": 7 ,
+	"fat": 0,
+	"carbs": 1.6,
+	"protein": 0.1 
+},
+{
+	"itemName": "Orange Pomegranate Water",
+	"diningHall": "BPlate",
+	"calories": 27 ,
+	"fat": 0,
+	"carbs": 6.6,
+	"protein": 0.2 
+},
+{
+	"itemName": "Orange-Papaya Marmalade",
+	"diningHall": "BPlate",
+	"calories": 56 ,
+	"fat": 0,
+	"carbs": 15,
+	"protein": 0.1 
+},
+{
+	"itemName": "Orange",
+	"diningHall": "BPlate",
+	"calories": 45 ,
+	"fat": 0.1,
+	"carbs": 11.2,
+	"protein": 0.9 
+},
+{
+	"itemName": "Passion Fruit & Orange Water",
+	"diningHall": "BPlate",
+	"calories": 13 ,
+	"fat": 0.1,
+	"carbs": 3,
+	"protein": 0.3 
+},
+{
+	"itemName": "Peanut Butter",
+	"diningHall": "BPlate",
+	"calories": 166 ,
+	"fat": 14.1,
+	"carbs": 6,
+	"protein": 6.9 
+},
+{
+	"itemName": "Pear Butter",
+	"diningHall": "BPlate",
+	"calories": 68 ,
+	"fat": 0.1,
+	"carbs": 17.6,
+	"protein": 0.3 
+},
+{
+	"itemName": "Pear Fennel Butter",
+	"diningHall": "BPlate",
+	"calories": 61 ,
+	"fat": 0.1,
+	"carbs": 15.7,
+	"protein": 0.5 
+},
+{
+	"itemName": "Pear-Date Compote",
+	"diningHall": "BPlate",
+	"calories": 52 ,
+	"fat": 0.1,
+	"carbs": 13.7,
+	"protein": 0.3 
+},
+{
+	"itemName": "Pineapple Water",
+	"diningHall": "BPlate",
+	"calories": 8 ,
+	"fat": 0,
+	"carbs": 2.1,
+	"protein": 0.1 
+},
+{
+	"itemName": "Pineapple",
+	"diningHall": "BPlate",
+	"calories": 11 ,
+	"fat": 0,
+	"carbs": 3,
+	"protein": 0.1 
+},
+{
+	"itemName": "Plantain Butter",
+	"diningHall": "BPlate",
+	"calories": 14 ,
+	"fat": 0,
+	"carbs": 3.7,
+	"protein": 0 
+},
+{
+	"itemName": "Pork w/ Buckwheat Noodle in Roasted Vegetable Broth",
+	"diningHall": "BPlate",
+	"calories": 128 ,
+	"fat": 2.2,
+	"carbs": 13.1,
+	"protein": 14.5 
+},
+{
+	"itemName": "Potato & Red Pepper Hash",
+	"diningHall": "BPlate",
+	"calories": 85 ,
+	"fat": 4.5,
+	"carbs": 10.1,
+	"protein": 1.2 
+},
+{
+	"itemName": "Potato, Kale, Brown Rice, & Red Bean Bowl",
+	"diningHall": "BPlate",
+	"calories": 96 ,
+	"fat": 4.8,
+	"carbs": 12.2,
+	"protein": 2.5 
+},
+{
+	"itemName": "Pumpkin Walnut Flax Bar",
+	"diningHall": "BPlate",
+	"calories": 130 ,
+	"fat": 6.2,
+	"carbs": 18,
+	"protein": 2.4 
+},
+{
+	"itemName": "Quinoa Flakes & Brown Rice Cereal",
+	"diningHall": "BPlate",
+	"calories": 152 ,
+	"fat": 1.5,
+	"carbs": 31.4,
+	"protein": 4.1 
+},
+{
+	"itemName": "Raisin Bran Bread",
+	"diningHall": "BPlate",
+	"calories": 84 ,
+	"fat": 4.6,
+	"carbs": 10.5,
+	"protein": 1.4 
+},
+{
+	"itemName": "Raisin Bread",
+	"diningHall": "BPlate",
+	"calories": 315 ,
+	"fat": 5.7,
+	"carbs": 62.1,
+	"protein": 8.9 
+},
+{
+	"itemName": "Raisin Walnut Bread",
+	"diningHall": "BPlate",
+	"calories": 186 ,
+	"fat": 3.8,
+	"carbs": 33.3,
+	"protein": 5.7 
+},
+{
+	"itemName": "Raspberry Water",
+	"diningHall": "BPlate",
+	"calories": 4 ,
+	"fat": 0,
+	"carbs": 0.8,
+	"protein": 0.1 
+},
+{
+	"itemName": "Red Chile Rotisserie Chicken",
+	"diningHall": "BPlate",
+	"calories": 188 ,
+	"fat": 13.8,
+	"carbs": 1.9,
+	"protein": 13.9 
+},
+{
+	"itemName": "Red Grapes",
+	"diningHall": "BPlate",
+	"calories": 19 ,
+	"fat": 0.1,
+	"carbs": 4.9,
+	"protein": 0.2 
+},
+{
+	"itemName": "Roasted Apples w/ Cornmeal Streusel",
+	"diningHall": "BPlate",
+	"calories": 116 ,
+	"fat": 3.5,
+	"carbs": 21.7,
+	"protein": 0.9 
+},
+{
+	"itemName": "Roasted Beet & Grilled Pineapple Butter",
+	"diningHall": "BPlate",
+	"calories": 87 ,
+	"fat": 0.4,
+	"carbs": 21.9,
+	"protein": 0.6 
+},
+{
+	"itemName": "Roasted Broccoli",
+	"diningHall": "BPlate",
+	"calories": 58 ,
+	"fat": 4.5,
+	"carbs": 4.1,
+	"protein": 1.4 
+},
+{
+	"itemName": "Roasted Brussels Sprouts",
+	"diningHall": "BPlate",
+	"calories": 30 ,
+	"fat": 1.3,
+	"carbs": 4.3,
+	"protein": 1.5 
+},
+{
+	"itemName": "Roasted Butternut Squash & Celery Root",
+	"diningHall": "BPlate",
+	"calories": 47 ,
+	"fat": 2.8,
+	"carbs": 5.6,
+	"protein": 0.5 
+},
+{
+	"itemName": "Roasted Carrots & Onions",
+	"diningHall": "BPlate",
+	"calories": 31 ,
+	"fat": 0.9,
+	"carbs": 5.4,
+	"protein": 0.5 
+},
+{
+	"itemName": "Roasted Gold & Red Beets",
+	"diningHall": "BPlate",
+	"calories": 41 ,
+	"fat": 1.2,
+	"carbs": 7.2,
+	"protein": 1.2 
+},
+{
+	"itemName": "Roasted Plantains",
+	"diningHall": "BPlate",
+	"calories": 69 ,
+	"fat": 0.2,
+	"carbs": 18.1,
+	"protein": 0.7 
+},
+{
+	"itemName": "Roasted Red Breakfast Potato Wedges",
+	"diningHall": "BPlate",
+	"calories": 60 ,
+	"fat": 1.8,
+	"carbs": 9.9,
+	"protein": 1.3 
+},
+{
+	"itemName": "Roasted Yams",
+	"diningHall": "BPlate",
+	"calories": 72 ,
+	"fat": 0.5,
+	"carbs": 15.7,
+	"protein": 1.5 
+},
+{
+	"itemName": "Roasted Yukon Potatoes & Fennel",
+	"diningHall": "BPlate",
+	"calories": 69 ,
+	"fat": 0.7,
+	"carbs": 13.6,
+	"protein": 1.8 
+},
+{
+	"itemName": "Salmon, Dill Goat Cheese, & Cucumber Stacker",
+	"diningHall": "BPlate",
+	"calories": 143 ,
+	"fat": 4.7,
+	"carbs": 12.7,
+	"protein": 13.2 
+},
+{
+	"itemName": "Sauteed Kale",
+	"diningHall": "BPlate",
+	"calories": 46 ,
+	"fat": 2.1,
+	"carbs": 6,
+	"protein": 2.6 
+},
+{
+	"itemName": "Sauteed Spinach & Kale",
+	"diningHall": "BPlate",
+	"calories": 31 ,
+	"fat": 1.2,
+	"carbs": 4.4,
+	"protein": 2.1 
+},
+{
+	"itemName": "Sautéed Spinach",
+	"diningHall": "BPlate",
+	"calories": 30 ,
+	"fat": 1.4,
+	"carbs": 3.6,
+	"protein": 1.5 
+},
+{
+	"itemName": "Scallops, Wild Rice w/ Butternut Squash Puree & Romanesco",
+	"diningHall": "BPlate",
+	"calories": 237 ,
+	"fat": 4.7,
+	"carbs": 40.2,
+	"protein": 11.5 
+},
+{
+	"itemName": "Scrambled Egg Whites",
+	"diningHall": "BPlate",
+	"calories": 65 ,
+	"fat": 2.4,
+	"carbs": 0.9,
+	"protein": 9.3 
+},
+{
+	"itemName": "Scrambled Egg, Potato & Swiss Chard Taco",
+	"diningHall": "BPlate",
+	"calories": 164 ,
+	"fat": 4.4,
+	"carbs": 21.3,
+	"protein": 9.1 
+},
+{
+	"itemName": "Scrambled Eggs",
+	"diningHall": "BPlate",
+	"calories": 66 ,
+	"fat": 2.4,
+	"carbs": 1.5,
+	"protein": 8.9 
+},
+{
+	"itemName": "Seitan w/ Brown Rice, Kale & Carrot Bowl",
+	"diningHall": "BPlate",
+	"calories": 261 ,
+	"fat": 5.2,
+	"carbs": 25.5,
+	"protein": 29.9 
+},
+{
+	"itemName": "Sesame Tofu, Volcano Rice & Mixed Cabbage Bowl",
+	"diningHall": "BPlate",
+	"calories": 188 ,
+	"fat": 9.1,
+	"carbs": 20.7,
+	"protein": 5.8 
+},
+{
+	"itemName": "Spaghetti Squash, Cauliflower, & Escarole Sauté Bowl",
+	"diningHall": "BPlate",
+	"calories": 101 ,
+	"fat": 5.3,
+	"carbs": 12.4,
+	"protein": 2.9 
+},
+{
+	"itemName": "Spiced Gingerbread",
+	"diningHall": "BPlate",
+	"calories": 227 ,
+	"fat": 7.9,
+	"carbs": 35.2,
+	"protein": 3.9 
+},
+{
+	"itemName": "Spiced Lamb Chop",
+	"diningHall": "BPlate",
+	"calories": 66 ,
+	"fat": 3.7,
+	"carbs": 0.3,
+	"protein": 7.6 
+},
+{
+	"itemName": "Spicy Azuki & Tempeh Chili w/ Potatoes",
+	"diningHall": "BPlate",
+	"calories": 138 ,
+	"fat": 8,
+	"carbs": 13.4,
+	"protein": 5.9 
+},
+{
+	"itemName": "Spicy Beef & Eggplant Flatbread",
+	"diningHall": "BPlate",
+	"calories": 138 ,
+	"fat": 4.3,
+	"carbs": 19.1,
+	"protein": 7 
+},
+{
+	"itemName": "Spinach & Artichoke Flatbread",
+	"diningHall": "BPlate",
+	"calories": 129 ,
+	"fat": 3.4,
+	"carbs": 20.3,
+	"protein": 5.6 
+},
+{
+	"itemName": "Spinach & Bulgur Quesadilla",
+	"diningHall": "BPlate",
+	"calories": 178 ,
+	"fat": 7.4,
+	"carbs": 18.9,
+	"protein": 9.7 
+},
+{
+	"itemName": "Spinach, Arugula, & White Bean Guacamole Wrap",
+	"diningHall": "BPlate",
+	"calories": 122 ,
+	"fat": 4.2,
+	"carbs": 18,
+	"protein": 4.8 
+},
+{
+	"itemName": "Steamed Barley",
+	"diningHall": "BPlate",
+	"calories": 70 ,
+	"fat": 0.3,
+	"carbs": 16.1,
+	"protein": 1.3 
+},
+{
+	"itemName": "Strawberry Yogurt",
+	"diningHall": "BPlate",
+	"calories": 27 ,
+	"fat": 0.2,
+	"carbs": 5.2,
+	"protein": 1.1 
+},
+{
+	"itemName": "Thai Tofu Stacker",
+	"diningHall": "BPlate",
+	"calories": 46 ,
+	"fat": 1,
+	"carbs": 6.7,
+	"protein": 2.6 
+},
+{
+	"itemName": "Tofu Cranberry Bar",
+	"diningHall": "BPlate",
+	"calories": 380 ,
+	"fat": 12.3,
+	"carbs": 66.3,
+	"protein": 4.2 
+},
+{
+	"itemName": "Tri-Color Quinoa Pancake w/ Blueberries",
+	"diningHall": "BPlate",
+	"calories": 138 ,
+	"fat": 3.1,
+	"carbs": 25.2,
+	"protein": 3.5 
+},
+{
+	"itemName": "Tri-Color Quinoa",
+	"diningHall": "BPlate",
+	"calories": 34 ,
+	"fat": 0.5,
+	"carbs": 6.2,
+	"protein": 1.2 
+},
+{
+	"itemName": "Tuscan Bean Soup",
+	"diningHall": "BPlate",
+	"calories": 103 ,
+	"fat": 3.5,
+	"carbs": 14.9,
+	"protein": 4.2 
+},
+{
+	"itemName": "Tuscan Kale Salad",
+	"diningHall": "BPlate",
+	"calories": 139 ,
+	"fat": 9.3,
+	"carbs": 11.5,
+	"protein": 5.3 
+},
+{
+	"itemName": "Vegan Brownie",
+	"diningHall": "BPlate",
+	"calories": 226 ,
+	"fat": 13,
+	"carbs": 27.6,
+	"protein": 3.3 
+},
+{
+	"itemName": "Vegan Chocolate Loaf",
+	"diningHall": "BPlate",
+	"calories": 103 ,
+	"fat": 3.6,
+	"carbs": 17.4,
+	"protein": 1.2 
+},
+{
+	"itemName": "Vegan Coconut Yogurt",
+	"diningHall": "BPlate",
+	"calories": "N/A",
+	"fat": "N/A",
+	"carbs": "N/A",
+	"protein": "N/A"
+},
+{
+	"itemName": "Vegan Tiramisu",
+	"diningHall": "BPlate",
+	"calories": 162 ,
+	"fat": 6.3,
+	"carbs": 25.6,
+	"protein": 2.1 
+},
+{
+	"itemName": "Warm Rosemary Shrimp, White Bean, & Mizuna Salad Bowl",
+	"diningHall": "BPlate",
+	"calories": 128 ,
+	"fat": 4.8,
+	"carbs": 8.4,
+	"protein": 13.4 
+},
+{
+	"itemName": "Wheat Berry",
+	"diningHall": "BPlate",
+	"calories": 193 ,
+	"fat": 1.2,
+	"carbs": 41,
+	"protein": 7.2 
+},
+{
+	"itemName": "Whole Grain Banana Waffle",
+	"diningHall": "BPlate",
+	"calories": 83 ,
+	"fat": 4.1,
+	"carbs": 10.2,
+	"protein": 2.2 
+},
+{
+	"itemName": "Whole Wheat Bread",
+	"diningHall": "BPlate",
+	"calories": 112 ,
+	"fat": 0.5,
+	"carbs": 23.7,
+	"protein": 3.6 
+},
+{
+	"itemName": "Whole Wheat Pancakes w/ Amaranth & Chocolate Chips",
+	"diningHall": "BPlate",
+	"calories": 204 ,
+	"fat": 6.6,
+	"carbs": 30.7,
+	"protein": 6.2 
+},
+{
+	"itemName": "Wild Mushroom & Arugula Flatbread",
+	"diningHall": "BPlate",
+	"calories": 181 ,
+	"fat": 8.7,
+	"carbs": 19.1,
+	"protein": 8.3 
+},
+{
+	"itemName": "Zucchini Chocolate Bar",
+	"diningHall": "BPlate",
+	"calories": 244 ,
+	"fat": 9.5,
+	"carbs": 39.6,
+	"protein": 3.1 
 }
 ]

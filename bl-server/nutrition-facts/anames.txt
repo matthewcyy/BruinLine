@@ -1,39 +1,3 @@
-Egg Whites Omelet
-Omelet Bar
-Bacon
-Kielbasa
-Scrambled Eggs
-Belgian Waffle
-Ham & Egg English Muffin Sandwich
-Bruin Scramble (Ham & Cheddar)
-Bruin Scramble (Vegetarian)
-Egg White, Spinach, & Turkey Sausage Sandwich
-Scrambled Eggs
-Toasted Coconut Waffle
-Cinnamon Polenta Pancake w/ Apple Cranberry Compote
-Gemelli Pasta w/ Scallops in Butter Sauce
-Rotini, Pesto, & Kale Bowl
-All Meat Pizza
-Grilled Eggplant Sandwich w/ Honey & Melted Cheese
-Arancini
-Merguez Sausage
-Mediterranean Potato & Spinach Frittata
-Pork & Potato Saute w/ Coriander Sauce
-Braised Spicy Lentils w/ Potatoes & Tomatoes
-Sopes de Carne Asada
-Sope de Hongos
-Roast Turkey w/ Honey Mustard
-Vegetarian Cobb Salad
-Jalapeo Popper Pizza
-Chili Cheese Burger
-Col. Karapet's Yardbird Cruncher
-Black Quinoa, BBQ Chicken, & Red Bean Bowl
-Black Quinoa, BBQ Tofu & Red Bean Bowl
-Ground Beef, Farro & Mushroom Wrap
-Spinach & Bulgur Quesadilla
-Spicy Beef & Eggplant Flatbread
-Spinach & Artichoke Flatbread
-Chickpea Stacker w/ Yogurt-Tahini Sauce
 Gemelli Pasta w/ Scallops in Butter Sauce
 Rotini, Pesto, & Kale Bowl
 All Meat Pizza
@@ -44,65 +8,8 @@ Spinach & Chickpea Saut
 Braised Spicy Lentils w/ Potatoes & Tomatoes
 Chicken Fajitas
 Vegetable Fajitas
-Route 66 Steak & Eggs
-Tofu Mushroom Scramble
-Jalapeo Popper Pizza
-Chili Cheese Burger
-Col. Karapet's Yardbird Cruncher
-Chicken, Barley & Portobello Bowl
-Greek Farro Bowl
-Scallops, Wild Rice w/ Butternut Squash Puree & Romanesco
-Spicy Azuki & Tempeh Chili w/ Potatoes
-Grilled Santa Maria Tri-Tip
-Mojo-Marinated Grilled Tofu
-Egg Whites Omelet
-Omelet Bar
-Bacon
-Kielbasa
-Scrambled Eggs
-Belgian Waffle
-Ham & Egg English Muffin Sandwich
-Bruin Scramble (Ham & Cheddar)
-Bruin Scramble (Vegetarian)
-Egg White, Spinach, & Turkey Sausage Sandwich
-Scrambled Eggs
-Toasted Coconut Waffle
-Cinnamon Polenta Pancake w/ Apple Cranberry Compote
-Gemelli Pasta w/ Scallops in Butter Sauce
-Rotini, Pesto, & Kale Bowl
-All Meat Pizza
-Grilled Eggplant Sandwich w/ Honey & Melted Cheese
-Arancini
-Merguez Sausage
-Mediterranean Potato & Spinach Frittata
-Pork & Potato Saute w/ Coriander Sauce
-Braised Spicy Lentils w/ Potatoes & Tomatoes
-Sopes de Carne Asada
-Sope de Hongos
-Roast Turkey w/ Honey Mustard
-Vegetarian Cobb Salad
-Jalapeo Popper Pizza
-Chili Cheese Burger
-Col. Karapet's Yardbird Cruncher
-Black Quinoa, BBQ Chicken, & Red Bean Bowl
-Black Quinoa, BBQ Tofu & Red Bean Bowl
-Ground Beef, Farro & Mushroom Wrap
-Spinach & Bulgur Quesadilla
-Spicy Beef & Eggplant Flatbread
-Spinach & Artichoke Flatbread
-Chickpea Stacker w/ Yogurt-Tahini Sauce
-Gemelli Pasta w/ Scallops in Butter Sauce
-Rotini, Pesto, & Kale Bowl
-All Meat Pizza
-Harissa Roast Beef Sandwich
-Arancini
-Mediterranean Potato & Spinach Frittata
-Spinach & Chickpea Saut
-Braised Spicy Lentils w/ Potatoes & Tomatoes
-Chicken Fajitas
-Vegetable Fajitas
-Route 66 Steak & Eggs
-Tofu Mushroom Scramble
+Beef Teriyake Bowl
+Teriyaki Veggie Bowl
 Jalapeo Popper Pizza
 Chili Cheese Burger
 Col. Karapet's Yardbird Cruncher
@@ -229,51 +136,3 @@ Grilled Shrimp
 Scrambled Egg, Potato & Swiss Chard Taco
 Spiced Lamb Chop
 Banana Pecan Buckwheat Pancake
-Bruin Scramble (Ham & Cheddar)
-Bruin Scramble (Vegetarian)
-Green Chile Rice w/ Black Beans & Egg
-Scrambled Eggs
-Oat & Whole Wheat Waffle
-Tri-Color Quinoa Pancake w/ Blueberries
-Rotini Florentine
-Ziti w/ Pepperoni & Marinara
-Beef & Lamb Gyro
-Falafel Pita
-Roasted Cod Bruschetta
-Broccolini w/ Olive & Caper Tapenade
-Chicken Tagine
-Fall Vegetable Tian
-Egg Whites Omelet
-Omelet Bar
-Bacon
-Grilled Hot Links
-Scrambled Eggs
-Maple Bacon Breakfast Burger
-D.F.C.
-Bruin Scramble (Ham & Cheddar)
-Bruin Scramble (Vegetarian)
-Chile Roasted Turkey w/ Jalapeno-Lime Slaw
-Spinach, Arugula, & White Bean Guacamole Wrap
-BBQ Pork Tortilla Pizza
-BBQ Tofu Flatbread
-Falafel Stacker
-Rotini Florentine
-Ziti w/ Pepperoni & Marinara
-Beef & Lamb Gyro
-Falafel Pita
-Sauteed Kale w/ Dates & Pistachios
-Broccolini w/ Olive & Caper Tapenade
-Grecian Style Shrimp w/ Grilled Zucchini
-Fall Vegetable Tian
-Huevos Motulenos
-Huevos Rancheros
-Roasted Flank Steak
-Smoked Gouda Grilled Cheese w/ Mushrooms & Onions
-Maple Bacon Breakfast Burger
-D.F.C.
-Greek Style Whole Wheat Penne w/ Chicken
-Seitan w/ Brown Rice, Kale & Carrot Bowl
-Chayote, Tri-Tip & Egg Bowl
-Lentils w/ Roasted Beets & Carrots
-Mojo-Marinated Grilled Pork Tenderloin
-Whole Wheat Pancakes w/ Amaranth & Chocolate Chips

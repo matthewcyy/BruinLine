@@ -4,7 +4,7 @@ website="https://menu.dining.ucla.edu/Menus/Epicuria"
 P=$(curl -s $website)
 echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>urls.txt
 #echo \n
-echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>names.txt
+echo "$P"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html/..>names.txt
 dining_hall="Epicuria"
 file_name_json="epicuria_nutrient.json"
 
@@ -13,16 +13,16 @@ file_name_json="epicuria_nutrient.json"
 echo "" > $file_name_json;
 
 curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
+curl -s "$website/Tomorrow"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html/..>>names.txt
 
-for i in {2..8}
+for i in {2..3}
 do
     #NEXT_DATE=$(date +%Y-%m-%d -d "$DATE + $i day")
     NEXT_DATE=$(date -v+"$i"d "+%Y-%m-%d")
     echo "$NEXT_DATE">>nextday.txt
     #P=$(curl -s "$website$NEXT_DATE)
     curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '"' '{print $4}'>>urls.txt
-    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html..ascii>>names.txt
+    curl -s "$website/$NEXT_DATE"|grep '<a class=\"recipelink\" href='|awk -F '[<>]' '{print $3}'|recode html/..>>names.txt
 
 done
 
@@ -51,7 +51,7 @@ do
         echo "\"protein\": \"N/A\"" |sed -E 's/\"protein\"/\t\"protein\"/'>> $file_name_json
     fi
     echo "},">>$file_name_json
-sdone
+done
 sed -i '' '$ s/,$//g' $file_name_json
 echo "]">>$file_name_json
 #rm $file_name_json
