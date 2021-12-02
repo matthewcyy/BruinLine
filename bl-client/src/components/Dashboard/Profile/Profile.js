@@ -88,9 +88,7 @@ function Profile() {
     }
   };
 
-  const submit = async (e) => {
-    e.preventDefault();
-    e.target.reset();
+  const submit = async () => {
     try {
       const requestBody = { password, id };
       await axios.post(
@@ -100,7 +98,7 @@ function Profile() {
       setPassword("");
       alert("Password has been changed!");
     } catch (err) {
-      err.response.data.msg && setError(err.response.data.msg);
+      alert("Could not upate password. "+err.response.data.msg);
     }
   };
 
@@ -125,7 +123,6 @@ function Profile() {
                 </Grid>
                 <Grid item xs={12}>
                   <div class="password">
-                    <form onSubmit={submit}>
                       <Grid container justify="space-between">
                         <Grid item xs={4} align="left">
                           <FormControl>
@@ -136,25 +133,25 @@ function Profile() {
                               id="newpassword"
                               type="password"
                               onChange={(e) => setPassword(e.target.value)}
+                              value={password}
                               label="Pasword"
                             />
                           </FormControl>
                         </Grid>
                         <Grid item xs={6} align="left" sx={{ m: 1 }}>
                           <Button
-                            type="submit"
                             value="Update Password"
                             form="password"
                             id="submitNewPassword"
                             primary={true}
                             variant="contained"
                             size="x-large"
+                            onClick={() => submit()}
                           >
                             Update Password
                           </Button>
                         </Grid>
                       </Grid>
-                    </form>
                   </div>
                 </Grid>
                 <br />
