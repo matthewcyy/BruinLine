@@ -303,7 +303,7 @@ function DiningHalls() {
                         marginBottom="1.0rem"
                       >
                         <Box>
-                          Number of Users in {hall}: {peopleInHall[hall]}
+                          Number of Users in {hall}: {hall === "B-Plate" ? peopleInHall["bPlate"] : peopleInHall[hall]}
                         </Box>
                       </Grid>
                       <Grid item xs={12} marginTop="0.5 rem">
