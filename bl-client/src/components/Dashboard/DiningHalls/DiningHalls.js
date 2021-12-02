@@ -317,7 +317,7 @@ function DiningHalls() {
                                 sx={{ width: "33%", flexShrink: 0 }}
                                 align="left"
                               >
-                                Menu
+                                <b>Menu</b>
                               </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
@@ -352,7 +352,7 @@ function DiningHalls() {
               component="h2"
               sx={{ p: 1.0 }}
             >
-              {reviewItemName}
+              <b>{reviewItemName}</b>
             </Typography>
             <Typography
               id="modal-modal-title"

@@ -21,6 +21,7 @@ function ItemCard(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [nutFacts, setNutFacts] = useState({});
+  const [errorInReq, setErrorInReq] = useState(false);
   const updateFavorite = () => {
     console.log("IN UPDATEFAV");
     setIsFavorite(favorites.includes(itemName));
@@ -84,23 +85,28 @@ function ItemCard(props) {
   };
 
   const getNutritionFacts = async () => {
-    var reqBody = {};
-    reqBody.itemName = itemName;
-    console.log(reqBody);
-    const getNutFacts = await axios.post(
-      "http://localhost:5000/foods/getNutrientFacts",
-      reqBody
-    );
-    console.log(getNutFacts.data);
-    handleOpen();
-    setNutFacts(getNutFacts.data);
+    try {
+      var reqBody = {};
+      reqBody.itemName = itemName;
+      console.log(reqBody);
+      const getNutFacts = await axios.post(
+        "http://localhost:5000/foods/getNutrientFacts",
+        reqBody
+      );
+      setNutFacts(getNutFacts.data);
+      handleOpen();
+    } catch (err) {
+      setErrorInReq(true)
+      handleOpen();
+    }
+    
   };
 
   console.log("HIHIHI");
   return (
     <div>
-      <Grid container justify="space-between">
-        <Grid item xs={3}></Grid>
+      <Grid container justify="space-between" justifyContent="center" alignItems="center">
+        <Grid item xs={10}></Grid>
         <Grid item xs={3} align="left">
           <p>{props.name}</p>
         </Grid>
@@ -118,7 +124,7 @@ function ItemCard(props) {
         <Grid item xs={0.3}>
           {" "}
         </Grid>
-        <Grid item xs={2} align="left">
+        <Grid item xs={1} align="left">
           <Button variant="contained" onClick={() => reviewItem()}>
             Review
           </Button>
@@ -130,10 +136,18 @@ function ItemCard(props) {
         </Grid>
       </Grid>
       <Modal open={open} onClose={handleClose}>
-        <Box style={style}>
+        {errorInReq ?
+        <Box sx={style}>
+        <Box>
+          <Typography variant="h6" component="h2">
+            <b>Error, no nutritional information for {itemName}</b>
+          </Typography>
+        </Box>
+      </Box> :
+        <Box sx={style}>
           <Box>
             <Typography variant="h6" component="h2">
-              Nutrition Facts for {itemName}
+              <b>Nutrition Facts for {itemName}</b>
             </Typography>
             <Typography sx={{ mt: 2 }}>
               Calories: {nutFacts.calories}
@@ -143,6 +157,7 @@ function ItemCard(props) {
             <Typography sx={{ mt: 2 }}>Protein: {nutFacts.protein}</Typography>
           </Box>
         </Box>
+          }
       </Modal>
     </div>
   );
