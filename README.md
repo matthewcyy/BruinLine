@@ -38,4 +38,3 @@ Here is how to run BruinLine on your local maching:
   npm start
   ```
 6. The localhost website should be launched automatically but if it isn't, you can naviguate to http://localhost:3000/
-Note: Running the application on mac might produce better results
