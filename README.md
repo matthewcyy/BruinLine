@@ -1,5 +1,5 @@
 # BruinLine
-<img src="./bl-client/src/images/logo_name.png" width="250">
+<img src="./bl-client/src/images/logo_name.png" width="250" style="display: block; margin-left: auto; margih-right: auto; width:50%">
 
 Bruinline is a web application meant to be an alternative, more personalized and customisable version of the UCLA dining hall menu system.
 
