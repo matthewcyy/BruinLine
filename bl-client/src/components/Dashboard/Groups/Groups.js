@@ -19,13 +19,9 @@ function Groups() {
   const [groupMemberProp, setGroupMemberProp] = useState([]);
   const updateStates = async () => {
     if (userData.user) {
-      console.log("USERDATA", userData.user);
-      console.log("STUFF", userData.user.allUsers);
       setAllUsers(userData.user.allUsers);
       setGroups(userData.user.groups);
       setInviter(userData.user.username);
-      console.log("GROUPS", groups);
-      console.log("ALLUSERS", allUsers);
     }
   };
 
