@@ -25,12 +25,11 @@ class Voting extends Component {
 		reqBody.username = this.props.username
 		this.props.setUserVote(diningHall)
 		const changeVote = await axios.patch('http://localhost:5000/groups/vote', reqBody)
-		localStorage.setItem("vote", diningHall)
 		this.props.setDisable(true)
 	}
 
 	async removeVote() {
-		var diningHall = localStorage.getItem("vote")
+		var diningHall = this.props.userVote
 		if (diningHall === "B-Plate") {
 			diningHall = "bPlate"
 		}
@@ -45,7 +44,6 @@ class Voting extends Component {
 		reqBody.username = this.props.username
 		this.props.setUserVote("")
 		const changeVote = await axios.patch('http://localhost:5000/groups/removeVote', reqBody)
-		localStorage.setItem("vote", "")
 		this.props.setDisable(false)
 	}
 	addSymbols(e){
