@@ -51,16 +51,20 @@ function DiningHalls() {
   const allDiningHalls = ["DeNeve", "Epicuria", "B-Plate", "Feast"];
 
   const updateStates = async () => {
-      if (userData.user) {
-        console.log("gotdata",currentHall, userData.user.hall);
+    if (userData.user) {
+      console.log("gotdata", currentHall, userData.user.hall);
+      if (userData.user.hall === "bPlate") {
+        setCurrentHall("B-Plate");
+      } else {
         setCurrentHall(userData.user.hall);
       }
-      console.log("CALLING UPDATESTATES")
+    }
+    console.log("CALLING UPDATESTATES");
   };
 
   const getPeopleHall = async () => {
     try {
-        console.log("HOWMANYTIMES")
+      console.log("HOWMANYTIMES");
       const hallCreateResponse = await axios.get(
         "http://localhost:5000/halls/getPeople"
       );
@@ -81,8 +85,7 @@ function DiningHalls() {
     newUserData.user.hall = hallName;
     setUserData({ ...newUserData });
     if (hallName == "B-Plate") {
-        hallName = "bPlate";
-      
+      hallName = "bPlate";
     }
     var copyPeople = peopleInHall;
     copyPeople[hallName] += 1;
@@ -105,12 +108,12 @@ function DiningHalls() {
       const reqBody = {};
       if (peopleInHall[hallName] > 0) {
         if (hallName == "B-Plate") {
-            hallName = "bPlate";
-        } 
-          var copyPeople = peopleInHall;
-          copyPeople[hallName] = --copyPeople[hallName];
-          setPeopleInHall({ ...copyPeople });
-        
+          hallName = "bPlate";
+        }
+        var copyPeople = peopleInHall;
+        copyPeople[hallName] = --copyPeople[hallName];
+        setPeopleInHall({ ...copyPeople });
+
         setCurrentHall("");
         reqBody.hallCheck = hallName;
         reqBody.userId = userData.user.id;
@@ -169,15 +172,15 @@ function DiningHalls() {
 
   useEffect(() => {
     updateMenus();
-  }, [userData])
+  }, [userData]);
 
   useEffect(() => {
     getPeopleHall();
-  }, [])
+  }, []);
 
   const updateUserData = async () => {
     try {
-        console.log(newUserData.user.favFoods)
+      console.log(newUserData.user.favFoods);
       const newUserData = userData;
       newUserData.user.favFoods = favorites;
       setUserData({ ...newUserData });
@@ -202,10 +205,10 @@ function DiningHalls() {
   const [reviewDescription, setReviewDescription] = useState("");
   const [rating, setRating] = useState(0);
 
-//   useEffect(() => {
-//       debugger;
-//     updateUserData();
-//   }, [favorites, userData]);
+  //   useEffect(() => {
+  //       debugger;
+  //     updateUserData();
+  //   }, [favorites, userData]);
 
   const submitReview = async () => {
     if (userData.user) {
@@ -264,8 +267,8 @@ function DiningHalls() {
                       </Grid>
                       <Grid item marginTop="0.5rem" float="left">
                         {userData.user ? (
-                          (currentHall!=="") ? (
-                            (hall === currentHall) ? (
+                          currentHall !== "" ? (
+                            hall === currentHall ? (
                               <Button
                                 onClick={() => removeHall(hall)}
                                 variant="contained"
@@ -300,7 +303,7 @@ function DiningHalls() {
                         marginBottom="1.0rem"
                       >
                         <Box>
-                          Number of Users in {hall}: {peopleInHall[hall]}
+                          Number of Users in {hall}: {hall === "B-Plate" ? peopleInHall["bPlate"] : peopleInHall[hall]}
                         </Box>
                       </Grid>
                       <Grid item xs={12} marginTop="0.5 rem">
@@ -314,7 +317,7 @@ function DiningHalls() {
                                 sx={{ width: "33%", flexShrink: 0 }}
                                 align="left"
                               >
-                                Menu
+                                <b>Menu</b>
                               </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
@@ -342,39 +345,39 @@ function DiningHalls() {
       </div>
       <Modal open={reviewPopShow} onClose={handleClose}>
         <Box sx={style}>
-            <Box>
+          <Box>
             <Typography
-                id="modal-modal-title"
-                variant="h6"
-                component="h2"
-                sx={{ p: 1.0 }}
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ p: 1.0 }}
             >
-                {reviewItemName}
+              <b>{reviewItemName}</b>
             </Typography>
             <Typography
-                id="modal-modal-title"
-                variant="h6"
-                component="h2"
-                sx={{ p: 1.0 }}
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ p: 1.0 }}
             >
-                {reviewHallName}
+              {reviewHallName}
             </Typography>
             <TextField
-                label="Rating"
-                select
-                fullWidth
-                size="small"
-                onChange={(e) => setRating(e.target.value)}
-                sx={{ p: 1.0 }}
+              label="Rating"
+              select
+              fullWidth
+              size="small"
+              onChange={(e) => setRating(e.target.value)}
+              sx={{ p: 1.0 }}
             >
-                {ratingOptions.map((option) => (
+              {ratingOptions.map((option) => (
                 <MenuItem key={option} value={option}>
-                    {option}
+                  {option}
                 </MenuItem>
-                ))}
+              ))}
             </TextField>
-            </Box>
-            <TextField
+          </Box>
+          <TextField
             label="Review"
             variant="outlined"
             size="Normal"
@@ -384,17 +387,14 @@ function DiningHalls() {
             multiline
             rows={4}
             sx={{ p: 1.0 }}
-            />
-            <Box sx={{ p: 1.0 }}>
-            <Button
-                onClick={() => submitReview()}
-                variant="contained"
-            >
-                Submit
+          />
+          <Box sx={{ p: 1.0 }}>
+            <Button onClick={() => submitReview()} variant="contained">
+              Submit
             </Button>
-            </Box>
+          </Box>
         </Box>
-        </Modal>
+      </Modal>
     </div>
   );
 }
