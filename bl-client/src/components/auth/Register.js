@@ -29,6 +29,7 @@ function Registration() {
     e.preventDefault();
     try {
       const newUser = { email, password, passwordVerify, username, favFoods };
+      console.log(newUser);
       await axios.post("http://localhost:5000/users/register", newUser);
       const loginResponse = await axios.post(
         "http://localhost:5000/users/login",
@@ -37,6 +38,7 @@ function Registration() {
           password,
         }
       );
+      console.log(loginResponse.data);
       localStorage.setItem("auth-token", loginResponse.data.token);
       history.push("/login");
     } catch (err) {

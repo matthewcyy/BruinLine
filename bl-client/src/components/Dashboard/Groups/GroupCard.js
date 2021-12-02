@@ -36,17 +36,21 @@ function GroupCard(props) {
     setVotes(getVotesResponse.data.Votes);
     setUserVote(getVotesResponse.data.userVote);
   };
+  console.log("WHAT");
+  console.log("HEY", props.groupObj);
 
   const getOptions = () => {
     const optionsCopy = props.auser.map((x) => {
       return x.username;
     });
     setMyOptions(optionsCopy);
+    console.log("LOLOL", myOptions);
   };
 
   const getGroupMembers = async () => {
     const reqBody = {};
     reqBody.groupId = props.groupObj.groupId;
+    console.log("HEY", reqBody);
     const getResponse = await axios.post(
       "http://localhost:5000/groups/getGroupMembers",
       reqBody
@@ -89,6 +93,7 @@ function GroupCard(props) {
     getVotes();
     getOptions();
   }, []);
+  console.log("HIHIHI");
   return (
     <Box xs={12}>
       <Card>

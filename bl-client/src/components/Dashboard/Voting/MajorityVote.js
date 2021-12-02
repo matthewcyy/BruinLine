@@ -56,6 +56,7 @@ class Voting extends Component {
 	}
 
 	render() {
+	console.log("PROPS", this.props)
 		const options = {
 			theme: "light2",
 			axisX: {

@@ -52,6 +52,7 @@ function Profile() {
       reqBody.id = id;
       reqBody.groupId = groupId;
       const indexOfInvite = invitations.findIndex((x) => x.groupId === groupId);
+      // console.log("INVITE'S INDEX", indexOfInvite)
       var invitationsCopy = invitations;
       invitationsCopy.splice(indexOfInvite, 1);
       setInvitations([...invitationsCopy]);
@@ -74,6 +75,7 @@ function Profile() {
       setGroups([...newGroups]);
       reqBody.id = id;
       const indexOfInvite = invitations.findIndex((x) => x.groupId === groupId);
+      // console.log("INVITE'S INDEX", indexOfInvite)
       var invitationsCopy = invitations;
       invitationsCopy.splice(indexOfInvite, 1);
       setInvitations([...invitationsCopy]);

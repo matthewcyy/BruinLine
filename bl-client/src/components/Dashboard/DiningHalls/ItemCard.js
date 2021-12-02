@@ -18,15 +18,19 @@ function ItemCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const updateFavorite = () => {
+      console.log('IN UPDATEFAV')
       setIsFavorite(favorites.includes(itemName));
   };
 
   useEffect(() => {
+      console.log("USEEFFECT");
     updateFavorite();
   }, [favorites]);
 
   const starItem = async () => {
+      console.log('IN STARITEM')
     if (!favorites.includes(itemName)) {
+        console.log('IN STARITEM IF')
       favorites.push(itemName);
       props.setFavorites([...favorites]);
       const reqBody = {};
@@ -36,12 +40,15 @@ function ItemCard(props) {
         "http://localhost:5000/users/updateFavFood",
         reqBody
       );
+      console.log(getResponse);
     }
   };
 
   const unStarItem = async () => {
+      console.log('IN UNSTARITEM')
     const index = favorites.indexOf(itemName);
     if (index > -1) {
+        console.log('IN UNSTARITEM IF')
       favorites.splice(index, 1);
       props.setFavorites([...favorites]);
       const reqBody = {};
@@ -55,11 +62,13 @@ function ItemCard(props) {
   };
 
   const reviewItem = async (foodName) => {
+    console.log("Reviewing");
     props.setReviewItemName(itemName);
     props.setReviewHallName(props.hall)
     props.setReviewPopShow(true);
   };
 
+  console.log("HIHIHI");
   return (
     <div>
       <Grid container justify="space-between">

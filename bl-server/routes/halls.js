@@ -12,6 +12,7 @@ router.patch("/checkin", async (req, res) => {
     let { hallCheck, userId } = req.body; // hallCheck = req.body.hallCheck
     // needs hallname
     var hall = await Halls.findById("61a54697b2b28a17be702118"); //take the hall from the function call
+    console.log("HALL", hall);
     const user = await User.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "Cannot find user" });
@@ -34,6 +35,7 @@ router.patch("/checkout", async (req, res) => {
     let { hallCheck, userId } = req.body; // hallCheck = req.body.hallCheck
     // needs hallname
     var hall = await Halls.findById("61a54697b2b28a17be702118"); //take the hall from the function call
+    console.log("HALL", hall);
     const user = await User.findById(userId);
     if (!user) {
       return res.status(404).json({ message: "Cannot find user" });

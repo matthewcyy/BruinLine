@@ -7,6 +7,8 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
 function ReviewCard(props) {
+  console.log("REVIEW OBJ", props.reviewObj);
+  console.log("HIHIHI");
   return (
     <Box xs={12}>
       <Card>

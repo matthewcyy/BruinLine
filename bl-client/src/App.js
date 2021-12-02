@@ -49,9 +49,11 @@ function App() {
       }
       const tokenResponse = await axios.post('http://localhost:5000/users/tokenIsValid', null, {headers: {"x-auth-token": token}}); // getting token for authorization
       if (tokenResponse.data) {
+        console.log("IN THE USEEFFECT")
         const userRes = await axios.get("http://localhost:5000/users/", {
           headers: { "x-auth-token": token },
         });
+        console.log("USERRESSSS",userRes)
         setUserData({
           token,
           user: userRes.data,

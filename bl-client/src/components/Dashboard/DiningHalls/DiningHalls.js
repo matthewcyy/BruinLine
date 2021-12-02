@@ -52,24 +52,29 @@ function DiningHalls() {
 
   const updateStates = async () => {
       if (userData.user) {
+        console.log("gotdata",currentHall, userData.user.hall);
         setCurrentHall(userData.user.hall);
       }
+      console.log("CALLING UPDATESTATES")
   };
 
   const getPeopleHall = async () => {
     try {
+        console.log("HOWMANYTIMES")
       const hallCreateResponse = await axios.get(
         "http://localhost:5000/halls/getPeople"
       );
       hallCreateResponse.data.hall["B-Plate"] =
         hallCreateResponse.data.hall["bPlate"];
       setPeopleInHall(hallCreateResponse.data.hall);
+      console.log("ss", hallCreateResponse);
     } catch (err) {
       console.log("ERROR", err.response.data.msg);
     }
   };
 
   const addHall = async (hallName) => {
+    console.log("ADD HALLNAMe", hallName);
     const reqBody = {};
     setCurrentHall(hallName);
     const newUserData = userData;
@@ -83,6 +88,9 @@ function DiningHalls() {
     copyPeople[hallName] += 1;
     setPeopleInHall({ ...copyPeople });
 
+    console.log(peopleInHall);
+    console.log(hallName);
+
     reqBody.hallCheck = hallName;
     reqBody.userId = userData.user.id;
     const hallCreateResponse = await axios.patch(
@@ -93,6 +101,7 @@ function DiningHalls() {
 
   const removeHall = async (hallName) => {
     try {
+      console.log("REMOVE HALLNAMe", hallName);
       const reqBody = {};
       if (peopleInHall[hallName] > 0) {
         if (hallName == "B-Plate") {
@@ -123,6 +132,7 @@ function DiningHalls() {
   const [expanded, setExpanded] = React.useState(false);
 
   const showmenu = (hallbutton) => (event, isExpanded) => {
+    //console.log("CLICKED", hallbutton);
     if (hallbutton == "B-Plate") {
       hallbutton = "bPlate";
     }
@@ -167,6 +177,7 @@ function DiningHalls() {
 
   const updateUserData = async () => {
     try {
+        console.log(newUserData.user.favFoods)
       const newUserData = userData;
       newUserData.user.favFoods = favorites;
       setUserData({ ...newUserData });
@@ -219,6 +230,7 @@ function DiningHalls() {
           "http://localhost:5000/foods/reviewFood",
           reqObject
         );
+        console.log("ADDREVIEW", addReview);
       } catch (err) {
         console.log("ERROR", err.response.data.msg);
       }
